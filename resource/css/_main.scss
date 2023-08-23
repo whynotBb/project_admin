@@ -1,0 +1,119 @@
+.admin_container_wrapper {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    .lnb_wrap {
+        width: 24rem;
+        background: $color-s1-dark;
+    }
+    .admin_container {
+        background: #fff;
+        padding: 4rem;
+        flex: 1;
+        h2 {
+            font-size: 4rem;
+            line-height: 5.6rem;
+            margin-bottom: 4rem;
+        }
+        .content_box {
+            @include box-shadow-sm;
+            border: 1px solid $border-base-light;
+            border-radius: 4rem;
+            padding: 4rem;
+            margin-bottom: 4rem;
+            h3 {
+                color: $color-primary;
+                font-size: 2rem;
+                line-height: 2.6rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding-bottom: 1.2rem;
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    flex: 1;
+                    height: 1px;
+                    border-top: 1px dashed $border-base-light;
+                }
+            }
+            .content_list {
+                margin-top: 2.4rem;
+                margin-top: 4rem;
+                padding-left: 13.2rem;
+                position: relative;
+                h4 {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    width: 12rem;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    line-height: 3.6rem;
+                }
+                .detail {
+                    font-weight: 500;
+                    line-height: 3.6rem;
+                    .biz_num {
+                        display: flex;
+                        gap: 2rem;
+                        li {
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 1px;
+                                height: 1rem;
+                                background: $border-base;
+                                position: absolute;
+                                top: 1.2rem;
+                                right: -1rem;
+                            }
+                            &:last-child::before {
+                                display: none;
+                            }
+                            a {
+                                color: $color-primary;
+                                text-decoration: underline;
+                                text-underline-position: under;
+                            }
+                        }
+                    }
+                    .label_float {
+                        width: 16rem;
+                    }
+                    .select_btn_group {
+                        width: 89rem;
+                        .btn {
+                            width: 12.7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.address_wrap {
+    width: 89rem;
+    .address_1 {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 1.6rem;
+        input {
+            flex: 1;
+            &:first-child {
+                width: 16rem;
+                flex: initial;
+            }
+        }
+        button {
+            width: 12.7rem;
+            height: 3.6rem;
+        }
+    }
+    .address_2 {
+        input {
+            width: 100%;
+        }
+    }
+}

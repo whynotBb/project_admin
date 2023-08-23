@@ -30,6 +30,14 @@ $text-disabled: #6c757d;
 $border-base: #ced4da;
 $border-base-light: #e9ecef;
 
+// spacing
+$space-xs: 2px;
+$space-s: 8px;
+$space-m: 1.6rem;
+$space-lg: 2.4rem;
+$space-xl: 4rem;
+$space-xxl: 8rem;
+
 // float clear
 @mixin clearfix {
     &::after {
