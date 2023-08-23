@@ -1,0 +1,447 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+address {
+  display: block;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 700;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+hr {
+  height: 0;
+  box-sizing: content-box;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  overflow: visible;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button:focus {
+  outline: #007bce dotted thin;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+dl,
+dt,
+dd {
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+html {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #000;
+  word-break: keep-all;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 400;
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1900px;
+  margin: 0 auto;
+  color: #343a40;
+}
+
+/* 스크롤바 설정*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 17%;
+  background-color: rgba(186, 186, 186, 0.5);
+  border-radius: 10px;
+}
+
+/* 스크롤바 뒷 배경 설정*/
+::-webkit-scrollbar-track {
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+input[type=text],
+input[type=password],
+input[type=number] {
+  background: #fff;
+  color: #343a40;
+  border-radius: 0.4rem;
+  border: 1px solid #ced4da;
+  padding: 0.6rem 1.2rem;
+  height: 3.6rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.label_vertical label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.label_float {
+  position: relative;
+  width: 100%;
+}
+.label_float input {
+  width: 100%;
+  padding: 0.6rem 4rem 0.6rem 1.2rem;
+}
+.label_float label {
+  position: absolute;
+  right: 1.2rem;
+}
+
+.checkbox_wrap label {
+  padding-left: 2.4rem;
+  line-height: 2.4rem;
+  display: block;
+  cursor: pointer;
+  background: url(../images/checkbox.svg) no-repeat left center;
+}
+.checkbox_wrap input[type=checkbox] {
+  display: none;
+}
+.checkbox_wrap input[type=checkbox]:checked ~ label {
+  background: url(../images/checkbox_on.svg) no-repeat left center;
+}
+.checkbox_wrap input[type=checkbox]:checked:disabled ~ label {
+  color: #6c757d;
+  cursor: default;
+  background: url(../images/checkbox_on_disabled.svg) no-repeat left center;
+}
+.checkbox_wrap input[type=checkbox]:disabled ~ label {
+  color: #6c757d;
+  cursor: default;
+  background: url(../images/checkbox_disabled.svg) no-repeat left center;
+}
+
+button.btn {
+  display: block;
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.8rem;
+}
+button.btn:disabled {
+  opacity: 0.4;
+}
+button.btn.btn_primary {
+  color: #fff;
+  background: #0ab968;
+}
+button.btn.btn_primary:hover {
+  background: #19a078;
+}
+button.btn.btn_secondary {
+  color: #fff;
+  background: #343a40;
+}
+button.btn.btn_secondary:hover {
+  background: #212529;
+}
+button.btn.btn_danger {
+  color: #fff;
+  background: #dc3545;
+}
+button.btn.btn_danger:hover {
+  background: #b02a37;
+}
+
+.login_wrapper {
+  background: url(../images/login_bg.png) no-repeat center;
+  background-size: 1920px auto;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.login_container {
+  width: 48rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login_container h1 {
+  color: #333;
+  font-size: 4.4116rem;
+  font-weight: 400;
+  text-align: center;
+  padding-left: 4.1rem;
+  background: url(../images/logo.svg) no-repeat left 9rem center;
+  margin-bottom: 4rem;
+}
+.login_container .login_box {
+  border-radius: 4rem;
+  width: 100%;
+  height: 58.4rem;
+  padding: 8rem 4rem;
+  background: #fff;
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.17);
+}
+.login_container .login_box h2 {
+  text-align: center;
+  color: #212529;
+  font-size: 3.2rem;
+}
+.login_container .login_box input[type=text],
+.login_container .login_box input[type=password] {
+  font-size: 2rem;
+  height: 4.2rem;
+  padding: 0.8rem 1.6rem;
+  width: 100%;
+}
+.login_container .login_box label {
+  height: 3.8rem;
+  line-height: 3.8rem;
+}
+.login_container .login_box .inner {
+  padding: 4rem 0;
+}
+.login_container .login_box .inner .label_vertical {
+  margin-bottom: 2.4rem;
+}
+.login_container .login_box .inner .login_more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.login_container .login_box .inner .login_more ul {
+  display: flex;
+}
+.login_container .login_box .inner .btn {
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.login_container .copyright {
+  margin-top: 4rem;
+  font-size: 1.4rem;
+  color: #6c757d;
+  width: 100%;
+  text-align: center;
+}
+
+.admin_container_wrapper {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+.admin_container_wrapper .lnb_wrap {
+  width: 24rem;
+  background: #212529;
+}
+.admin_container_wrapper .admin_container {
+  background: #fff;
+  padding: 4rem;
+  flex: 1;
+}
+.admin_container_wrapper .admin_container h2 {
+  font-size: 4rem;
+  line-height: 5.6rem;
+  margin-bottom: 4rem;
+}
+.admin_container_wrapper .admin_container .content_box {
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  border-radius: 4rem;
+  padding: 4rem;
+  margin-bottom: 4rem;
+}
+.admin_container_wrapper .admin_container .content_box h3 {
+  color: #0ab968;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+}
+.admin_container_wrapper .admin_container .content_box h3::after {
+  content: "";
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed #e9ecef;
+}
+.admin_container_wrapper .admin_container .content_box .content_list {
+  margin-top: 2.4rem;
+  margin-top: 4rem;
+  padding-left: 13.2rem;
+  position: relative;
+}
+.admin_container_wrapper .admin_container .content_box .content_list h4 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  width: 12rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 3.6rem;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail {
+  font-weight: 500;
+  line-height: 3.6rem;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail ul {
+  display: flex;
+  gap: 2rem;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail ul li {
+  position: relative;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail ul li::before {
+  content: "";
+  width: 1px;
+  height: 1rem;
+  background: #ced4da;
+  position: absolute;
+  top: 1.1rem;
+  right: -1rem;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail ul li:last-child::before {
+  display: none;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail ul li a {
+  color: #0ab968;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.admin_container_wrapper .admin_container .content_box .content_list .detail .label_float {
+  width: 16rem;
+}

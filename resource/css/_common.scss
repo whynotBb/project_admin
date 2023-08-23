@@ -1,0 +1,296 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system,
+        BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+        "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #000;
+    word-break: keep-all;
+}
+body {
+    font-size: 1.6rem;
+    font-weight: 400;
+    width: 100%;
+    max-width: 1920px;
+    min-width: 1900px;
+    margin: 0 auto;
+    color: $text-body;
+}
+// common
+
+/* 스크롤바 설정*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 17%;
+    background-color: rgba(186, 186, 186, 0.5);
+    border-radius: 10px;
+}
+
+/* 스크롤바 뒷 배경 설정*/
+::-webkit-scrollbar-track {
+    background-color: rgba(245, 245, 245, 0.5);
+}
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    background: #fff;
+    color: $text-body;
+    border-radius: 0.4rem;
+    border: 1px solid $border-base;
+    padding: 0.6rem 1.2rem;
+    height: 3.6rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.label_vertical {
+    label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+    }
+}
+.label_float {
+    position: relative;
+    width: 100%;
+    input {
+        width: 100%;
+        padding: 0.6rem 4rem 0.6rem 1.2rem;
+    }
+    label {
+        position: absolute;
+        right: 1.2rem;
+    }
+}
+.checkbox_wrap {
+    label {
+        padding-left: 2.4rem;
+        line-height: 2.4rem;
+        display: block;
+        cursor: pointer;
+        background: url(../images/checkbox.svg) no-repeat left center;
+    }
+    input[type="checkbox"] {
+        display: none;
+        &:checked {
+            & ~ label {
+                background: url(../images/checkbox_on.svg) no-repeat left center;
+            }
+            &:disabled {
+                & ~ label {
+                    color: $text-disabled;
+                    cursor: default;
+                    background: url(../images/checkbox_on_disabled.svg)
+                        no-repeat left center;
+                }
+            }
+        }
+        &:disabled {
+            & ~ label {
+                color: $text-disabled;
+                cursor: default;
+                background: url(../images/checkbox_disabled.svg) no-repeat left
+                    center;
+            }
+        }
+    }
+}
+button.btn {
+    display: block;
+    padding: 1.2rem 1.6rem;
+    border-radius: 0.8rem;
+    &:disabled {
+        opacity: 0.4;
+    }
+    &.btn_primary {
+        color: #fff;
+        background: $color-primary;
+        &:hover {
+            background: $color-primary-dark;
+        }
+    }
+    &.btn_secondary {
+        color: #fff;
+        background: $color-s1;
+        &:hover {
+            background: $color-s1-dark;
+        }
+    }
+    &.btn_danger {
+        color: #fff;
+        background: $color-s2;
+        &:hover {
+            background: $color-s2-dark;
+        }
+    }
+}
+
+// login
+.login_wrapper {
+    background: url(../images/login_bg.png) no-repeat center;
+    background-size: 1920px auto;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.login_container {
+    width: 48rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+        color: #333;
+        font-size: 4.4116rem;
+        font-weight: 400;
+        text-align: center;
+        padding-left: 4.1rem;
+        background: url(../images/logo.svg) no-repeat left 9rem center;
+        margin-bottom: 4rem;
+    }
+    .login_box {
+        border-radius: 4rem;
+        width: 100%;
+        height: 58.4rem;
+        padding: 8rem 4rem;
+        @include box-shadow-lg;
+        h2 {
+            text-align: center;
+            color: $text-title;
+            font-size: 3.2rem;
+        }
+        input[type="text"],
+        input[type="password"] {
+            font-size: 2rem;
+            height: 4.2rem;
+            padding: 0.8rem 1.6rem;
+            width: 100%;
+        }
+        label {
+            height: 3.8rem;
+            line-height: 3.8rem;
+        }
+        .inner {
+            padding: 4rem 0;
+            .label_vertical {
+                margin-bottom: 2.4rem;
+            }
+            .login_more {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 4rem;
+                ul {
+                    display: flex;
+                }
+            }
+            .btn {
+                width: 100%;
+                height: 5rem;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+    }
+    .copyright {
+        margin-top: 4rem;
+        font-size: 1.4rem;
+        color: $text-body-sub;
+        width: 100%;
+        text-align: center;
+    }
+}
+//layout
+.admin_container_wrapper {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    .lnb_wrap {
+        width: 24rem;
+        background: $color-s1-dark;
+    }
+    .admin_container {
+        background: #fff;
+        padding: 4rem;
+        flex: 1;
+        h2 {
+            font-size: 4rem;
+            line-height: 5.6rem;
+            margin-bottom: 4rem;
+        }
+        .content_box {
+            @include box-shadow-sm;
+            border: 1px solid $border-base-light;
+            border-radius: 4rem;
+            padding: 4rem;
+            margin-bottom: 4rem;
+            h3 {
+                color: $color-primary;
+                font-size: 2rem;
+                line-height: 2.6rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding-bottom: 1.2rem;
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    flex: 1;
+                    height: 1px;
+                    border-top: 1px dashed $border-base-light;
+                }
+            }
+            .content_list {
+                margin-top: 2.4rem;
+                margin-top: 4rem;
+                padding-left: 13.2rem;
+                position: relative;
+                h4 {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    width: 12rem;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    line-height: 3.6rem;
+                }
+                .detail {
+                    font-weight: 500;
+                    line-height: 3.6rem;
+                    ul {
+                        display: flex;
+                        gap: 2rem;
+                        li {
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 1px;
+                                height: 1rem;
+                                background: $border-base;
+                                position: absolute;
+                                top: 1.1rem;
+                                right: -1rem;
+                            }
+                            &:last-child::before {
+                                display: none;
+                            }
+                            a {
+                                color: $color-primary;
+                                text-decoration: underline;
+                                text-underline-position: under;
+                            }
+                        }
+                    }
+                    .label_float {
+                        width: 16rem;
+                    }
+                }
+            }
+        }
+    }
+}
