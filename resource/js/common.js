@@ -1,3 +1,12 @@
+//modal
+function modalOpen(el) {
+    $(el).fadeIn();
+    $("body").addClass("modal-open");
+}
+function modalClose(e) {
+    $(".modal_wrap").fadeOut();
+    $("body").removeClass("modal-open");
+}
 $(document).ready(function () {
     // select box
     // select box 여닫기
