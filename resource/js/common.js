@@ -49,4 +49,10 @@ $(document).ready(function () {
         autoApply: true,
         locale: datepickerOption,
     });
+
+    //pagination
+    $(".pagination ul li").on("click", function () {
+        $(".pagination ul li").removeClass("on");
+        $(this).addClass("on");
+    });
 });

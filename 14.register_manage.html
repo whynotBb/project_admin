@@ -24,6 +24,17 @@
             href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
         />
         <link rel="stylesheet" href="./resource/css/style.css" />
+        <script>
+            //modal
+            function modalOpen(el) {
+                $(el).fadeIn();
+                $("body").addClass("modal-open");
+            }
+            function modalClose(e) {
+                $(".modal_wrap").fadeOut();
+                $("body").removeClass("modal-open");
+            }
+        </script>
     </head>
     <body>
         <div class="admin_container_wrapper">
@@ -41,44 +52,76 @@
                         <li>
                             <p>메인화면</p>
                             <ul class="depth_2">
-                                <li><a href="#">대시보드</a></li>
-                                <li><a href="#">공지사항</a></li>
+                                <li>
+                                    <a href="javascript:void(0);">대시보드</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">공지사항</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <p>회원정보</p>
                             <ul class="depth_2">
-                                <li><a href="#">회원정보관리</a></li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >회원정보관리</a
+                                    >
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <p>원료관리</p>
                             <ul class="depth_2">
-                                <li class="on"><a href="#">접수관리</a></li>
-                                <li><a href="#">입고관리</a></li>
-                                <li><a href="#">원료관리</a></li>
-                                <li><a href="#">반송관리</a></li>
+                                <li class="on">
+                                    <a href="javascript:void(0);">접수관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">입고관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">원료관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반송관리</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <p>주문관리</p>
                             <ul class="depth_2">
-                                <li><a href="#">주문/배송관리</a></li>
-                                <li><a href="#">반품 관리</a></li>
-                                <li><a href="#">취소 관리</a></li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >주문/배송관리</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반품 관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">취소 관리</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <p>정산관리</p>
                             <ul class="depth_2">
-                                <li><a href="#">정산 목록</a></li>
+                                <li>
+                                    <a href="javascript:void(0);">정산 목록</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <p>고객센터</p>
                             <ul class="depth_2">
-                                <li><a href="#">1:1 문의</a></li>
-                                <li><a href="#">자주묻는 질문</a></li>
+                                <li>
+                                    <a href="javascript:void(0);">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >자주묻는 질문</a
+                                    >
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -92,7 +135,7 @@
                     <h2>접수관리</h2>
                     <div class="desc">
                         원료판매를 원하는 업체가 접수한 내역을 확인할 수
-                        있습니다.<br/ >접수한 원료에 대한 세부정보 및 증빙자료를
+                        있습니다.<br />접수한 원료에 대한 세부정보 및 증빙자료를
                         확인합니다.
                     </div>
                 </div>
@@ -161,7 +204,20 @@
                             <div class="col_2">
                                 <div class="row col_2_1">
                                     <h3>검색어</h3>
-                                    <div>select box</div>
+                                    <div class="selectbox">
+                                        <p class="selected">전체</p>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">전체</li>
+                                                    <li>접수번호</li>
+                                                    <li>원료명</li>
+                                                    <li>업체명</li>
+                                                    <li>사업자번호</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <input
                                         type="text"
                                         placeholder="검색어를 입력해 주세요"
@@ -169,12 +225,227 @@
                                 </div>
                                 <div class="row col_2_1">
                                     <h3>현재상태</h3>
-                                    <div>radio box</div>
+                                    <div class="radiobox_wrap">
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_all"
+                                            />
+                                            <label for="current_all"
+                                                >전체</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_complete"
+                                            />
+                                            <label for="current_complete"
+                                                >접수완료</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_hold"
+                                            />
+                                            <label for="current_hold"
+                                                >보류</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_recomplete"
+                                            />
+                                            <label for="current_recomplete"
+                                                >재접수완료</label
+                                            >
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="search_btn">
                             <button class="btn btn_search">검색</button>
+                        </div>
+                    </div>
+                    <div class="main_table_wrap">
+                        <div class="table_header">
+                            <div class="counter">
+                                총 <b>101</b>건의 접수완료 내역이 있습니다.
+                            </div>
+                            <div class="btn_wrap">
+                                <button
+                                    class="btn btn_secondary btn_check"
+                                    disabled
+                                >
+                                    체크한 접수건 입고완료 처리
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table_body">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 30px" />
+                                    <col style="width: 72px" />
+                                    <col style="width: 128px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 349px" />
+                                    <col style="width: 349px" />
+                                    <col style="width: 160px" />
+                                    <col style="width: 80px" />
+                                    <col style="width: 80px" />
+                                    <col style="width: 80px" />
+                                    <col style="width: 80px" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>#</th>
+                                        <th>접수번호</th>
+                                        <th>접수일</th>
+                                        <th>재접수일</th>
+                                        <th>원료명</th>
+                                        <th>업체명</th>
+                                        <th>사업자번호</th>
+                                        <th>현재상태</th>
+                                        <th>보류사유</th>
+                                        <th>상태변경</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_01"
+                                                />
+                                                <label
+                                                    for="chk_01"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >1234567890</a
+                                            >
+                                        </td>
+                                        <td>2022.12.12</td>
+                                        <td>-</td>
+                                        <td>옥수수 수염 레몬밤</td>
+                                        <td>
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >뉴트리라이프케어</a
+                                            >
+                                        </td>
+                                        <td>123-456-7890</td>
+                                        <td>접수완료</td>
+                                        <td>-</td>
+                                        <td>
+                                            <button
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                보류
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                반송
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_02"
+                                                />
+                                                <label
+                                                    for="chk_02"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >1234567890</a
+                                            >
+                                        </td>
+                                        <td>2022.12.12</td>
+                                        <td>-</td>
+                                        <td>옥수수 수염 레몬밤</td>
+                                        <td>
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >뉴트리라이프케어</a
+                                            >
+                                        </td>
+                                        <td>123-456-7890</td>
+                                        <td>접수완료</td>
+                                        <td>-</td>
+                                        <td>
+                                            <button
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                보류
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                반송
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <a href="javascript:void(0);" class="prev"
+                                    >prev</a
+                                >
+                                <ul>
+                                    <li class="on">
+                                        <a href="javascript:void(0);">1</a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a href="javascript:void(0);">6</a></li>
+                                    <li><a href="javascript:void(0);">7</a></li>
+                                    <li><a href="javascript:void(0);">8</a></li>
+                                    <li><a href="javascript:void(0);">9</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);">10</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:void(0);" class="next"
+                                    >next</a
+                                >
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -185,6 +456,27 @@
                 </footer>
             </div>
             <!-- //admin_container -->
+        </div>
+        <div class="modal_wrap" id="modal_01">
+            <div class="modal">
+                <div class="modal_header">
+                    <h3>접수신청상세</h3>
+                    <a
+                        href="javascript:void(0);"
+                        class="modal_close"
+                        onclick="modalClose()"
+                        >x</a
+                    >
+                </div>
+                <div class="modal_body">
+                    <div class="inner">modal_body</div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button class="btn btn_primary">확인</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

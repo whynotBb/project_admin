@@ -50,6 +50,7 @@
             }
             .depth_2 {
                 li {
+                    margin-top: 0.8rem;
                     a {
                         color: #fff;
                         font-weight: 600;
@@ -57,11 +58,14 @@
                         line-height: 3.7rem;
                         display: block;
                         padding: 0 $space-lg;
+                        border-radius: 1.6rem;
+                        &:hover {
+                            background: $color-s1;
+                        }
                     }
                     &.on {
                         a {
                             background: $color-primary;
-                            border-radius: 1.6rem;
                         }
                     }
                 }
@@ -71,6 +75,8 @@
     .admin_container {
         background: #fff;
         flex: 1;
+        display: flex;
+        flex-direction: column;
         .title {
             padding: $space-xl;
             h2 {
@@ -87,6 +93,7 @@
 
         main {
             padding: 0 $space-xl $space-xxl;
+            flex: 1;
         }
         footer {
             width: 100%;
@@ -203,6 +210,7 @@
 .search_box_wrap {
     display: flex;
     border: 1px solid $border-base-light;
+    margin-bottom: $space-xl;
     h3 {
         width: 9.6rem;
     }
@@ -222,6 +230,9 @@
             }
             .col_2_1 {
                 flex: 1;
+                input {
+                    flex: 1;
+                }
             }
         }
         & > div {
