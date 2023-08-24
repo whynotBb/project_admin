@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>barter place admin</title>
+        <script
+            defer
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        ></script>
+        <script
+            defer
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        ></script>
+        <script defer src="./resource/js/common.js"></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <link rel="stylesheet" href="./resource/css/style.css" />
+    </head>
+    <body>
+        <div class="admin_container_wrapper">
+            <!-- lnb_wrap -->
+            <div class="lnb_wrap">
+                <header>
+                    <h1>Barter Place</h1>
+                    <div class="my_info">
+                        <button class="btn btn_secondary">계정정보</button>
+                        <button class="btn btn_secondary">로그아웃</button>
+                    </div>
+                </header>
+                <nav>
+                    <ul class="depth_1">
+                        <li>
+                            <p>메인화면</p>
+                            <ul class="depth_2">
+                                <li><a href="#">대시보드</a></li>
+                                <li><a href="#">공지사항</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>회원정보</p>
+                            <ul class="depth_2">
+                                <li><a href="#">회원정보관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>원료관리</p>
+                            <ul class="depth_2">
+                                <li class="on"><a href="#">접수관리</a></li>
+                                <li><a href="#">입고관리</a></li>
+                                <li><a href="#">원료관리</a></li>
+                                <li><a href="#">반송관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>주문관리</p>
+                            <ul class="depth_2">
+                                <li><a href="#">주문/배송관리</a></li>
+                                <li><a href="#">반품 관리</a></li>
+                                <li><a href="#">취소 관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>정산관리</p>
+                            <ul class="depth_2">
+                                <li><a href="#">정산 목록</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>고객센터</p>
+                            <ul class="depth_2">
+                                <li><a href="#">1:1 문의</a></li>
+                                <li><a href="#">자주묻는 질문</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //lnb_wrap -->
+
+            <!-- admin_container -->
+            <div class="admin_container">
+                <div class="title">
+                    <h2>접수관리</h2>
+                    <div class="desc">
+                        원료판매를 원하는 업체가 접수한 내역을 확인할 수
+                        있습니다.<br/ >접수한 원료에 대한 세부정보 및 증빙자료를
+                        확인합니다.
+                    </div>
+                </div>
+                <main>
+                    <div class="search_box_wrap">
+                        <div class="search_box">
+                            <div class="row col_1">
+                                <h3>조회기간</h3>
+                                <div class="selectbox">
+                                    <p class="selected">원료등록일</p>
+                                    <div class="option_group">
+                                        <div class="inner">
+                                            <ul>
+                                                <li class="active">
+                                                    원료등록일
+                                                </li>
+                                                <li>특가시작일</li>
+                                                <li>최종수정일</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="radiobox_wrap">
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_today"
+                                        />
+                                        <label for="rad_today">오늘</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_week"
+                                        />
+                                        <label for="rad_week">1주일</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_1month"
+                                        />
+                                        <label for="rad_1month">3개월</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_6month"
+                                        />
+                                        <label for="rad_6month">6개월</label>
+                                    </div>
+                                </div>
+                                <div class="date_wrap">
+                                    <input
+                                        class="date_picker"
+                                        type="text"
+                                        name="daterange"
+                                        id="dateRange"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col_2">
+                                <div class="row col_2_1">
+                                    <h3>검색어</h3>
+                                    <div>select box</div>
+                                    <input
+                                        type="text"
+                                        placeholder="검색어를 입력해 주세요"
+                                    />
+                                </div>
+                                <div class="row col_2_1">
+                                    <h3>현재상태</h3>
+                                    <div>radio box</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_btn">
+                            <button class="btn btn_search">검색</button>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <p class="footer_copy">
+                        COPYRIGHT © (주)BARTERPLACE Co.,Ltd All RIGHT RESERVED.
+                    </p>
+                </footer>
+            </div>
+            <!-- //admin_container -->
+        </div>
+    </body>
+</html>

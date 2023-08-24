@@ -4,10 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>barter place admin</title>
+        <script
+            defer
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        ></script>
+        <script defer src="./resource/js/common.js"></script>
         <link rel="stylesheet" href="./resource/css/style.css" />
     </head>
     <body>
         <div class="admin_container_wrapper">
+            <!-- lnb_wrap -->
             <div class="lnb_wrap">
                 <header>
                     <h1>Barter Place</h1>
@@ -16,8 +22,57 @@
                         <button class="btn btn_secondary">로그아웃</button>
                     </div>
                 </header>
-                <nav></nav>
+                <nav>
+                    <ul class="depth_1">
+                        <li>
+                            <p>메인화면</p>
+                            <ul class="depth_2">
+                                <li><a href="#">대시보드</a></li>
+                                <li><a href="#">공지사항</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>회원정보</p>
+                            <ul class="depth_2">
+                                <li><a href="#">회원정보관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>원료관리</p>
+                            <ul class="depth_2">
+                                <li><a href="#">접수관리</a></li>
+                                <li><a href="#">입고관리</a></li>
+                                <li><a href="#">원료관리</a></li>
+                                <li><a href="#">반송관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>주문관리</p>
+                            <ul class="depth_2">
+                                <li><a href="#">주문/배송관리</a></li>
+                                <li><a href="#">반품 관리</a></li>
+                                <li><a href="#">취소 관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>정산관리</p>
+                            <ul class="depth_2">
+                                <li><a href="#">정산 목록</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>고객센터</p>
+                            <ul class="depth_2">
+                                <li><a href="#">1:1 문의</a></li>
+                                <li><a href="#">자주묻는 질문</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
+            <!-- //lnb_wrap -->
+
+            <!-- admin_container -->
             <div class="admin_container">
                 <h2>계정정보</h2>
                 <main>
@@ -148,13 +203,28 @@
                             <h4>지정택배사</h4>
                             <div class="detail">
                                 <div class="select_btn_group">
-                                    <div class="selectbox">
+                                    <div class="selectbox up_st">
                                         <p class="selected">우체국</p>
-                                        <ul class="option_group">
-                                            <li>우체국</li>
-                                            <li>CJ</li>
-                                            <li>롯데</li>
-                                        </ul>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">
+                                                        우체국
+                                                    </li>
+                                                    <li>CJ</li>
+                                                    <li class="disabled">
+                                                        롯데
+                                                    </li>
+                                                    <li>4</li>
+                                                    <li>5</li>
+                                                    <li>6</li>
+                                                    <li>7</li>
+                                                    <li>8</li>
+                                                    <li>9</li>
+                                                    <li>10</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <button class="btn btn_secondary">
                                         추가
@@ -163,9 +233,17 @@
                             </div>
                         </div>
                     </section>
+                    <div class="bottom_btn_wrap">
+                        <button class="btn btn_primary">저장</button>
+                    </div>
                 </main>
-                <footer>footer</footer>
+                <footer>
+                    <p class="footer_copy">
+                        COPYRIGHT © (주)BARTERPLACE Co.,Ltd All RIGHT RESERVED.
+                    </p>
+                </footer>
             </div>
+            <!-- //admin_container -->
         </div>
     </body>
 </html>

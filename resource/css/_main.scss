@@ -5,15 +5,99 @@
     .lnb_wrap {
         width: 24rem;
         background: $color-s1-dark;
+        header {
+            width: 100%;
+            padding: $space-xl $space-xl $space-lg;
+            border-bottom: 1px solid $border-base-dark;
+
+            h1 {
+                font-size: 2.2627rem;
+                color: #fff;
+                font-weight: 400;
+                height: 3.2rem;
+                line-height: 3.2rem;
+                padding-left: 3.6rem;
+                margin-bottom: $space-lg;
+                background: url(../images/logo_circle.svg) no-repeat left center;
+            }
+            .my_info {
+                display: flex;
+                gap: $space-s;
+            }
+        }
+        nav {
+            padding: $space-m $space-xl;
+            .depth_1 {
+                & > li {
+                    padding: $space-s 0;
+                    p {
+                        color: $color-primary;
+                        font-weight: 600;
+                        height: 4rem;
+                        line-height: 4rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        &::after {
+                            content: "";
+                            display: block;
+                            flex: 1;
+                            height: 1px;
+                            border-top: 1px dashed $border-base-dark;
+                        }
+                    }
+                }
+            }
+            .depth_2 {
+                li {
+                    a {
+                        color: #fff;
+                        font-weight: 600;
+                        height: 3.7rem;
+                        line-height: 3.7rem;
+                        display: block;
+                        padding: 0 $space-lg;
+                    }
+                    &.on {
+                        a {
+                            background: $color-primary;
+                            border-radius: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
     }
     .admin_container {
         background: #fff;
-        padding: 4rem;
         flex: 1;
-        h2 {
-            font-size: 4rem;
-            line-height: 5.6rem;
-            margin-bottom: 4rem;
+        .title {
+            padding: $space-xl;
+            h2 {
+                font-size: 4rem;
+                line-height: 5.6rem;
+            }
+            .desc {
+                margin-top: $space-m;
+                font-size: 2rem;
+                color: $text-body-sub;
+                line-height: 2.6rem;
+            }
+        }
+
+        main {
+            padding: 0 $space-xl $space-xxl;
+        }
+        footer {
+            width: 100%;
+            height: 8rem;
+            line-height: 8rem;
+            padding: 0 $space-xl;
+            background: $color-g1;
+            .footer_copy {
+                font-size: 1.4rem;
+                color: $text-body-sub;
+            }
         }
         .content_box {
             @include box-shadow-sm;
@@ -38,8 +122,7 @@
                 }
             }
             .content_list {
-                margin-top: 2.4rem;
-                margin-top: 4rem;
+                margin-top: $space-lg;
                 padding-left: 13.2rem;
                 position: relative;
                 h4 {
@@ -115,5 +198,49 @@
         input {
             width: 100%;
         }
+    }
+}
+.search_box_wrap {
+    display: flex;
+    border: 1px solid $border-base-light;
+    h3 {
+        width: 9.6rem;
+    }
+    .search_box {
+        flex: 1;
+        .row {
+            height: 8rem;
+            display: flex;
+            align-items: center;
+            gap: $space-s;
+            padding: 0 $space-xl;
+        }
+        .col_2 {
+            display: flex;
+            & > div:first-child {
+                border-right: 1px solid $border-base-light;
+            }
+            .col_2_1 {
+                flex: 1;
+            }
+        }
+        & > div {
+            border-bottom: 1px solid $border-base-light;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .date_wrap {
+            flex: 1;
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+    }
+    .search_btn {
+        width: 28rem;
+        padding: 8.4rem $space-lg $space-lg;
+        border-left: 1px solid $border-base-light;
     }
 }
