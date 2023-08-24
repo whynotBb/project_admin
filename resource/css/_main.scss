@@ -106,77 +106,97 @@
                 color: $text-body-sub;
             }
         }
-        .content_box {
-            @include box-shadow-sm;
-            border: 1px solid $border-base-light;
-            border-radius: 4rem;
-            padding: 4rem;
-            margin-bottom: 4rem;
-            h3 {
-                color: $color-primary;
-                font-size: 2rem;
-                line-height: 2.6rem;
+    }
+}
+.contents_box {
+    padding: $space-xxl 0 0 0;
+    &:first-child {
+        padding: 0;
+    }
+    &.shadow_st {
+        @include box-shadow-sm;
+        border: 1px solid $border-base-light;
+        border-radius: 4rem;
+        padding: 4rem;
+        margin-bottom: 4rem;
+        .content_list {
+            margin-top: $space-lg;
+        }
+    }
+
+    h3 {
+        color: $color-primary;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1.2rem;
+        &::after {
+            content: "";
+            display: inline-block;
+            flex: 1;
+            height: 1px;
+            border-top: 1px dashed $border-base-light;
+        }
+    }
+    .content_list {
+        margin-top: $space-m;
+        padding-left: 13.2rem;
+        position: relative;
+        h4 {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            width: 12rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 3.6rem;
+        }
+        .detail {
+            font-weight: 500;
+            line-height: 2.4rem;
+            min-height: 3.6rem;
+            padding: 0.8rem 0;
+            .list_st {
                 display: flex;
-                align-items: center;
-                gap: 1rem;
-                padding-bottom: 1.2rem;
-                &::after {
-                    content: "";
-                    display: inline-block;
-                    flex: 1;
-                    height: 1px;
-                    border-top: 1px dashed $border-base-light;
+                gap: 2rem;
+                li {
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: 1px;
+                        height: 1rem;
+                        background: $border-base;
+                        position: absolute;
+                        top: 0.6rem;
+                        right: -1rem;
+                    }
+                    &:last-child::before {
+                        display: none;
+                    }
+                    a {
+                        color: $color-primary;
+                        text-decoration: underline;
+                        text-underline-position: under;
+                    }
                 }
             }
-            .content_list {
-                margin-top: $space-lg;
-                padding-left: 13.2rem;
-                position: relative;
-                h4 {
-                    font-size: 1.6rem;
-                    line-height: 2.4rem;
-                    width: 12rem;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
+            .link_st {
+                color: $color-primary;
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+            .label_float {
+                width: 16rem;
+                label {
                     line-height: 3.6rem;
                 }
-                .detail {
-                    font-weight: 500;
-                    line-height: 3.6rem;
-                    .biz_num {
-                        display: flex;
-                        gap: 2rem;
-                        li {
-                            position: relative;
-                            &::before {
-                                content: "";
-                                width: 1px;
-                                height: 1rem;
-                                background: $border-base;
-                                position: absolute;
-                                top: 1.2rem;
-                                right: -1rem;
-                            }
-                            &:last-child::before {
-                                display: none;
-                            }
-                            a {
-                                color: $color-primary;
-                                text-decoration: underline;
-                                text-underline-position: under;
-                            }
-                        }
-                    }
-                    .label_float {
-                        width: 16rem;
-                    }
-                    .select_btn_group {
-                        width: 89rem;
-                        .btn {
-                            width: 12.7rem;
-                        }
-                    }
+            }
+            .select_btn_group {
+                width: 89rem;
+                .btn {
+                    width: 12.7rem;
                 }
             }
         }

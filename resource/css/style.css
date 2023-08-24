@@ -586,8 +586,7 @@ button.btn.btn_check:hover {
 }
 .modal_wrap .modal {
   width: 92rem;
-  height: 50rem;
-  background: #fff;
+  max-height: 90vh;
   border-radius: 2.4rem;
   background: #fff;
   box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.17);
@@ -598,6 +597,7 @@ button.btn.btn_check:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: transparent;
 }
 .modal_wrap .modal .modal_header {
   height: 7rem;
@@ -619,6 +619,13 @@ button.btn.btn_check:hover {
 }
 .modal_wrap .modal .modal_body {
   flex: 1;
+  padding: 4rem;
+  overflow-y: auto;
+  background: #fff;
+  margin-top: -0.1rem;
+}
+.modal_wrap .modal .modal_body .inner {
+  height: 100%;
 }
 .modal_wrap .modal .modal_footer {
   display: flex;
@@ -835,7 +842,14 @@ button.btn.btn_check:hover {
   font-size: 1.4rem;
   color: #6c757d;
 }
-.admin_container_wrapper .admin_container .content_box {
+
+.contents_box {
+  padding: 8rem 0 0 0;
+}
+.contents_box:first-child {
+  padding: 0;
+}
+.contents_box.shadow_st {
   background: #fff;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
   border: 1px solid #e9ecef;
@@ -843,7 +857,10 @@ button.btn.btn_check:hover {
   padding: 4rem;
   margin-bottom: 4rem;
 }
-.admin_container_wrapper .admin_container .content_box h3 {
+.contents_box.shadow_st .content_list {
+  margin-top: 2.4rem;
+}
+.contents_box h3 {
   color: #0ab968;
   font-size: 2rem;
   line-height: 2.6rem;
@@ -852,19 +869,19 @@ button.btn.btn_check:hover {
   gap: 1rem;
   padding-bottom: 1.2rem;
 }
-.admin_container_wrapper .admin_container .content_box h3::after {
+.contents_box h3::after {
   content: "";
   display: inline-block;
   flex: 1;
   height: 1px;
   border-top: 1px dashed #e9ecef;
 }
-.admin_container_wrapper .admin_container .content_box .content_list {
-  margin-top: 2.4rem;
+.contents_box .content_list {
+  margin-top: 1.6rem;
   padding-left: 13.2rem;
   position: relative;
 }
-.admin_container_wrapper .admin_container .content_box .content_list h4 {
+.contents_box .content_list h4 {
   font-size: 1.6rem;
   line-height: 2.4rem;
   width: 12rem;
@@ -873,41 +890,51 @@ button.btn.btn_check:hover {
   left: 0;
   line-height: 3.6rem;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail {
+.contents_box .content_list .detail {
   font-weight: 500;
-  line-height: 3.6rem;
+  line-height: 2.4rem;
+  min-height: 3.6rem;
+  padding: 0.8rem 0;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .biz_num {
+.contents_box .content_list .detail .list_st {
   display: flex;
   gap: 2rem;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .biz_num li {
+.contents_box .content_list .detail .list_st li {
   position: relative;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .biz_num li::before {
+.contents_box .content_list .detail .list_st li::before {
   content: "";
   width: 1px;
   height: 1rem;
   background: #ced4da;
   position: absolute;
-  top: 1.2rem;
+  top: 0.6rem;
   right: -1rem;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .biz_num li:last-child::before {
+.contents_box .content_list .detail .list_st li:last-child::before {
   display: none;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .biz_num li a {
+.contents_box .content_list .detail .list_st li a {
   color: #0ab968;
   text-decoration: underline;
   text-underline-position: under;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .label_float {
+.contents_box .content_list .detail .link_st {
+  color: #0ab968;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.contents_box .content_list .detail .label_float {
   width: 16rem;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .select_btn_group {
+.contents_box .content_list .detail .label_float label {
+  line-height: 3.6rem;
+}
+.contents_box .content_list .detail .select_btn_group {
   width: 89rem;
 }
-.admin_container_wrapper .admin_container .content_box .content_list .detail .select_btn_group .btn {
+.contents_box .content_list .detail .select_btn_group .btn {
   width: 12.7rem;
 }
 

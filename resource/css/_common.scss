@@ -459,8 +459,7 @@ button.btn {
     background: rgba(0, 0, 0, 0.4);
     .modal {
         width: 92rem;
-        height: 50rem;
-        background: #fff;
+        max-height: 90vh;
         border-radius: 2.4rem;
         @include box-shadow-lg;
         position: absolute;
@@ -470,7 +469,7 @@ button.btn {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-
+        background: transparent;
         .modal_header {
             height: 7rem;
             padding: $space-lg;
@@ -491,6 +490,13 @@ button.btn {
         }
         .modal_body {
             flex: 1;
+            padding: $space-xl;
+            overflow-y: auto;
+            background: #fff;
+            margin-top: -0.1rem;
+            .inner {
+                height: 100%;
+            }
         }
         .modal_footer {
             display: flex;
