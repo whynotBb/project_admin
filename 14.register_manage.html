@@ -17,12 +17,15 @@
             type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
         ></script>
+        <script src="./resource/js/datepicker.all.min.js"></script>
         <script defer src="./resource/js/common.js"></script>
         <link
             rel="stylesheet"
             type="text/css"
             href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
         />
+
+        <link rel="stylesheet" href="./resource/css/datepicker.css" />
         <link rel="stylesheet" href="./resource/css/style.css" />
     </head>
     <body>
@@ -188,6 +191,40 @@
                                         name="daterange"
                                         id="dateRange"
                                     />
+                                    <!-- <div
+                                        class="c-datepicker-date-editor J-datepicker-range-day mt10"
+                                    >
+                                        <input
+                                            placeholder="Start"
+                                            name=""
+                                            class="c-datepicker-data-input only-date"
+                                            value=""
+                                        />
+                                        <span
+                                            class="c-datepicker-range-separator"
+                                            >-</span
+                                        >
+                                        <input
+                                            placeholder="End"
+                                            name=""
+                                            class="c-datepicker-data-input only-date"
+                                            value=""
+                                        />
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $(
+                                                ".J-datepicker-range-day"
+                                            ).datePicker({
+                                                hasShortcut: true,
+                                                language: "en",
+                                                format: "YYYY-MM-DD",
+                                                isRange: true,
+                                                shortcutOptions:
+                                                    DATAPICKERAPI.rangeShortcutOption1,
+                                            });
+                                        });
+                                    </script> -->
                                 </div>
                             </div>
                             <div class="col_2">
@@ -271,7 +308,7 @@
                             <div class="btn_wrap">
                                 <button
                                     class="btn btn_secondary btn_check"
-                                    disabled
+                                    onclick="modalOpen('#alert_01')"
                                 >
                                     체크한 접수건 입고완료 처리
                                 </button>
@@ -348,6 +385,7 @@
                                         <td>-</td>
                                         <td>
                                             <button
+                                                onclick="modalOpen('#modal_03')"
                                                 class="btn btn_border_secondary sm"
                                             >
                                                 보류
@@ -706,5 +744,59 @@
             </div>
         </div>
         <!-- //modal_02 -->
+        <!-- modal_03 -->
+        <div class="modal_wrap md_st" id="modal_03">
+            <div class="modal">
+                <div class="modal_header">
+                    <h3>title</h3>
+                </div>
+                <div class="modal_body">
+                    <h4>main text</h4>
+                    <textarea
+                        name=""
+                        id=""
+                        cols="30"
+                        rows="10"
+                        placeholder="Comments"
+                    ></textarea>
+                    <p class="sub_txt">sub text</p>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalClose()"
+                        >
+                            취소
+                        </button>
+                        <button class="btn btn_primary">상태변경</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal_03 -->
+        <!-- alert_01 -->
+        <div class="modal_wrap alert_st" id="alert_01">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        체크한 접수건의 진행상태를
+                        <b class="fc_primary">‘입고완료’</b>로 변경하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalClose()"
+                        >
+                            취소
+                        </button>
+                        <button class="btn btn_primary">상태변경</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_01 -->
     </body>
 </html>

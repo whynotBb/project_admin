@@ -54,6 +54,20 @@ input[type="number"] {
         color: $text-disabled;
         background: $color-g2;
     }
+    &::placeholder {
+        color: $text-placeholder;
+        font-size: 1.6rem;
+    }
+}
+textarea {
+    width: 100%;
+    border: 1px solid $border-base;
+    padding: 0.6rem 1.2rem;
+    resize: vertical;
+    &::placeholder {
+        color: $text-placeholder;
+        font-size: 1.6rem;
+    }
 }
 input[type="text"].date_picker {
     padding-left: 4rem;
@@ -193,6 +207,12 @@ input[type="text"].date_picker {
             }
         }
     }
+}
+.fc_primary {
+    color: $color-primary;
+}
+.fc_danger {
+    color: $color-s2;
 }
 button.btn {
     display: inline-block;
@@ -514,6 +534,59 @@ button.btn {
                     }
                     &.btn_secondary {
                         width: 15rem;
+                    }
+                }
+            }
+        }
+    }
+    &.md_st {
+        .modal {
+            width: 50rem;
+            height: 52rem;
+            .modal_header {
+                background: #fff;
+                padding-bottom: 0.8rem;
+                h3 {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .modal_body {
+                padding: $space-xl $space-lg;
+                h4 {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    text-align: center;
+                    line-height: 2.6rem;
+                    margin-bottom: $space-m;
+                }
+                .sub_txt {
+                    font-weight: 500;
+                    line-height: 2.4rem;
+                    text-align: center;
+                    margin-top: $space-m;
+                }
+            }
+        }
+    }
+    &.alert_st {
+        .modal {
+            width: 30rem;
+            min-height: 28rem;
+            .modal_body {
+                padding: $space-lg;
+                position: relative;
+                .alert_msg {
+                    text-align: center;
+                    width: 25rem;
+                    line-height: 2.4rem;
+                    font-weight: 600;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    b {
+                        font-weight: 600;
                     }
                 }
             }

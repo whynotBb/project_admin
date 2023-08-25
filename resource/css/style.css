@@ -214,6 +214,31 @@ input[type=number]:disabled {
   color: #6c757d;
   background: #e9ecef;
 }
+input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=number]::-moz-placeholder {
+  color: #adb5bd;
+  font-size: 1.6rem;
+}
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+input[type=number]::placeholder {
+  color: #adb5bd;
+  font-size: 1.6rem;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ced4da;
+  padding: 0.6rem 1.2rem;
+  resize: vertical;
+}
+textarea::-moz-placeholder {
+  color: #adb5bd;
+  font-size: 1.6rem;
+}
+textarea::placeholder {
+  color: #adb5bd;
+  font-size: 1.6rem;
+}
 
 input[type=text].date_picker {
   padding-left: 4rem;
@@ -335,6 +360,14 @@ input[type=text].date_picker:disabled {
 .radiobox input[type=radio]:disabled ~ label {
   color: #6c757d;
   cursor: default;
+}
+
+.fc_primary {
+  color: #0ab968;
+}
+
+.fc_danger {
+  color: #dc3545;
 }
 
 button.btn {
@@ -645,6 +678,55 @@ button.btn.btn_check:hover {
 }
 .modal_wrap .modal .modal_footer .btn_wrap .btn.btn_secondary {
   width: 15rem;
+}
+.modal_wrap.md_st .modal {
+  width: 50rem;
+  height: 52rem;
+}
+.modal_wrap.md_st .modal .modal_header {
+  background: #fff;
+  padding-bottom: 0.8rem;
+}
+.modal_wrap.md_st .modal .modal_header h3 {
+  width: 100%;
+  text-align: center;
+}
+.modal_wrap.md_st .modal .modal_body {
+  padding: 4rem 2.4rem;
+}
+.modal_wrap.md_st .modal .modal_body h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 2.6rem;
+  margin-bottom: 1.6rem;
+}
+.modal_wrap.md_st .modal .modal_body .sub_txt {
+  font-weight: 500;
+  line-height: 2.4rem;
+  text-align: center;
+  margin-top: 1.6rem;
+}
+.modal_wrap.alert_st .modal {
+  width: 30rem;
+  min-height: 28rem;
+}
+.modal_wrap.alert_st .modal .modal_body {
+  padding: 2.4rem;
+  position: relative;
+}
+.modal_wrap.alert_st .modal .modal_body .alert_msg {
+  text-align: center;
+  width: 25rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal_wrap.alert_st .modal .modal_body .alert_msg b {
+  font-weight: 600;
 }
 
 .login_wrapper {
