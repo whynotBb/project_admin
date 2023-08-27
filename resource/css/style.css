@@ -1702,3 +1702,24 @@ button.btn.btn_check:hover {
 .contents_detail_wrap .detail_footer .btn_modify:hover {
   background: #212529 url(../images/pencil-square.svg) no-repeat left 35% center !important;
 }
+
+.contents_register_wrap {
+  border: 1px solid #e9ecef;
+}
+.contents_register_wrap .register_list {
+  border-top: 1px solid #e9ecef;
+  min-height: 8.4rem;
+  display: flex;
+  align-items: center;
+  padding: 2.4rem 4rem;
+  gap: 1.2rem;
+}
+.contents_register_wrap .register_list:first-child {
+  border-top: 0;
+}
+.contents_register_wrap .register_list h3 {
+  width: 12rem;
+}
+.contents_register_wrap .register_list .contents {
+  flex: 1;
+}

@@ -558,3 +558,23 @@
         }
     }
 }
+.contents_register_wrap {
+    border: 1px solid $border-base-light;
+    .register_list {
+        border-top: 1px solid $border-base-light;
+        min-height: 8.4rem;
+        display: flex;
+        align-items: center;
+        padding: $space-lg $space-xl;
+        gap: 1.2rem;
+        &:first-child {
+            border-top: 0;
+        }
+        h3 {
+            width: 12rem;
+        }
+        .contents {
+            flex: 1;
+        }
+    }
+}
