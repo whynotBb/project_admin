@@ -146,18 +146,29 @@
         position: relative;
         h4 {
             font-size: 1.6rem;
-            line-height: 2.4rem;
+            line-height: 3.6rem;
             width: 12rem;
             position: absolute;
             top: 0;
             left: 0;
             line-height: 3.6rem;
+            &.required {
+                display: flex;
+                align-items: center;
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 1rem;
+                    height: 2.4rem;
+                    background: url(../images/required.svg) no-repeat center top;
+                }
+            }
         }
         .detail {
             font-weight: 500;
-            line-height: 2.4rem;
+            line-height: 3.6rem;
             min-height: 3.6rem;
-            padding: 0.8rem 0;
+
             .list_st {
                 display: flex;
                 gap: 2rem;
@@ -169,7 +180,7 @@
                         height: 1rem;
                         background: $border-base;
                         position: absolute;
-                        top: 0.6rem;
+                        top: 1.3rem;
                         right: -1rem;
                     }
                     &:last-child::before {
@@ -197,6 +208,12 @@
                 width: 89rem;
                 .btn {
                     width: 12.7rem;
+                }
+            }
+            .input_multi_wrap {
+                margin-top: $space-m;
+                &:first-child {
+                    margin-top: 0;
                 }
             }
         }
@@ -243,6 +260,9 @@
             gap: $space-s;
             padding: 0 $space-xl;
         }
+        .flex_1 {
+            flex: 1;
+        }
         .col_2 {
             display: flex;
             & > div:first-child {
@@ -270,8 +290,271 @@
         }
     }
     .search_btn {
+        position: relative;
         width: 28rem;
         padding: 8.4rem $space-lg $space-lg;
         border-left: 1px solid $border-base-light;
+        .btn {
+            position: absolute;
+            bottom: 2.6rem;
+        }
+    }
+}
+.dashboard_main_wrap {
+    .important_noti_wrap {
+        width: 100%;
+        height: 8.4rem;
+        padding: 0 6.8rem 0 $space-xl;
+        background: $color-primary-light url(../images/chevron-right.svg)
+            no-repeat right 4rem center;
+        border-radius: 4rem;
+        margin-bottom: $space-xl;
+        .list {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            i {
+                height: 2.5rem;
+                line-height: 2.5rem;
+                padding: 0 $space-s;
+                font-size: 1.4rem;
+                font-weight: 700;
+                text-align: center;
+                background: $color-primary;
+                color: #fff;
+                border-radius: 1.2rem;
+            }
+            p {
+                flex: 1;
+                font-size: 2rem;
+                font-weight: 700;
+                line-height: 8.4rem;
+            }
+            .date {
+                color: $text-body-sub;
+            }
+        }
+    }
+    .dashboard_contents_wrap {
+        .row {
+            display: flex;
+            gap: $space-lg;
+            margin-top: $space-lg;
+
+            justify-content: space-between;
+            &:first-child {
+                margin-top: 0;
+            }
+            .col_1 {
+                width: 38.2rem;
+            }
+            .col_2 {
+                width: calc(50% - 12px);
+                height: 33rem;
+            }
+            .flex_1 {
+                flex: 1;
+            }
+            .contents_box {
+                margin-bottom: 0;
+                height: 40srem;
+            }
+            .box_title {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+                h3 {
+                    flex: 1;
+                    padding-bottom: 0;
+                }
+                span {
+                    width: 7rem;
+                    color: $text-body-sub;
+                    &.view_add {
+                        cursor: pointer;
+                        padding-right: 3.4rem;
+                        background: url(../images/chevron-right.svg) no-repeat
+                            right center;
+                    }
+                }
+                .tab_menu {
+                    display: flex;
+                    gap: 0.8rem;
+                    li {
+                        height: 4rem;
+                        line-height: 4rem;
+                        background: $color-g1;
+                        padding: 0 $space-m;
+                        border-radius: 2rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        &.on {
+                            background: $color-primary;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .content_list {
+                border-bottom: 1px solid $color-g1;
+                margin-top: 0;
+                padding: $space-s 0;
+                h4 {
+                    top: 0.8rem;
+                    &.sub {
+                        font-weight: 400;
+                        padding-left: 3.2rem;
+                        background: url(../images/arrow-return.svg) no-repeat
+                            left center;
+                    }
+                }
+                .detail {
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 0.4rem;
+                    align-items: center;
+                    padding-left: 12rem;
+
+                    .num {
+                        text-align: right;
+                        flex: 1;
+                        b {
+                            margin-right: 0.8rem;
+                        }
+                    }
+                    .link {
+                        width: 2.4rem;
+                        height: 2.4rem;
+                        background: url(../images/chevron-right.svg) no-repeat
+                            center;
+                    }
+                }
+            }
+            .notice_list {
+                ul {
+                    li {
+                        display: flex;
+                        height: 4.8rem;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 1rem;
+                        i {
+                            width: 8rem;
+                        }
+                        span {
+                            width: 10rem;
+                        }
+                        p {
+                            flex: 1;
+                            line-height: 4.8rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+        .statistics_box {
+            padding: $space-lg;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    .num {
+                        display: block;
+                        text-align: center;
+                        width: 16rem;
+                        height: 16rem;
+                        border-radius: 8rem;
+                        background: $color-s1;
+                        font-size: 4rem;
+                        font-weight: 700;
+                        line-height: 16rem;
+                        color: #fff;
+                    }
+                    p {
+                        text-align: center;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        margin-top: $space-m;
+                    }
+                    &:nth-child(2n) {
+                        .num {
+                            background: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.contents_detail_wrap {
+    position: relative;
+    .detail_header {
+        text-align: right;
+        width: 100%;
+        position: absolute;
+        top: -8rem;
+        right: 0;
+    }
+    .detail_title {
+        width: 100%;
+        padding: $space-lg $space-xl;
+        border: 1px solid $border-base-light;
+        background: $color-g1;
+        color: $text-body-sub;
+        font-size: 1.4rem;
+        h3 {
+            margin: $space-s 0 $space-m;
+            font-size: 2rem;
+            font-weight: 700;
+            color: $text-title;
+        }
+        .title_info {
+            display: flex;
+            gap: 3.3rem;
+            li:first-child {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    right: -1.7rem;
+                    display: block;
+                    width: 1px;
+                    height: 1.2rem;
+                    background: $border-base;
+                }
+            }
+        }
+    }
+    .detail_body {
+        padding: $space-xl;
+        border-top: 0;
+        border: 1px solid $border-base-light;
+        min-height: 59rem;
+        margin-bottom: $space-xl;
+    }
+    .detail_footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn_right_wrap {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+        .btn_modify {
+            width: 20rem !important;
+            background: $color-s1 url(../images/pencil-square.svg) no-repeat
+                left 35% center !important;
+            &:hover {
+                background: $color-s1-dark url(../images/pencil-square.svg)
+                    no-repeat left 35% center !important;
+            }
+        }
     }
 }

@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>barter place admin</title>
+        <script
+            defer
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        ></script>
+        <script
+            defer
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        ></script>
+        <script src="./resource/js/datepicker.all.min.js"></script>
+        <script defer src="./resource/js/common.js"></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+
+        <link rel="stylesheet" href="./resource/css/datepicker.css" />
+        <link rel="stylesheet" href="./resource/css/style.css" />
+    </head>
+    <body>
+        <div class="admin_container_wrapper">
+            <!-- lnb_wrap -->
+            <div class="lnb_wrap">
+                <header>
+                    <h1>Barter Place</h1>
+                    <div class="my_info">
+                        <button class="btn btn_secondary">계정정보</button>
+                        <button class="btn btn_secondary">로그아웃</button>
+                    </div>
+                </header>
+                <nav>
+                    <ul class="depth_1">
+                        <li>
+                            <p>메인화면</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">대시보드</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">공지사항</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>회원정보</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >회원정보관리</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>원료관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">접수관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">입고관리</a>
+                                </li>
+                                <li class="on">
+                                    <a href="javascript:void(0);">원료관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반송관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>주문관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >주문/배송관리</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반품 관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">취소 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>정산관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">정산 목록</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>고객센터</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >자주묻는 질문</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //lnb_wrap -->
+
+            <!-- admin_container -->
+            <div class="admin_container">
+                <div class="title">
+                    <h2>원료관리</h2>
+                    <div class="desc">
+                        판매할 원료들을 확인하고 관리할 수 있습니다.
+                    </div>
+                </div>
+                <main>
+                    <div class="search_box_wrap">
+                        <div class="search_box">
+                            <div class="row col_1">
+                                <h3>조회기간</h3>
+                                <div class="selectbox">
+                                    <p class="selected">원료등록일</p>
+                                    <div class="option_group">
+                                        <div class="inner">
+                                            <ul>
+                                                <li class="active">
+                                                    원료등록일
+                                                </li>
+                                                <li>특가시작일</li>
+                                                <li>최종수정일</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="radiobox_wrap">
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_today"
+                                        />
+                                        <label for="rad_today">오늘</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_week"
+                                        />
+                                        <label for="rad_week">1주일</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_1month"
+                                        />
+                                        <label for="rad_1month">3개월</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_6month"
+                                        />
+                                        <label for="rad_6month">6개월</label>
+                                    </div>
+                                </div>
+                                <div class="date_wrap">
+                                    <input
+                                        class="date_picker"
+                                        type="text"
+                                        name="daterange"
+                                        id="dateRange"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col_2">
+                                <div class="row col_2_1">
+                                    <h3>검색어</h3>
+                                    <div class="selectbox">
+                                        <p class="selected">전체</p>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">전체</li>
+                                                    <li>접수번호</li>
+                                                    <li>원료명</li>
+                                                    <li>업체명</li>
+                                                    <li>사업자번호</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        placeholder="검색어를 입력해 주세요"
+                                    />
+                                </div>
+                                <div class="row col_2_1">
+                                    <h3>카테고리</h3>
+                                    <div class="selectbox flex_1">
+                                        <p class="selected">전체</p>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">전체</li>
+                                                    <li>건강식품원료</li>
+                                                    <li>화장품원료</li>
+                                                    <li>카테고리3</li>
+                                                    <li>카테고리4</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col_2">
+                                <div class="row col_2_1">
+                                    <h3>판매유형</h3>
+                                    <div class="radiobox_wrap">
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_type"
+                                                id="sale_type_01"
+                                            />
+                                            <label for="sale_type_01"
+                                                >전체</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_type"
+                                                id="sale_type_02"
+                                            />
+                                            <label for="sale_type_02"
+                                                >일반</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_type"
+                                                id="sale_type_03"
+                                            />
+                                            <label for="sale_type_03"
+                                                >특가</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col_2_1">
+                                    <h3>판매상태</h3>
+                                    <div class="radiobox_wrap">
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_state"
+                                                id="sale_state_01"
+                                            />
+                                            <label for="sale_state_01"
+                                                >전체</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_state"
+                                                id="sale_state_02"
+                                            />
+                                            <label for="sale_state_02"
+                                                >판매중</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_state"
+                                                id="sale_state_03"
+                                            />
+                                            <label for="sale_state_03"
+                                                >품절</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="sale_state"
+                                                id="sale_state_04"
+                                            />
+                                            <label for="sale_state_04"
+                                                >판매중지</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_btn">
+                            <button class="btn btn_search">검색</button>
+                        </div>
+                    </div>
+                    <div class="main_table_wrap">
+                        <div class="table_header">
+                            <div class="counter">
+                                총 <b>101</b>건의 접수완료 내역이 있습니다.
+                            </div>
+                            <div class="btn_wrap">
+                                <div
+                                    class="selectbox disabled"
+                                    onclick="modalOpen('#alert_01')"
+                                >
+                                    <p class="selected">판매상태변경</p>
+                                    <div class="option_group">
+                                        <div class="inner">
+                                            <p class="label">판매상태변경</p>
+                                            <ul>
+                                                <li>판매중</li>
+                                                <li>품절</li>
+                                                <li>판매중지</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button
+                                    class="btn btn_border_secondary btn_del"
+                                    onclick="modalOpen('#alert_03')"
+                                >
+                                    선택삭제
+                                </button>
+                                <button
+                                    class="btn btn_secondary btn_add"
+                                    onclick="modalOpen('#modal_03')"
+                                >
+                                    원료등록
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table_body base_material_mng_table">
+                            <table>
+                                <colgroup>
+                                    <!-- 16 -->
+                                    <col style="width: 30px" />
+                                    <col style="width: 70px" />
+                                    <col style="width: 128px" />
+                                    <col style="width: 240px" />
+                                    <col style="width: 135px" />
+                                    <col style="width: 70px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 93px" />
+                                    <col style="width: 94px" />
+                                    <col style="width: 72px" />
+                                    <col style="width: 108px" />
+                                    <col style="width: 108px" />
+                                    <col style="width: 86px" />
+                                    <col style="width: 86px" />
+                                    <col style="width: 86px" />
+                                    <col style="width: 80px" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>#</th>
+                                        <th>접수번호<br /><i>(원료코드)</i></th>
+                                        <th>원료명</th>
+                                        <th>카테고리</th>
+                                        <th>판매상태</th>
+                                        <th>합산중량<i>(g)</i></th>
+                                        <th>판매중량<i>(g)</i></th>
+                                        <th>재고수량<i>(개)</i></th>
+                                        <th>판매유형</th>
+                                        <th>정상판매가<i>(원)</i></th>
+                                        <th>할인판매가<i>(%)</i></th>
+                                        <th>원료등록일</th>
+                                        <th>특가시작일</th>
+                                        <th>최종수정일</th>
+                                        <th>수정</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border_st">
+                                        <td rowspan="3">
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_01"
+                                                />
+                                                <label
+                                                    for="chk_01"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td rowspan="3">1</td>
+                                        <td rowspan="3">
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >1234567890 (1234567890)</a
+                                            >
+                                        </td>
+                                        <td rowspan="3">옥수수 수염 레몬밤</td>
+                                        <td rowspan="3">건강식품원료</td>
+                                        <td rowspan="3">
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >판매중</a
+                                            >
+                                        </td>
+                                        <td rowspan="3">1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border_st">
+                                        <td rowspan="3">
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_02"
+                                                />
+                                                <label
+                                                    for="chk_02"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td rowspan="2">2</td>
+                                        <td rowspan="2">
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >1234567890 (1234567890)</a
+                                            >
+                                        </td>
+                                        <td rowspan="2">옥수수 수염 레몬밤</td>
+                                        <td rowspan="2">건강식품원료</td>
+                                        <td rowspan="2">
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >판매중</a
+                                            >
+                                        </td>
+                                        <td rowspan="2">1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table></table>
+                            <div class="pagination">
+                                <a href="javascript:void(0);" class="prev"
+                                    >prev</a
+                                >
+                                <ul>
+                                    <li class="on">
+                                        <a href="javascript:void(0);">1</a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a href="javascript:void(0);">6</a></li>
+                                    <li><a href="javascript:void(0);">7</a></li>
+                                    <li><a href="javascript:void(0);">8</a></li>
+                                    <li><a href="javascript:void(0);">9</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);">10</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:void(0);" class="next"
+                                    >next</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <p class="footer_copy">
+                        COPYRIGHT © (주)BARTERPLACE Co.,Ltd All RIGHT RESERVED.
+                    </p>
+                </footer>
+            </div>
+            <!-- //admin_container -->
+        </div>
+        <!-- modal_01 -->
+        <div class="modal_wrap" id="modal_01">
+            <div class="modal">
+                <div class="modal_header">
+                    <h3>접수신청상세</h3>
+                    <a
+                        href="javascript:void(0);"
+                        class="modal_close"
+                        onclick="modalClose('#modal_01')"
+                        >x</a
+                    >
+                </div>
+                <div class="modal_body">
+                    <div class="inner">
+                        <section class="contents_box">
+                            <h3>기본 정보</h3>
+                            <div class="content_list">
+                                <h4>카테고리</h4>
+                                <div class="detail">
+                                    <p>건강식품</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원산지</h4>
+                                <div class="detail">
+                                    <p>미국</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원료명</h4>
+                                <div class="detail">
+                                    <p>옥수수 수염 레몬밤</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원료설명</h4>
+                                <div class="detail">
+                                    <p>
+                                        옥수수 수염 레몬밤은 이뇨작용을 통해
+                                        노폐물을 제거하고 시큼한 맛으로 소화를
+                                        도와줌옥수수 수염 레몬밤은 이뇨작용을
+                                        통해 노폐물을 제거하고 시큼한 맛으로
+                                        소화를 도와줌
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>유통기한</h4>
+                                <div class="detail">
+                                    <p>2023.12.12 ~ 2023.12.12</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>제조원</h4>
+                                <div class="detail">
+                                    <p>올드트리라이프</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>구입처</h4>
+                                <div class="detail">
+                                    <p>-</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>수량(단위)</h4>
+                                <div class="detail">
+                                    <ul class="list_st">
+                                        <li>2개(300g)</li>
+                                        <li>3개(600g)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <h3>판매자 정보</h3>
+                            <div class="content_list">
+                                <h4>규격(성적서)</h4>
+                                <div class="detail">
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>제조원</h4>
+                                <div class="detail">
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>구입처</h4>
+                                <div class="detail">
+                                    <ul class="list_st">
+                                        <li>수입</li>
+                                        <li>미국123</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>국내 증빙자료</h4>
+                                <div class="detail">
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>수입 증빙자료</h4>
+                                <div class="detail">
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>기타 증빙</h4>
+                                <div class="detail">
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
+                                    >
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button class="btn btn_primary">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal_01 -->
+        <!-- modal_02 -->
+        <div class="modal_wrap" id="modal_02">
+            <div class="modal">
+                <div class="modal_header">
+                    <h3>판매원료수정</h3>
+                    <a
+                        href="javascript:void(0);"
+                        class="modal_close"
+                        onclick="modalClose('#modal_02')"
+                        >x</a
+                    >
+                </div>
+                <div class="modal_body">
+                    <div class="inner">
+                        <section class="contents_box">
+                            <h3>기본 정보</h3>
+                            <div class="content_list">
+                                <h4 class="required">접수번호</h4>
+                                <div class="detail">
+                                    <div class="input_search_wrap">
+                                        <input type="text" class="flex_1" />
+                                        <button class="btn btn_search_sm">
+                                            조회
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원료명</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="옥수수 수염 레몬밤"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원료설명</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="옥수수 수염 레몬밤은 이뇨작용을 통해 노폐물을 제거하고 시큼한 맛으로 소화를 도와줌"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>유통 기한</h4>
+                                <div class="detail">
+                                    <div class="date_wrap w_100">
+                                        <input
+                                            class="date_picker w_100"
+                                            type="text"
+                                            name="daterange"
+                                            disabled
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>합산중량</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="500g"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4 class="required">포장단위/가격</h4>
+                                <div class="detail">
+                                    <div class="input_multi_wrap">
+                                        <div class="selectbox">
+                                            <p class="selected">100g</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">
+                                                        최소포장단위
+                                                    </p>
+                                                    <ul>
+                                                        <li class="active">
+                                                            100g
+                                                        </li>
+                                                        <li>200g</li>
+                                                        <li>300g</li>
+                                                        <li>400g</li>
+                                                        <li>500g</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">할인없음</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">할인율</p>
+                                                    <ul>
+                                                        <li class="active">
+                                                            할인없음
+                                                        </li>
+                                                        <li>10%할인</li>
+                                                        <li>20%할인</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="label_float">
+                                            <input type="text" value="10,000" />
+                                            <label>원</label>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">1개</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">
+                                                        재고수량
+                                                    </p>
+                                                    <ul>
+                                                        <li class="active">
+                                                            1개
+                                                        </li>
+                                                        <li>2개</li>
+                                                        <li>3개</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="btn btn_secondary btn_add"
+                                        >
+                                            추가
+                                        </button>
+                                    </div>
+                                    <div class="input_multi_wrap">
+                                        <div class="selectbox">
+                                            <p class="selected">100g</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">
+                                                        최소포장단위
+                                                    </p>
+                                                    <ul>
+                                                        <li class="active">
+                                                            100g
+                                                        </li>
+                                                        <li>200g</li>
+                                                        <li>300g</li>
+                                                        <li>400g</li>
+                                                        <li>500g</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">할인없음</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">할인율</p>
+                                                    <ul>
+                                                        <li class="active">
+                                                            할인없음
+                                                        </li>
+                                                        <li>10%할인</li>
+                                                        <li>20%할인</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="label_float">
+                                            <input type="text" value="10,000" />
+                                            <label>원</label>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">1개</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">
+                                                        재고수량
+                                                    </p>
+                                                    <ul>
+                                                        <li class="active">
+                                                            1개
+                                                        </li>
+                                                        <li>2개</li>
+                                                        <li>3개</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="btn btn_border_secondary btn_del"
+                                        >
+                                            삭제
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>포장된 중량</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="800g"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <h3>배송정보</h3>
+                            <div class="content_list">
+                                <h4>희망판매가격</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="3,000원"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>반품배송비</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="6,000원"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>출고지주소</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="231216 충청남도 천안시 동남구 풍세면 가송로 130-33"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="link_wrap">
+                        <button
+                            class="btn btn_text_del"
+                            onclick="modalOpen('#alert_02')"
+                        >
+                            삭제
+                        </button>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="btn btn_secondary">취소</button>
+                        <button class="btn btn_primary">수정완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal_02 -->
+        <!-- modal_03 -->
+        <div class="modal_wrap" id="modal_03">
+            <div class="modal">
+                <div class="modal_header">
+                    <h3>판매원료등록</h3>
+                    <a
+                        href="javascript:void(0);"
+                        class="modal_close"
+                        onclick="modalClose('#modal_03')"
+                        >x</a
+                    >
+                </div>
+                <div class="modal_body">
+                    <div class="inner">
+                        <section class="contents_box">
+                            <h3>기본 정보</h3>
+                            <div class="content_list">
+                                <h4 class="required">접수번호</h4>
+                                <div class="detail">
+                                    <div class="input_search_wrap">
+                                        <input
+                                            type="text"
+                                            class="flex_1"
+                                            placeholder="접수번호 입력"
+                                        />
+                                        <button class="btn btn_search_sm">
+                                            조회
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원료명</h4>
+                                <div class="detail">
+                                    <input class="w_100" type="text" disabled />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원료설명</h4>
+                                <div class="detail">
+                                    <input class="w_100" type="text" disabled />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>유통 기한</h4>
+                                <div class="detail">
+                                    <div class="date_wrap w_100">
+                                        <input
+                                            class="date_picker w_100"
+                                            type="text"
+                                            name="daterange"
+                                            value=" "
+                                            disabled
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>합산중량</h4>
+                                <div class="detail">
+                                    <input class="w_100" type="text" disabled />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4 class="required">포장단위/가격</h4>
+                                <div class="detail">
+                                    <div class="input_multi_wrap">
+                                        <div class="selectbox">
+                                            <p class="selected">최소포장단위</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">
+                                                        최소포장단위
+                                                    </p>
+                                                    <ul>
+                                                        <li>100g</li>
+                                                        <li>200g</li>
+                                                        <li>300g</li>
+                                                        <li>400g</li>
+                                                        <li>500g</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">할인율</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">할인율</p>
+                                                    <ul>
+                                                        <li>할인없음</li>
+                                                        <li>10%할인</li>
+                                                        <li>20%할인</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="label_float">
+                                            <input type="text" value="10,000" />
+                                            <label>원</label>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">재고수량</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <p class="label">
+                                                        재고수량
+                                                    </p>
+                                                    <ul>
+                                                        <li>1개</li>
+                                                        <li>2개</li>
+                                                        <li>3개</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="btn btn_secondary btn_add"
+                                        >
+                                            추가
+                                        </button>
+                                    </div>
+                                    <div class="input_multi_wrap">
+                                        <div class="selectbox">
+                                            <p class="selected">100g</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <ul>
+                                                        <li class="active">
+                                                            100g
+                                                        </li>
+                                                        <li>200g</li>
+                                                        <li>300g</li>
+                                                        <li>400g</li>
+                                                        <li>500g</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">할인없음</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <ul>
+                                                        <li class="active">
+                                                            할인없음
+                                                        </li>
+                                                        <li>10%할인</li>
+                                                        <li>20%할인</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="label_float">
+                                            <input type="text" value="10,000" />
+                                            <label>원</label>
+                                        </div>
+                                        <div class="selectbox">
+                                            <p class="selected">1개</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <ul>
+                                                        <li class="active">
+                                                            1개
+                                                        </li>
+                                                        <li>2개</li>
+                                                        <li>3개</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="btn btn_border_secondary btn_del"
+                                        >
+                                            삭제
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>포장된 중량</h4>
+                                <div class="detail">
+                                    <input class="w_100" type="text" disabled />
+                                </div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <h3>배송정보</h3>
+                            <div class="content_list">
+                                <h4>희망판매가격</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="3,000원"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>반품배송비</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="6,000원"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>출고지주소</h4>
+                                <div class="detail">
+                                    <input
+                                        class="w_100"
+                                        type="text"
+                                        value="231216 충청남도 천안시 동남구 풍세면 가송로 130-33"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="link_wrap">
+                        <button
+                            class="btn btn_text_del"
+                            onclick="modalOpen('#alert_02')"
+                        >
+                            삭제
+                        </button>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="btn btn_secondary">취소</button>
+                        <button class="btn btn_primary">수정완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal_03 -->
+
+        <!-- alert_01 -->
+        <div class="modal_wrap alert_st" id="alert_01">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        체크한 원료을<br />
+                        <b class="fc_primary">‘ 판매중’</b>상태로
+                        변경하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalClose('#alert_01')"
+                        >
+                            취소
+                        </button>
+                        <button class="btn btn_primary">판매상태변경</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_01 -->
+        <!-- alert_02 -->
+        <div class="modal_wrap alert_st" id="alert_02">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        판매원료정보를<br />
+                        삭제하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalCloseSingle('#alert_02')"
+                        >
+                            취소
+                        </button>
+                        <button
+                            class="btn btn_danger"
+                            onclick="modalCloseAll(); toastOpen('#toast_01')"
+                        >
+                            삭제
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_02 -->
+        <!-- alert_03 -->
+        <div class="modal_wrap alert_st" id="alert_03">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        <h6>선택한 원료을 삭제하시겠습니까?</h6>
+                        판매중인 원료일 경우 즉시 삭제되니<br />확인후
+                        삭제하시기 바랍니다.
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalCloseSingle('#alert_03')"
+                        >
+                            취소
+                        </button>
+                        <button
+                            class="btn btn_danger"
+                            onclick="modalCloseAll(); toastOpen('#toast_01')"
+                        >
+                            삭제
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_03 -->
+        <!-- toast_01 -->
+        <div class="toast_wrap" id="toast_01">
+            <div class="toast danger">
+                <p>삭제되었습니다.</p>
+                <span class="toast_close" onclick="toastClose()">x</span>
+            </div>
+        </div>
+        <!-- //toast_01 -->
+    </body>
+</html>

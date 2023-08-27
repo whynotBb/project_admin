@@ -191,6 +191,40 @@
                                         name="daterange"
                                         id="dateRange"
                                     />
+                                    <!-- <div
+                                        class="c-datepicker-date-editor J-datepicker-range-day mt10"
+                                    >
+                                        <input
+                                            placeholder="Start"
+                                            name=""
+                                            class="c-datepicker-data-input only-date"
+                                            value=""
+                                        />
+                                        <span
+                                            class="c-datepicker-range-separator"
+                                            >-</span
+                                        >
+                                        <input
+                                            placeholder="End"
+                                            name=""
+                                            class="c-datepicker-data-input only-date"
+                                            value=""
+                                        />
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $(
+                                                ".J-datepicker-range-day"
+                                            ).datePicker({
+                                                hasShortcut: true,
+                                                language: "en",
+                                                format: "YYYY-MM-DD",
+                                                isRange: true,
+                                                shortcutOptions:
+                                                    DATAPICKERAPI.rangeShortcutOption1,
+                                            });
+                                        });
+                                    </script> -->
                                 </div>
                             </div>
                             <div class="col_2">
@@ -398,113 +432,10 @@
                                             >
                                         </td>
                                         <td>123-456-7890</td>
-                                        <td class="fc_danger">보류</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_05')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >사유보기</a
-                                            >
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            <button
-                                                onclick="modalOpen('#modal_04')"
-                                                class="btn btn_border_secondary sm"
-                                            >
-                                                반송
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
-                                        <td>2</td>
-                                        <td>
-                                            <a
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
-                                        <td>2022.12.12</td>
-                                        <td>-</td>
-                                        <td>옥수수 수염 레몬밤</td>
-                                        <td>
-                                            <a
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >뉴트리라이프케어</a
-                                            >
-                                        </td>
-                                        <td>123-456-7890</td>
-                                        <td class="fc_danger">반송</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_05')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >사유보기</a
-                                            >
-                                        </td>
-                                        <td>
-                                            <button
-                                                onclick="modalOpen('#modal_03')"
-                                                class="btn btn_border_secondary sm"
-                                            >
-                                                보류
-                                            </button>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
-                                        <td>2</td>
-                                        <td>
-                                            <a
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
-                                        <td>2022.12.12</td>
-                                        <td>2022.12.12</td>
-                                        <td>옥수수 수염 레몬밤</td>
-                                        <td>
-                                            <a
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >뉴트리라이프케어</a
-                                            >
-                                        </td>
-                                        <td>123-456-7890</td>
-                                        <td class="fc_success">재접수완료</td>
+                                        <td>접수완료</td>
                                         <td>-</td>
                                         <td>
                                             <button
-                                                onclick="modalOpen('#modal_03')"
                                                 class="btn btn_border_secondary sm"
                                             >
                                                 보류
@@ -512,7 +443,6 @@
                                         </td>
                                         <td>
                                             <button
-                                                onclick="modalOpen('#modal_04')"
                                                 class="btn btn_border_secondary sm"
                                             >
                                                 반송
@@ -564,7 +494,7 @@
                     <a
                         href="javascript:void(0);"
                         class="modal_close"
-                        onclick="modalClose('#modal_01')"
+                        onclick="modalClose()"
                         >x</a
                     >
                 </div>
@@ -710,7 +640,7 @@
                     <a
                         href="javascript:void(0);"
                         class="modal_close"
-                        onclick="modalClose('#modal_02')"
+                        onclick="modalClose()"
                         >x</a
                     >
                 </div>
@@ -839,7 +769,7 @@
                     <div class="btn_wrap">
                         <button
                             class="btn btn_secondary"
-                            onclick="modalClose('#modal_03')"
+                            onclick="modalClose()"
                         >
                             취소
                         </button>
@@ -852,28 +782,23 @@
         <!-- modal_04 -->
         <div class="modal_wrap md_st" id="modal_04">
             <div class="modal">
+                <div class="modal_header">
+                    <h3>title</h3>
+                </div>
                 <div class="modal_body">
-                    <h4>
-                        진행상태를<br /><b class="fc_danger">‘반송'</b>으로
-                        변경하시겠습니까?
-                    </h4>
+                    <h4>main text</h4>
                     <div class="textarea_wrap">
-                        <textarea
-                            placeholder="보류사유를 입력해주세요"
-                        ></textarea>
+                        <textarea placeholder="Comments"></textarea>
                         <div class="counter">(0/500자)</div>
                     </div>
 
-                    <p class="sub_txt">
-                        접수상태를 <b class="fc_danger">‘반송'</b>으로 변경시<br />
-                        판매자가 접수한 원료를 반송합니다.
-                    </p>
+                    <p class="sub_txt">sub text</p>
                 </div>
                 <div class="modal_footer">
                     <div class="btn_wrap">
                         <button
                             class="btn btn_secondary"
-                            onclick="modalClose('#modal_04')"
+                            onclick="modalClose()"
                         >
                             취소
                         </button>
@@ -883,31 +808,6 @@
             </div>
         </div>
         <!-- //modal_04 -->
-        <!-- modal_05 -->
-        <div class="modal_wrap md_st" id="modal_05">
-            <div class="modal">
-                <div class="modal_header">
-                    <h3>보류사유</h3>
-                </div>
-                <div class="modal_body only_sub_txt">
-                    <p class="sub_txt">
-                        접수내용과 실제원료의 용량이 맞지 않음<br />
-                        다시 수정해서 접수요망
-                    </p>
-                </div>
-                <div class="modal_footer">
-                    <div class="btn_wrap">
-                        <button
-                            class="btn btn_primary"
-                            onclick="modalClose('#modal_05')"
-                        >
-                            확인
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //modal_05 -->
         <!-- alert_01 -->
         <div class="modal_wrap alert_st" id="alert_01">
             <div class="modal">
@@ -921,7 +821,7 @@
                     <div class="btn_wrap">
                         <button
                             class="btn btn_secondary"
-                            onclick="modalClose('#alert_01')"
+                            onclick="modalClose()"
                         >
                             취소
                         </button>

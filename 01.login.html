@@ -6,7 +6,7 @@
         <title>barter place admin</title>
         <link rel="stylesheet" href="./resource/css/style.css" />
     </head>
-    <body>
+    <body class="sign_body">
         <div class="login_wrapper">
             <div class="login_container">
                 <h1>Barter Place</h1>
@@ -23,10 +23,10 @@
                                 />
                             </div>
                             <div class="label_vertical">
-                                <label for="userId">비밀번호</label>
+                                <label for="userPw">비밀번호</label>
                                 <input
                                     type="password"
-                                    id="userId"
+                                    id="userPw"
                                     placeholder="비밀번호 입력"
                                 />
                             </div>
@@ -36,11 +36,14 @@
                                     <label for="autoLogin">자동 로그인 </label>
                                 </div>
                                 <ul>
-                                    <li>로그인하기</li>
+                                    <li>아이디 찾기</li>
                                     <li>비밀번호 찾기</li>
                                 </ul>
                             </div>
-                            <button type="submit" class="btn btn_primary">
+                            <button
+                                type="submit"
+                                class="btn btn_primary btn_submit"
+                            >
                                 로그인
                             </button>
                         </form>

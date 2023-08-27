@@ -4,11 +4,30 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>barter place admin</title>
+        <!-- jquery -->
         <script
             defer
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         ></script>
+        <!-- date range picker -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        ></script>
+        <script
+            defer
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        ></script>
+        <!-- ui common js -->
         <script defer src="./resource/js/common.js"></script>
+        <!-- date range picker css -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <!-- ui common css -->
         <link rel="stylesheet" href="./resource/css/style.css" />
     </head>
     <body>
@@ -75,10 +94,42 @@
             <!-- admin_container -->
             <div class="admin_container">
                 <h2>title</h2>
+                <style>
+                    .flex_row {
+                        display: flex;
+                        gap: 1rem;
+                    }
+                </style>
                 <main>
-                    <div class="bottom_btn_wrap">
-                        <button class="btn btn_primary">저장</button>
+                    <hr />
+                    <h4>button + popup</h4>
+                    <div class="flex_row">
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalOpen('#modal_01')"
+                        >
+                            modal lg
+                        </button>
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalOpen('#modal_02')"
+                        >
+                            modal mid
+                        </button>
+                        <button
+                            class="btn btn_border_secondary"
+                            onclick="modalOpen('#alert_01')"
+                        >
+                            alert
+                        </button>
+                        <button
+                            class="btn btn_danger"
+                            onclick="toastOpen('#toast_01')"
+                        >
+                            toast
+                        </button>
                     </div>
+                    <hr />
                 </main>
                 <footer>
                     <p class="footer_copy">
@@ -87,6 +138,207 @@
                 </footer>
             </div>
             <!-- //admin_container -->
+            <!-- modal_01 -->
+            <div class="modal_wrap" id="modal_01">
+                <div class="modal">
+                    <div class="modal_header">
+                        <h3>접수신청상세</h3>
+                        <a
+                            href="javascript:void(0);"
+                            class="modal_close"
+                            onclick="modalClose('#modal_01')"
+                            >x</a
+                        >
+                    </div>
+                    <div class="modal_body">
+                        <div class="inner">
+                            <section class="contents_box">
+                                <h3>기본 정보</h3>
+                                <div class="content_list">
+                                    <h4>카테고리</h4>
+                                    <div class="detail">
+                                        <p>건강식품</p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>원산지</h4>
+                                    <div class="detail">
+                                        <p>미국</p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>원료명</h4>
+                                    <div class="detail">
+                                        <p>옥수수 수염 레몬밤</p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>원료설명</h4>
+                                    <div class="detail">
+                                        <p>
+                                            옥수수 수염 레몬밤은 이뇨작용을 통해
+                                            노폐물을 제거하고 시큼한 맛으로
+                                            소화를 도와줌옥수수 수염 레몬밤은
+                                            이뇨작용을 통해 노폐물을 제거하고
+                                            시큼한 맛으로 소화를 도와줌
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>유통기한</h4>
+                                    <div class="detail">
+                                        <p>2023.12.12 ~ 2023.12.12</p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>제조원</h4>
+                                    <div class="detail">
+                                        <p>올드트리라이프</p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>구입처</h4>
+                                    <div class="detail">
+                                        <p>-</p>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>수량(단위)</h4>
+                                    <div class="detail">
+                                        <ul class="list_st">
+                                            <li>2개(300g)</li>
+                                            <li>3개(600g)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="contents_box">
+                                <h3>판매자 정보</h3>
+                                <div class="content_list">
+                                    <h4>규격(성적서)</h4>
+                                    <div class="detail">
+                                        <a
+                                            class="link_st"
+                                            href="javascript:void(0);"
+                                            >image_sample.pdf</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>제조원</h4>
+                                    <div class="detail">
+                                        <a
+                                            class="link_st"
+                                            href="javascript:void(0);"
+                                            >image_sample.pdf</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>구입처</h4>
+                                    <div class="detail">
+                                        <ul class="list_st">
+                                            <li>수입</li>
+                                            <li>미국123</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>국내 증빙자료</h4>
+                                    <div class="detail">
+                                        <a
+                                            class="link_st"
+                                            href="javascript:void(0);"
+                                            >image_sample.pdf</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>수입 증빙자료</h4>
+                                    <div class="detail">
+                                        <a
+                                            class="link_st"
+                                            href="javascript:void(0);"
+                                            >image_sample.pdf</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="content_list">
+                                    <h4>기타 증빙</h4>
+                                    <div class="detail">
+                                        <a
+                                            class="link_st"
+                                            href="javascript:void(0);"
+                                            >image_sample.pdf</a
+                                        >
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <div class="btn_wrap">
+                            <button class="btn btn_primary">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //modal_01 -->
+            <!-- modal_02 -->
+            <div class="modal_wrap md_st" id="modal_02">
+                <div class="modal">
+                    <div class="modal_header"><h3>반송사유</h3></div>
+                    <div class="modal_body only_sub_txt">
+                        <p class="sub_txt">
+                            접수내용과 실제원료의 용량이 맞지 않음<br />
+                            다시 수정해서 접수요망
+                        </p>
+                    </div>
+                    <div class="modal_footer">
+                        <div class="btn_wrap">
+                            <button
+                                onclick="modalClose('#modal_02')"
+                                class="btn btn_primary"
+                            >
+                                확인
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //modal_02 -->
+            <!-- alert_01 -->
+            <div class="modal_wrap alert_st" id="alert_01">
+                <div class="modal">
+                    <div class="modal_body">
+                        <div class="alert_msg">
+                            진행상태를
+                            <b class="fc_primary">‘반송완료’</b> 로
+                            변경하시겠습니까?
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <div class="btn_wrap">
+                            <button
+                                class="btn btn_secondary"
+                                onclick="modalClose('#alert_01')"
+                            >
+                                취소
+                            </button>
+                            <button class="btn btn_primary">상태변경</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //alert_01 -->
+            <!-- toast_01 -->
+            <div class="toast_wrap" id="toast_01">
+                <div class="toast danger">
+                    <p>삭제되었습니다.</p>
+                    <span class="toast_close" onclick="toastClose()">x</span>
+                </div>
+            </div>
+            <!-- //toast_01 -->
         </div>
     </body>
 </html>

@@ -1,12 +1,31 @@
 //modal
 function modalOpen(el) {
+    console.log("click", el);
     $(el).fadeIn();
     $("body").addClass("modal-open");
 }
-function modalClose(e) {
+function modalClose(el) {
+    $(el).fadeOut();
+    $("body").removeClass("modal-open");
+}
+function modalCloseAll() {
     $(".modal_wrap").fadeOut();
     $("body").removeClass("modal-open");
 }
+function modalCloseSingle(el) {
+    $(el).fadeOut();
+}
+//toast
+function toastOpen(el) {
+    $(el).fadeIn();
+    setTimeout(function () {
+        $(el).fadeOut();
+    }, 3000);
+}
+function toastClose() {
+    $(".toast_wrap").fadeOut();
+}
+
 $(document).ready(function () {
     // select box
     // select box 여닫기
@@ -25,6 +44,11 @@ $(document).ready(function () {
             $(this).closest(".selectbox").find(".selected").text(selectedValue);
             $(this).closest(".option_group").removeClass("active");
         }
+    });
+    // dash board - tab_menu
+    $(".tab_menu li").on("click", function () {
+        $(".tab_menu li").removeClass("on");
+        $(this).addClass("on");
     });
     // date range picker
     const datepickerOption = {
