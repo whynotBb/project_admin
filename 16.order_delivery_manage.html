@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>barter place admin</title>
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- date range picker -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        ></script>
+        <script
+            defer
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        ></script>
+        <!-- summernote -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <!-- CDN 한글화 -->
+
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+        <!-- ui common js -->
+        <script defer src="./resource/js/common.js"></script>
+
+        <!-- date range picker css -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <!-- summernote css -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+            rel="stylesheet"
+        />
+        <!-- ui common css -->
+        <link rel="stylesheet" href="./resource/css/style.css" />
+    </head>
+    <body>
+        <div class="admin_container_wrapper">
+            <!-- lnb_wrap -->
+            <div class="lnb_wrap">
+                <header>
+                    <h1>Barter Place</h1>
+                    <div class="my_info">
+                        <button class="btn btn_secondary">계정정보</button>
+                        <button class="btn btn_secondary">로그아웃</button>
+                    </div>
+                </header>
+                <nav>
+                    <ul class="depth_1">
+                        <li>
+                            <p>메인화면</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">대시보드</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">공지사항</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>회원정보</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >회원정보관리</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>원료관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">접수관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">입고관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">원료관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반송관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>주문관리</p>
+                            <ul class="depth_2">
+                                <li class="on">
+                                    <a href="javascript:void(0);"
+                                        >주문/배송관리</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반품 관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">취소 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>정산관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">정산 목록</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>고객센터</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >자주묻는 질문</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //lnb_wrap -->
+
+            <!-- admin_container -->
+            <div class="admin_container">
+                <div class="title">
+                    <h2>주문/배송관리</h2>
+                    <div class="desc">
+                        주문과 배송내역을 관리할 수 있습니다.
+                    </div>
+                </div>
+                <main>
+                    <div class="search_box_wrap">
+                        <div class="search_box">
+                            <div class="row col_1">
+                                <h3>조회기간</h3>
+                                <div class="selectbox">
+                                    <p class="selected">원료등록일</p>
+                                    <div class="option_group">
+                                        <div class="inner">
+                                            <ul>
+                                                <li class="active">
+                                                    원료등록일
+                                                </li>
+                                                <li>특가시작일</li>
+                                                <li>최종수정일</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="radiobox_wrap">
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_today"
+                                        />
+                                        <label for="rad_today">오늘</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_week"
+                                        />
+                                        <label for="rad_week">1주일</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_1month"
+                                        />
+                                        <label for="rad_1month">3개월</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input
+                                            type="radio"
+                                            name="rad_range"
+                                            id="rad_6month"
+                                        />
+                                        <label for="rad_6month">6개월</label>
+                                    </div>
+                                </div>
+                                <div class="date_wrap">
+                                    <input
+                                        class="date_picker"
+                                        type="text"
+                                        name="daterange"
+                                        id="dateRange"
+                                    />
+                                </div>
+                            </div>
+                            <div class="row col_1">
+                                <h3>검색어</h3>
+                                <div class="selectbox">
+                                    <p class="selected">전체</p>
+                                    <div class="option_group">
+                                        <div class="inner">
+                                            <ul>
+                                                <li class="active">전체</li>
+                                                <li>회사명</li>
+                                                <li>사업자번호</li>
+                                                <li>아이디</li>
+                                                <li>회원명</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input
+                                    class="flex_1"
+                                    type="text"
+                                    placeholder="검색어를 입력해 주세요"
+                                />
+                            </div>
+                        </div>
+                        <div class="search_btn">
+                            <button class="btn btn_search">검색</button>
+                        </div>
+                    </div>
+                    <div class="main_table_wrap">
+                        <div class="table_header">
+                            <div class="counter">
+                                총 <b>101</b>건의 접수완료 내역이 있습니다.
+                            </div>
+                            <div class="btn_wrap">
+                                <button
+                                    class="btn btn_border_secondary btn_del"
+                                    onclick="modalOpen('#alert_02')"
+                                >
+                                    체크한 회원 삭제
+                                </button>
+                                <button
+                                    class="btn btn_secondary btn_check"
+                                    onclick="modalOpen('#alert_01')"
+                                >
+                                    체크한 회원 승인
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table_body">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 30px" />
+                                    <col style="width: 72px" />
+                                    <col style="width: 433px" />
+                                    <col style="width: 104px" />
+                                    <col style="width: 433px" />
+                                    <col style="width: 160px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 80px" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>#</th>
+                                        <th>아이디</th>
+                                        <th>회원명</th>
+                                        <th>업체명</th>
+                                        <th>사업자번호</th>
+                                        <th>가입일자</th>
+                                        <th>승인일자</th>
+                                        <th>탈퇴일자</th>
+                                        <th>승인</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_01"
+                                                />
+                                                <label
+                                                    for="chk_01"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >abcde123456@gmail.com</a
+                                            >
+                                        </td>
+                                        <td>홍길동</td>
+                                        <td>뉴트리라이프케어</td>
+                                        <td>123-456-7890</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>-</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_04')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                승인
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_02"
+                                                />
+                                                <label
+                                                    for="chk_02"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >abcde123456@gmail.com</a
+                                            >
+                                        </td>
+                                        <td>홍길동</td>
+                                        <td>뉴트리라이프케어</td>
+                                        <td>123-456-7890</td>
+                                        <td>2022.12.12</td>
+                                        <td>-</td>
+                                        <td>2022.12.12</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <a href="javascript:void(0);" class="prev"
+                                    >prev</a
+                                >
+                                <ul>
+                                    <li class="on">
+                                        <a href="javascript:void(0);">1</a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a href="javascript:void(0);">6</a></li>
+                                    <li><a href="javascript:void(0);">7</a></li>
+                                    <li><a href="javascript:void(0);">8</a></li>
+                                    <li><a href="javascript:void(0);">9</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);">10</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:void(0);" class="next"
+                                    >next</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <p class="footer_copy">
+                        COPYRIGHT © (주)BARTERPLACE Co.,Ltd All RIGHT RESERVED.
+                    </p>
+                </footer>
+            </div>
+            <!-- //admin_container -->
+        </div>
+
+        <!-- modal_01 -->
+        <div class="modal_wrap" id="modal_01">
+            <div class="modal">
+                <div class="modal_header">
+                    <h3>회원정보</h3>
+                    <a
+                        href="javascript:void(0);"
+                        class="modal_close"
+                        onclick="modalClose('#modal_01')"
+                        >x</a
+                    >
+                </div>
+                <div class="modal_body">
+                    <div class="inner">
+                        <section class="contents_box">
+                            <h3>기본 정보</h3>
+                            <div class="content_list">
+                                <h4>아이디</h4>
+                                <div class="detail">
+                                    <p>abcde123456@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>회원명</h4>
+                                <div class="detail">
+                                    <p>홍길동</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>휴대폰번호</h4>
+                                <div class="detail">
+                                    <p>010-1234-5677</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>가입일</h4>
+                                <div class="detail"><p>2022.12.12</p></div>
+                            </div>
+                            <div class="content_list">
+                                <h4>승인일</h4>
+                                <div class="detail"><p>2022.12.12</p></div>
+                            </div>
+                            <div class="content_list">
+                                <h4>탈퇴일</h4>
+                                <div class="detail"><p>2022.12.12</p></div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <h3>사업자 정보</h3>
+                            <div class="content_list">
+                                <h4>회사명</h4>
+                                <div class="detail">
+                                    <p>뉴트리라이프케어</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>대표자명</h4>
+                                <div class="detail">
+                                    <p>홍길동</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>사업자번호</h4>
+                                <div class="detail">
+                                    <ul class="list_st">
+                                        <li>123-45-67890</li>
+                                        <li>
+                                            <a href="#"
+                                                >사업자정보사본_20230601.jpg</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>주소</h4>
+                                <div class="detail">
+                                    <p>
+                                        서울시 구로구 디지털로 300 지밸리프라자
+                                        15층
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="content_list">
+                                <h4>은행명</h4>
+                                <div class="detail">
+                                    <p>국민은행</p>
+                                </div>
+                            </div>
+
+                            <div class="content_list">
+                                <h4>계좌번호</h4>
+                                <div class="detail">
+                                    <ul class="list_st">
+                                        <li>111-222222-33333</li>
+                                        <li>
+                                            <a href="javascript:void(0)"
+                                                >계좌번호사본_20230601.jpg</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>예금주</h4>
+                                <div class="detail">
+                                    <p>뉴트리라이프</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button class="btn btn_primary">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal_01 -->
+        <!-- alert_01 -->
+        <div class="modal_wrap alert_st" id="alert_01">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        체크한 회원을<br/ >승인하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalClose('#alert_01')"
+                        >
+                            취소
+                        </button>
+                        <button class="btn btn_primary">승인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_01 -->
+        <!-- alert_02 -->
+        <div class="modal_wrap alert_st" id="alert_02">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        체크한 회원을<br/ > 삭제하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalClose('#alert_02')"
+                        >
+                            취소
+                        </button>
+                        <button class="btn btn_danger">삭제</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_02 -->
+    </body>
+</html>

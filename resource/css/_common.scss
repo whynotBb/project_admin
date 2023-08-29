@@ -199,6 +199,9 @@ input[type="text"].date_picker {
     align-items: center;
     gap: $space-m;
     padding: 0 $space-m;
+    &.gap_wide {
+        gap: 4rem;
+    }
 }
 .radiobox {
     label {
@@ -297,13 +300,13 @@ button.btn {
             color: #fff;
         }
         &.btn_del {
-            width: 11.2rem;
+            // width: 11.2rem;
+            width: auto;
             padding-left: 2.6rem;
-            background: url(../images/trash.svg) no-repeat left 1.2rem center;
+            background: url(../images/trash.svg) no-repeat left 1rem center;
             &:hover {
                 color: $text-body;
-                background: url(../images/trash.svg) no-repeat left 1.2rem
-                    center;
+                background: url(../images/trash.svg) no-repeat left 1rem center;
             }
         }
         &.btn_list {
@@ -365,6 +368,7 @@ button.btn {
 }
 .selectbox {
     min-width: 16rem;
+    width: 16rem;
     position: relative;
     cursor: pointer;
     font-weight: 500;
@@ -446,6 +450,9 @@ button.btn {
             color: $text-disabled;
         }
     }
+    &.time_select {
+        min-width: 12rem;
+    }
 }
 .select_btn_group {
     display: flex;
@@ -463,6 +470,7 @@ button.btn {
 }
 .flex_row {
     display: flex;
+    gap: 1.6rem;
     .flex_1 {
         flex: 1;
     }
@@ -865,5 +873,28 @@ button.btn {
             text-indent: -999999px;
             background: url(../images/close_w.svg) no-repeat center;
         }
+    }
+}
+.summernote_wrap {
+    .note-editor.note-frame {
+        border-color: $border-base;
+        border-radius: 0.4rem;
+        color: $text-body;
+        font-family: "Pretendard Variable", Pretendard, -apple-system,
+            BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+            "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    }
+    .note-toolbar {
+        background: #fff;
+    }
+    .note-btn {
+        border-color: $border-base;
+        &:hover {
+            background: $color-g1;
+        }
+    }
+    .note-placeholder {
+        color: $text-placeholder;
     }
 }

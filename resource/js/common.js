@@ -1,6 +1,5 @@
 //modal
 function modalOpen(el) {
-    console.log("click", el);
     $(el).fadeIn();
     $("body").addClass("modal-open");
 }
@@ -27,6 +26,21 @@ function toastClose() {
 }
 
 $(document).ready(function () {
+    // text editor
+    $("#summernote").summernote({
+        placeholder: "공지사항 내용 입력",
+        tabsize: 2,
+        height: 490,
+        toolbar: [
+            ["style", ["style"]],
+            ["font", ["bold", "underline", "clear"]],
+            ["color", ["color"]],
+            ["para", ["ul", "ol", "paragraph"]],
+            ["table", ["table"]],
+            ["insert", ["link", "picture", "video"]],
+            ["view", ["fullscreen", "codeview", "help"]],
+        ],
+    });
     // select box
     // select box 여닫기
     $(".selected").click(function () {
@@ -81,6 +95,12 @@ $(document).ready(function () {
         opens: "left",
         autoApply: true,
         locale: datepickerOption,
+    });
+    $('input[name="singleDate"]').daterangepicker({
+        opens: "left",
+        autoApply: true,
+        locale: datepickerOption,
+        singleDatePicker: true,
     });
 
     //pagination

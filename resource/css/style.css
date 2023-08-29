@@ -364,6 +364,9 @@ input[type=text].date_picker:disabled {
   gap: 1.6rem;
   padding: 0 1.6rem;
 }
+.radiobox_wrap.gap_wide {
+  gap: 4rem;
+}
 
 .radiobox label {
   padding-left: 2.4rem;
@@ -454,13 +457,13 @@ button.btn.btn_border_secondary:hover {
   color: #fff;
 }
 button.btn.btn_border_secondary.btn_del {
-  width: 11.2rem;
+  width: auto;
   padding-left: 2.6rem;
-  background: url(../images/trash.svg) no-repeat left 1.2rem center;
+  background: url(../images/trash.svg) no-repeat left 1rem center;
 }
 button.btn.btn_border_secondary.btn_del:hover {
   color: #343a40;
-  background: url(../images/trash.svg) no-repeat left 1.2rem center;
+  background: url(../images/trash.svg) no-repeat left 1rem center;
 }
 button.btn.btn_border_secondary.btn_list {
   width: 11.2rem;
@@ -516,6 +519,7 @@ button.btn.btn_check:hover {
 
 .selectbox {
   min-width: 16rem;
+  width: 16rem;
   position: relative;
   cursor: pointer;
   font-weight: 500;
@@ -596,6 +600,9 @@ button.btn.btn_check:hover {
   background: #e9ecef url(../images/select_down.svg) no-repeat center right 1.2rem;
   color: #6c757d;
 }
+.selectbox.time_select {
+  min-width: 12rem;
+}
 
 .select_btn_group {
   display: flex;
@@ -615,6 +622,7 @@ button.btn.btn_check:hover {
 
 .flex_row {
   display: flex;
+  gap: 1.6rem;
 }
 .flex_row .flex_1 {
   flex: 1;
@@ -979,6 +987,25 @@ button.btn.btn_check:hover {
   height: 1.6rem;
   text-indent: -999999px;
   background: url(../images/close_w.svg) no-repeat center;
+}
+
+.summernote_wrap .note-editor.note-frame {
+  border-color: #ced4da;
+  border-radius: 0.4rem;
+  color: #343a40;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.summernote_wrap .note-toolbar {
+  background: #fff;
+}
+.summernote_wrap .note-btn {
+  border-color: #ced4da;
+}
+.summernote_wrap .note-btn:hover {
+  background: #f8f9fa;
+}
+.summernote_wrap .note-placeholder {
+  color: #adb5bd;
 }
 
 .login_wrapper {
@@ -1705,14 +1732,16 @@ button.btn.btn_check:hover {
 
 .contents_register_wrap {
   border: 1px solid #e9ecef;
+  margin-bottom: 4rem;
 }
 .contents_register_wrap .register_list {
   border-top: 1px solid #e9ecef;
   min-height: 8.4rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 2.4rem 4rem;
   gap: 1.2rem;
+  line-height: 3.6rem;
 }
 .contents_register_wrap .register_list:first-child {
   border-top: 0;
@@ -1722,4 +1751,35 @@ button.btn.btn_check:hover {
 }
 .contents_register_wrap .register_list .contents {
   flex: 1;
+}
+
+.detail_footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail_footer .btn {
+  min-width: 12rem;
+}
+.detail_footer .btn_right_wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.detail_footer .btn_modify {
+  padding-left: 3.2rem;
+  width: 20rem !important;
+  background: #343a40 url(../images/pencil-square.svg) no-repeat left 35% center !important;
+}
+.detail_footer .btn_modify:hover {
+  background: #212529 url(../images/pencil-square.svg) no-repeat left 35% center !important;
+}
+.detail_footer .btn_modify.btn_primary {
+  background: #0ab968 url(../images/pencil-square.svg) no-repeat left 6rem center !important;
+}
+.detail_footer .btn_add {
+  padding-left: 3.2rem;
+  width: 20rem !important;
+  background: #0ab968 url(../images/btn_check.svg) no-repeat left 6rem center !important;
 }

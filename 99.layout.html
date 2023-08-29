@@ -5,10 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>barter place admin</title>
         <!-- jquery -->
-        <script
-            defer
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <!-- date range picker -->
         <script
             type="text/javascript"
@@ -19,13 +17,24 @@
             type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
         ></script>
+        <!-- summernote -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <!-- CDN 한글화 -->
+
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
         <!-- ui common js -->
         <script defer src="./resource/js/common.js"></script>
+
         <!-- date range picker css -->
         <link
             rel="stylesheet"
             type="text/css"
             href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <!-- summernote css -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+            rel="stylesheet"
         />
         <!-- ui common css -->
         <link rel="stylesheet" href="./resource/css/style.css" />
@@ -130,6 +139,30 @@
                         </button>
                     </div>
                     <hr />
+                    <h4>date range picker</h4>
+                    <div class="date_wrap">
+                        <input
+                            class="date_picker"
+                            type="text"
+                            name="daterange"
+                            id="dateRange"
+                        />
+                    </div>
+                    <hr />
+                    <h4>date picker</h4>
+                    <div class="date_wrap">
+                        <input
+                            class="date_picker"
+                            type="text"
+                            name="singleDate"
+                            id="singleDate"
+                        />
+                    </div>
+                    <hr />
+                    <h4>text editor</h4>
+                    <div class="summernote_wrap">
+                        <div id="summernote"></div>
+                    </div>
                 </main>
                 <footer>
                     <p class="footer_copy">

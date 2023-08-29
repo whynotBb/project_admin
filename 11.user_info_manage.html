@@ -5,10 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>barter place admin</title>
         <!-- jquery -->
-        <script
-            defer
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- date range picker -->
         <script
             type="text/javascript"
@@ -19,13 +16,24 @@
             type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
         ></script>
+        <!-- summernote -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <!-- CDN 한글화 -->
+
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
         <!-- ui common js -->
         <script defer src="./resource/js/common.js"></script>
+
         <!-- date range picker css -->
         <link
             rel="stylesheet"
             type="text/css"
             href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <!-- summernote css -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+            rel="stylesheet"
         />
         <!-- ui common css -->
         <link rel="stylesheet" href="./resource/css/style.css" />
@@ -57,7 +65,7 @@
                         <li>
                             <p>회원정보</p>
                             <ul class="depth_2">
-                                <li>
+                                <li class="on">
                                     <a href="javascript:void(0);"
                                         >회원정보관리</a
                                     >
@@ -76,7 +84,7 @@
                                 <li>
                                     <a href="javascript:void(0);">원료관리</a>
                                 </li>
-                                <li class="on">
+                                <li>
                                     <a href="javascript:void(0);">반송관리</a>
                                 </li>
                             </ul>
@@ -126,10 +134,7 @@
             <!-- admin_container -->
             <div class="admin_container">
                 <div class="title">
-                    <h2>반송관리</h2>
-                    <div class="desc">
-                        접수과정에서 반송처리된 내역을 확인할 수 있습니다.
-                    </div>
+                    <h2>회원정보관리</h2>
                 </div>
                 <main>
                     <div class="search_box_wrap">
@@ -137,14 +142,15 @@
                             <div class="row col_1">
                                 <h3>조회기간</h3>
                                 <div class="selectbox">
-                                    <p class="selected">반송확정일</p>
+                                    <p class="selected">원료등록일</p>
                                     <div class="option_group">
                                         <div class="inner">
                                             <ul>
                                                 <li class="active">
-                                                    반송확정일
+                                                    원료등록일
                                                 </li>
-                                                <li>반송완료일</li>
+                                                <li>특가시작일</li>
+                                                <li>최종수정일</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -200,9 +206,10 @@
                                         <div class="inner">
                                             <ul>
                                                 <li class="active">전체</li>
-                                                <li>접수번호</li>
-                                                <li>업체명</li>
+                                                <li>회사명</li>
                                                 <li>사업자번호</li>
+                                                <li>아이디</li>
+                                                <li>회원명</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -221,104 +228,118 @@
                     <div class="main_table_wrap">
                         <div class="table_header">
                             <div class="counter">
-                                총 <b>101</b>건의 내역이 있습니다.
+                                총 <b>101</b>건의 접수완료 내역이 있습니다.
+                            </div>
+                            <div class="btn_wrap">
+                                <button
+                                    class="btn btn_border_secondary btn_del"
+                                    onclick="modalOpen('#alert_02')"
+                                >
+                                    체크한 회원 삭제
+                                </button>
+                                <button
+                                    class="btn btn_secondary btn_check"
+                                    onclick="modalOpen('#alert_01')"
+                                >
+                                    체크한 회원 승인
+                                </button>
                             </div>
                         </div>
                         <div class="table_body">
                             <table>
                                 <colgroup>
+                                    <col style="width: 30px" />
                                     <col style="width: 72px" />
-                                    <col style="width: 569px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 260px" />
+                                    <col style="width: 433px" />
+                                    <col style="width: 104px" />
+                                    <col style="width: 433px" />
                                     <col style="width: 160px" />
-                                    <col style="width: 80px" />
-                                    <col style="width: 91px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 96px" />
                                     <col style="width: 80px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>#</th>
-                                        <th>접수번호</th>
-                                        <th>접수일</th>
-                                        <th>반송확정일</th>
-                                        <th>반송완료일</th>
+                                        <th>아이디</th>
+                                        <th>회원명</th>
                                         <th>업체명</th>
                                         <th>사업자번호</th>
-                                        <th>현재상태</th>
-                                        <th>반송사유</th>
-                                        <th>수정</th>
+                                        <th>가입일자</th>
+                                        <th>승인일자</th>
+                                        <th>탈퇴일자</th>
+                                        <th>승인</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_01"
+                                                />
+                                                <label
+                                                    for="chk_01"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
                                         <td>1</td>
                                         <td>
-                                            <span
+                                            <a
                                                 onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
                                                 class="link"
-                                                >1234567890</span
+                                                >abcde123456@gmail.com</a
                                             >
                                         </td>
-                                        <td>2022.12.12</td>
-                                        <td>2022.12.12</td>
-                                        <td>2022.12.12</td>
-                                        <td>
-                                            <span
-                                                onclick="modalOpen('#modal_02')"
-                                                class="link"
-                                                >뉴트리라이프케어</span
-                                            >
-                                        </td>
+                                        <td>홍길동</td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>123-456-7890</td>
-                                        <td>반송완료</td>
-                                        <td>
-                                            <span
-                                                onclick="modalOpen('#modal_03')"
-                                                class="link"
-                                                >사유보기</span
-                                            >
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <span
-                                                onclick="modalOpen('#modal_01')"
-                                                class="link"
-                                                >1234567890</span
-                                            >
-                                        </td>
                                         <td>2022.12.12</td>
                                         <td>2022.12.12</td>
-                                        <td>2022.12.12</td>
-                                        <td>
-                                            <span
-                                                onclick="modalOpen('#modal_02')"
-                                                class="link"
-                                                >뉴트리라이프케어</span
-                                            >
-                                        </td>
-                                        <td>123-456-7890</td>
-                                        <td class="fc_danger">반송요청</td>
-                                        <td>
-                                            <span
-                                                onclick="modalOpen('#modal_03')"
-                                                class="link"
-                                                >사유보기</span
-                                            >
-                                        </td>
+                                        <td>-</td>
                                         <td>
                                             <button
-                                                onclick="modalOpen('#alert_01')"
+                                                onclick="modalOpen('#modal_04')"
                                                 class="btn btn_border_secondary sm"
                                             >
-                                                반송완료
+                                                승인
                                             </button>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_02"
+                                                />
+                                                <label
+                                                    for="chk_02"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >abcde123456@gmail.com</a
+                                            >
+                                        </td>
+                                        <td>홍길동</td>
+                                        <td>뉴트리라이프케어</td>
+                                        <td>123-456-7890</td>
+                                        <td>2022.12.12</td>
+                                        <td>-</td>
+                                        <td>2022.12.12</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -357,11 +378,12 @@
             </div>
             <!-- //admin_container -->
         </div>
+
         <!-- modal_01 -->
         <div class="modal_wrap" id="modal_01">
             <div class="modal">
                 <div class="modal_header">
-                    <h3>접수신청상세</h3>
+                    <h3>회원정보</h3>
                     <a
                         href="javascript:void(0);"
                         class="modal_close"
@@ -374,155 +396,9 @@
                         <section class="contents_box">
                             <h3>기본 정보</h3>
                             <div class="content_list">
-                                <h4>카테고리</h4>
-                                <div class="detail">
-                                    <p>건강식품</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>원산지</h4>
-                                <div class="detail">
-                                    <p>미국</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>원료명</h4>
-                                <div class="detail">
-                                    <p>옥수수 수염 레몬밤</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>원료설명</h4>
-                                <div class="detail">
-                                    <p>
-                                        옥수수 수염 레몬밤은 이뇨작용을 통해
-                                        노폐물을 제거하고 시큼한 맛으로 소화를
-                                        도와줌옥수수 수염 레몬밤은 이뇨작용을
-                                        통해 노폐물을 제거하고 시큼한 맛으로
-                                        소화를 도와줌
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>유통기한</h4>
-                                <div class="detail">
-                                    <p>2023.12.12 ~ 2023.12.12</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>제조원</h4>
-                                <div class="detail">
-                                    <p>올드트리라이프</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>구입처</h4>
-                                <div class="detail">
-                                    <p>-</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>수량(단위)</h4>
-                                <div class="detail">
-                                    <ul class="list_st">
-                                        <li>2개(300g)</li>
-                                        <li>3개(600g)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="contents_box">
-                            <h3>판매자 정보</h3>
-                            <div class="content_list">
-                                <h4>규격(성적서)</h4>
-                                <div class="detail">
-                                    <a
-                                        class="link_st"
-                                        href="javascript:void(0);"
-                                        >image_sample.pdf</a
-                                    >
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>제조원</h4>
-                                <div class="detail">
-                                    <a
-                                        class="link_st"
-                                        href="javascript:void(0);"
-                                        >image_sample.pdf</a
-                                    >
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>구입처</h4>
-                                <div class="detail">
-                                    <ul class="list_st">
-                                        <li>수입</li>
-                                        <li>미국123</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>국내 증빙자료</h4>
-                                <div class="detail">
-                                    <a
-                                        class="link_st"
-                                        href="javascript:void(0);"
-                                        >image_sample.pdf</a
-                                    >
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>수입 증빙자료</h4>
-                                <div class="detail">
-                                    <a
-                                        class="link_st"
-                                        href="javascript:void(0);"
-                                        >image_sample.pdf</a
-                                    >
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>기타 증빙</h4>
-                                <div class="detail">
-                                    <a
-                                        class="link_st"
-                                        href="javascript:void(0);"
-                                        >image_sample.pdf</a
-                                    >
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <div class="modal_footer">
-                    <div class="btn_wrap">
-                        <button class="btn btn_primary">확인</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //modal_01 -->
-        <!-- modal_02 -->
-        <div class="modal_wrap" id="modal_02">
-            <div class="modal">
-                <div class="modal_header">
-                    <h3>업체정보</h3>
-                    <a
-                        href="javascript:void(0);"
-                        class="modal_close"
-                        onclick="modalClose('#modal_02')"
-                        >x</a
-                    >
-                </div>
-                <div class="modal_body">
-                    <div class="inner">
-                        <section class="contents_box">
-                            <h3>기본 정보</h3>
-                            <div class="content_list">
                                 <h4>아이디</h4>
                                 <div class="detail">
-                                    <p>hongkd1234</p>
+                                    <p>abcde123456@gmail.com</p>
                                 </div>
                             </div>
                             <div class="content_list">
@@ -532,9 +408,36 @@
                                 </div>
                             </div>
                             <div class="content_list">
+                                <h4>휴대폰번호</h4>
+                                <div class="detail">
+                                    <p>010-1234-5677</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>가입일</h4>
+                                <div class="detail"><p>2022.12.12</p></div>
+                            </div>
+                            <div class="content_list">
+                                <h4>승인일</h4>
+                                <div class="detail"><p>2022.12.12</p></div>
+                            </div>
+                            <div class="content_list">
+                                <h4>탈퇴일</h4>
+                                <div class="detail"><p>2022.12.12</p></div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <h3>사업자 정보</h3>
+                            <div class="content_list">
                                 <h4>회사명</h4>
                                 <div class="detail">
                                     <p>뉴트리라이프케어</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>대표자명</h4>
+                                <div class="detail">
+                                    <p>홍길동</p>
                                 </div>
                             </div>
                             <div class="content_list">
@@ -559,39 +462,14 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="content_list">
-                                <h4>가입일시</h4>
-                                <div class="detail">
-                                    <p>2023.06.01</p>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="contents_box">
-                            <h3>판매자 정보</h3>
-                            <div class="content_list">
-                                <h4>담당자명</h4>
-                                <div class="detail">
-                                    <p>홍길동</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>담당자 연락처</h4>
-                                <div class="detail">
-                                    <p>010-1234-5678</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>담당자 이메일</h4>
-                                <div class="detail">
-                                    <p>honggildong1234@naver.com</p>
-                                </div>
-                            </div>
+
                             <div class="content_list">
                                 <h4>은행명</h4>
                                 <div class="detail">
                                     <p>국민은행</p>
                                 </div>
                             </div>
+
                             <div class="content_list">
                                 <h4>계좌번호</h4>
                                 <div class="detail">
@@ -605,6 +483,12 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="content_list">
+                                <h4>예금주</h4>
+                                <div class="detail">
+                                    <p>뉴트리라이프</p>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>
@@ -615,38 +499,13 @@
                 </div>
             </div>
         </div>
-        <!-- //modal_02 -->
-        <!-- modal_03 -->
-        <div class="modal_wrap md_st" id="modal_03">
-            <div class="modal">
-                <div class="modal_header"><h3>반송사유</h3></div>
-                <div class="modal_body only_sub_txt">
-                    <p class="sub_txt">
-                        접수내용과 실제원료의 용량이 맞지 않음<br />
-                        다시 수정해서 접수요망
-                    </p>
-                </div>
-                <div class="modal_footer">
-                    <div class="btn_wrap">
-                        <button
-                            onclick="modalClose('#modal_03')"
-                            class="btn btn_primary"
-                        >
-                            확인
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //modal_03 -->
+        <!-- //modal_01 -->
         <!-- alert_01 -->
         <div class="modal_wrap alert_st" id="alert_01">
             <div class="modal">
                 <div class="modal_body">
                     <div class="alert_msg">
-                        진행상태를
-                        <b class="fc_primary">‘반송완료’</b> 로
-                        변경하시겠습니까?
+                        체크한 회원을<br/ >승인하시겠습니까?
                     </div>
                 </div>
                 <div class="modal_footer">
@@ -657,11 +516,33 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">상태변경</button>
+                        <button class="btn btn_primary">승인</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- //alert_01 -->
+        <!-- alert_02 -->
+        <div class="modal_wrap alert_st" id="alert_02">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">
+                        체크한 회원을<br/ > 삭제하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalClose('#alert_02')"
+                        >
+                            취소
+                        </button>
+                        <button class="btn btn_danger">삭제</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_02 -->
     </body>
 </html>
