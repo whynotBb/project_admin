@@ -201,27 +201,93 @@
                                     />
                                 </div>
                             </div>
-                            <div class="row col_1">
-                                <h3>검색어</h3>
-                                <div class="selectbox">
-                                    <p class="selected">전체</p>
-                                    <div class="option_group">
-                                        <div class="inner">
-                                            <ul>
-                                                <li class="active">전체</li>
-                                                <li>회사명</li>
-                                                <li>사업자번호</li>
-                                                <li>아이디</li>
-                                                <li>회원명</li>
-                                            </ul>
+                            <div class="col_2">
+                                <div class="row col_2_1">
+                                    <h3>검색어</h3>
+                                    <div class="selectbox">
+                                        <p class="selected">전체</p>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">전체</li>
+                                                    <li>접수번호</li>
+                                                    <li>원료명</li>
+                                                    <li>업체명</li>
+                                                    <li>사업자번호</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        placeholder="검색어를 입력해 주세요"
+                                    />
+                                </div>
+                                <div class="row col_2_1">
+                                    <h3>현재상태</h3>
+                                    <div class="radiobox_wrap">
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_all"
+                                            />
+                                            <label for="current_all"
+                                                >전체</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_01"
+                                            />
+                                            <label for="current_01"
+                                                >주문접수</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_02"
+                                            />
+                                            <label for="current_02"
+                                                >배송준비</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_03"
+                                            />
+                                            <label for="current_03"
+                                                >품절</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_04"
+                                            />
+                                            <label for="current_04"
+                                                >배송중</label
+                                            >
+                                        </div>
+                                        <div class="radiobox">
+                                            <input
+                                                type="radio"
+                                                name="current_state"
+                                                id="current_05"
+                                            />
+                                            <label for="current_05"
+                                                >배송완료</label
+                                            >
                                         </div>
                                     </div>
                                 </div>
-                                <input
-                                    class="flex_1"
-                                    type="text"
-                                    placeholder="검색어를 입력해 주세요"
-                                />
                             </div>
                         </div>
                         <div class="search_btn">
@@ -231,49 +297,53 @@
                     <div class="main_table_wrap">
                         <div class="table_header">
                             <div class="counter">
-                                총 <b>101</b>건의 접수완료 내역이 있습니다.
+                                총 <b>101</b>건의 내역이 있습니다.
                             </div>
                             <div class="btn_wrap">
                                 <button
                                     class="btn btn_border_secondary btn_del"
                                     onclick="modalOpen('#alert_02')"
                                 >
-                                    체크한 회원 삭제
+                                    체크한 접수건 발주확인 처리
                                 </button>
-                                <button
-                                    class="btn btn_secondary btn_check"
-                                    onclick="modalOpen('#alert_01')"
-                                >
-                                    체크한 회원 승인
-                                </button>
+                                
                             </div>
                         </div>
                         <div class="table_body">
                             <table>
                                 <colgroup>
+                                    <!-- col 14 -->
                                     <col style="width: 30px" />
-                                    <col style="width: 72px" />
-                                    <col style="width: 433px" />
-                                    <col style="width: 104px" />
-                                    <col style="width: 433px" />
-                                    <col style="width: 160px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
+                                    <col style="width: 70px" />
+                                    <col style="width: 128px" />
+                                    <col style="width: 119px" />
                                     <col style="width: 80px" />
+                                    <col style="width: 287px" />
+                                    <col style="width: 100px" />
+                                    <col style="width: 100px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 126px" />
+                                    <col style="width: 162px" />
+                                    <col style="width: 100px" />
+                                    <col style="width: 100px" />
+                                    <col style="width: 100px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th></th>
                                         <th>#</th>
-                                        <th>아이디</th>
-                                        <th>회원명</th>
-                                        <th>업체명</th>
-                                        <th>사업자번호</th>
-                                        <th>가입일자</th>
-                                        <th>승인일자</th>
-                                        <th>탈퇴일자</th>
-                                        <th>승인</th>
+                                        <th>주문번호</th>
+                                        <th>주문일시</th>
+                                        <th>주문상태</th>
+                                        <th>원료명</th>
+                                        <th>용량(g)</th>
+                                        <th>수량(개)</th>
+                                        <th>주문자<br/>수령자</th>
+                                        <th>주문자 연락처<br/>수령자 연락처</th>
+                                        <th>배송정보</th>
+                                        <th>원료가격(원)</th>
+                                        <th>수수료(원)</th>
+                                        <th>정산금액(원)</th>
                                     </tr>
                                 </thead>
                                 <tbody>

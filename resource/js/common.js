@@ -95,7 +95,7 @@ $(document).ready(function () {
         opens: "left",
         autoApply: true,
         locale: datepickerOption,
-    });
+    }).val('').attr("placeholder","시작일자 → 종료일자");
     $('input[name="singleDate"]').daterangepicker({
         opens: "left",
         autoApply: true,
