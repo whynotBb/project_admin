@@ -64,6 +64,11 @@ $(document).ready(function () {
         $(".tab_menu li").removeClass("on");
         $(this).addClass("on");
     });
+    // 정산관리 - tab_menu
+    $(".table_tab_menu li").on("click", function () {
+        $(".table_tab_menu li").removeClass("on");
+        $(this).addClass("on");
+    });
     // date range picker
     const datepickerOption = {
         format: "YYYY-MM-DD",
@@ -91,11 +96,14 @@ $(document).ready(function () {
         ],
         firstDay: 1,
     };
-    $('input[name="daterange"]').daterangepicker({
-        opens: "left",
-        autoApply: true,
-        locale: datepickerOption,
-    }).val('').attr("placeholder","시작일자 → 종료일자");
+    $('input[name="daterange"]')
+        .daterangepicker({
+            opens: "left",
+            autoApply: true,
+            locale: datepickerOption,
+        })
+        .val("")
+        .attr("placeholder", "시작일자 → 종료일자");
     $('input[name="singleDate"]').daterangepicker({
         opens: "left",
         autoApply: true,

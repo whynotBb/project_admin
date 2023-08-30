@@ -92,12 +92,12 @@
                         <li>
                             <p>주문관리</p>
                             <ul class="depth_2">
-                                <li class="on">
+                                <li>
                                     <a href="javascript:void(0);"
                                         >주문/배송관리</a
                                     >
                                 </li>
-                                <li>
+                                <li class="on">
                                     <a href="javascript:void(0);">반품 관리</a>
                                 </li>
                                 <li>
@@ -134,9 +134,9 @@
             <!-- admin_container -->
             <div class="admin_container">
                 <div class="title">
-                    <h2>주문/배송관리</h2>
+                    <h2>반품관리</h2>
                     <div class="desc">
-                        주문과 배송내역을 관리할 수 있습니다.
+                        반품요청된 내역을 관리할 수 있습니다.
                     </div>
                 </div>
                 <main>
@@ -145,15 +145,13 @@
                             <div class="row col_1">
                                 <h3>조회기간</h3>
                                 <div class="selectbox">
-                                    <p class="selected">주문일</p>
+                                    <p class="selected">전체</p>
                                     <div class="option_group">
                                         <div class="inner">
                                             <ul>
-                                                <li class="active">주문일</li>
+                                                <li class="active">전체</li>
+                                                <li>반품요청일</li>
                                                 <li>주문접수일</li>
-                                                <li>배송준비일</li>
-                                                <li>배송중</li>
-                                                <li>배송완료일</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -247,39 +245,42 @@
                             </div>
                             <div class="btn_wrap">
                                 <button
-                                    class="btn btn_border_secondary btn_del"
+                                    class="btn btn_secondary btn_check"
                                     onclick="modalOpen('#alert_02')"
                                 >
-                                    체크한 접수건 발주확인 처리
+                                    회수완료
+                                </button>
+                                <button
+                                    class="btn btn_secondary btn_check"
+                                    onclick="modalOpen('#alert_01')"
+                                >
+                                    반품승인
                                 </button>
                             </div>
                         </div>
                         <div class="table_body order_delivery_mng_table">
                             <table>
                                 <colgroup>
-                                    <!-- col 14 -->
+                                    <!-- col 11 -->
                                     <col style="width: 30px" />
                                     <col style="width: 70px" />
                                     <col style="width: 128px" />
                                     <col style="width: 119px" />
                                     <col style="width: 80px" />
-                                    <col style="width: 287px" />
+                                    <col style="width: 374px" />
                                     <col style="width: 100px" />
                                     <col style="width: 100px" />
                                     <col style="width: 96px" />
                                     <col style="width: 126px" />
-                                    <col style="width: 162px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
+                                    <col style="width: 374px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th></th>
                                         <th>#</th>
                                         <th>주문번호</th>
-                                        <th>주문일시</th>
-                                        <th>주문상태</th>
+                                        <th>반품요청일시</th>
+                                        <th>반품상태</th>
                                         <th>원료명</th>
                                         <th>용량<i>(g)</i></th>
                                         <th>수량<i>(개)</i></th>
@@ -287,10 +288,7 @@
                                         <th>
                                             주문자 연락처<br />수령자 연락처
                                         </th>
-                                        <th>배송정보</th>
-                                        <th>원료가격<i>(원)</i></th>
-                                        <th>수수료<i>(원)</i></th>
-                                        <th>정산금액<i>(원)</i></th>
+                                        <th>반품사유</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -317,8 +315,17 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
-                                        <td>주문접수</td>
-                                        <td>옥수수 수염 레몬밤</td>
+                                        <td>반품완료</td>
+                                        <td>
+                                            <div class="ellipsis">
+                                                옥수수 수염 레몬밤옥수수 수염
+                                                레몬밤옥수수 수염 레몬밤옥수수
+                                                수염 레몬밤옥수수 수염
+                                                레몬밤옥수수 수염 레몬밤수염
+                                                레몬밤옥수수 수염 레몬밤옥수수
+                                                수염 레몬밤
+                                            </div>
+                                        </td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -329,10 +336,7 @@
                                             010-1234-5678<br />
                                             010-1234-5678
                                         </td>
-                                        <td>-</td>
-                                        <td>1,234,567</td>
-                                        <td>1,234,567</td>
-                                        <td>1,234,567</td>
+                                        <td>다른원료주문</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -357,8 +361,12 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
-                                        <td class="fc_danger">배송준비</td>
-                                        <td>옥수수 수염 레몬밤</td>
+                                        <td class="fc_danger">반품요청</td>
+                                        <td>
+                                            <div class="ellipsis">
+                                                옥수수 수염 레몬밤
+                                            </div>
+                                        </td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -369,10 +377,7 @@
                                             010-1234-5678<br />
                                             010-1234-5678
                                         </td>
-                                        <td>-</td>
-                                        <td>1,234,567</td>
-                                        <td>1,234,567</td>
-                                        <td>1,234,567</td>
+                                        <td>다른원료주문</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -397,8 +402,12 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
-                                        <td class="fc_primary">배송완료</td>
-                                        <td>옥수수 수염 레몬밤</td>
+                                        <td class="fc_primary">회수완료</td>
+                                        <td>
+                                            <div class="ellipsis">
+                                                옥수수 수염 레몬밤
+                                            </div>
+                                        </td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -409,13 +418,7 @@
                                             010-1234-5678<br />
                                             010-1234-5678
                                         </td>
-                                        <td>
-                                            우체국<br />
-                                            1234567891213
-                                        </td>
-                                        <td>1,234,567</td>
-                                        <td>1,234,567</td>
-                                        <td>1,234,567</td>
+                                        <td>다른원료주문</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -586,25 +589,52 @@
                                         <p>주문접수</p>
                                         <span>2023.07.01</span>
                                     </div>
-                                    <div class="box active">
+                                    <div class="box disabled">
                                         <p>배송준비</p>
                                         <span>2023.07.01</span>
                                     </div>
-                                    <div class="box"><p>품절</p></div>
-                                    <div class="box"><p>배송중</p></div>
-                                    <div class="box"><p>배송완료</p></div>
+                                    <div class="box disabled"><p>품절</p></div>
+                                    <div class="box disabled">
+                                        <p>배송중</p>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>배송완료</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="state_list">
                                 <h4>취소상태</h4>
                                 <div class="detail cancle">
-                                    <div class="box active">
+                                    <div class="box disabled">
                                         <p>취소요청</p>
                                     </div>
                                     <div class="box disabled">
                                         <p>취소승인</p>
                                     </div>
-                                    <div class="box"><p>취소완료</p></div>
+                                    <div class="box disabled">
+                                        <p>취소완료</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="state_list">
+                                <h4>반품상태</h4>
+                                <div class="detail cancle">
+                                    <div class="box disabled">
+                                        <p>반품요청</p>
+                                        <span>2023.07.01</span>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>회수접수</p>
+                                        <span>2023.07.01</span>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>회수완료</p>
+                                        <span>2023.07.01</span>
+                                    </div>
+                                    <div class="box active">
+                                        <p>반품완료</p>
+                                        <span>2023.07.01</span>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -625,7 +655,12 @@
             <div class="modal">
                 <div class="modal_body">
                     <div class="alert_msg">
-                        체크한 회원을<br />승인하시겠습니까?
+                        <p class="info_txt">
+                            회수완료 처리없이 반품승인을 하실 경우<br />
+                            회수완료 및 반품승인이 동시에 처리됩니다.
+                        </p>
+                        <b class="fc_danger">반품승인(환불)</b>처리를<br />
+                        를 진행하시겠습니까?
                     </div>
                 </div>
                 <div class="modal_footer">
@@ -636,7 +671,7 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">승인</button>
+                        <button class="btn btn_primary">처리하기</button>
                     </div>
                 </div>
             </div>
@@ -647,7 +682,12 @@
             <div class="modal">
                 <div class="modal_body">
                     <div class="alert_msg">
-                        체크한 회원을<br/ > 삭제하시겠습니까?
+                        <p class="info_txt">
+                            회수완료 처리시<br />
+                            이전 상태로 변경이 불가능합니다.
+                        </p>
+                        <b class="fc_primary">회수완료</b>처리를
+                        진행하시겠습니까?
                     </div>
                 </div>
                 <div class="modal_footer">
@@ -658,7 +698,7 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_danger">삭제</button>
+                        <button class="btn btn_primary">처리하기</button>
                     </div>
                 </div>
             </div>

@@ -140,6 +140,14 @@
             border-top: 1px dashed $border-base-light;
         }
     }
+    h4 {
+        font-size: 2rem;
+        line-height: 2.6rem;
+        margin-bottom: $space-lg;
+    }
+    .biz_num {
+        margin-bottom: $space-lg;
+    }
     .content_list {
         margin-top: $space-m;
         padding-left: 13.2rem;
@@ -174,14 +182,18 @@
                 gap: 2rem;
                 li {
                     position: relative;
+                    min-height: 3.6rem;
+                    line-height: 2.3rem;
+                    padding: 0.6rem 0;
                     &::before {
                         content: "";
                         width: 1px;
                         height: 1rem;
                         background: $border-base;
                         position: absolute;
-                        top: 1.3rem;
+                        top: 50%;
                         right: -1rem;
+                        transform: translateY(-50%);
                     }
                     &:last-child::before {
                         display: none;
@@ -214,6 +226,65 @@
                 margin-top: $space-m;
                 &:first-child {
                     margin-top: 0;
+                }
+            }
+        }
+    }
+    .state_list {
+        h4 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 1.6rem;
+        }
+        .detail {
+            display: flex;
+            gap: $space-lg;
+            margin: 1.6rem 0 2.4rem 0;
+            .box {
+                cursor: pointer;
+                width: 12.8rem;
+                height: 11.4rem;
+                border: 1px solid $border-base-light;
+                border-radius: 2.4rem;
+                display: flex;
+                gap: $space-m;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+                span {
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                }
+                &.active {
+                    color: #fff;
+                    background: $color-primary;
+                    border-color: $color-primary;
+                }
+                &.disabled {
+                    cursor: default;
+                    color: $text-disabled;
+                    background: $color-g1;
+                    border-color: $color-g1;
+                }
+            }
+            &.cancle {
+                .box {
+                    color: $color-s2;
+                    &.active {
+                        color: #fff;
+                        background: $color-s2;
+                        border-color: $color-s2;
+                    }
+                    &.disabled {
+                        cursor: default;
+                        color: $text-disabled;
+                        background: $color-g1;
+                        border-color: $color-g1;
+                    }
                 }
             }
         }
@@ -613,5 +684,53 @@
         width: 20rem !important;
         background: $color-primary url(../images/btn_check.svg) no-repeat left
             6rem center !important;
+    }
+}
+.delivery_search_box {
+    display: flex;
+    gap: 1.2rem;
+    .btn {
+        width: 12.7rem;
+    }
+}
+.settlement_table {
+    table {
+        th,
+        td {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            height: 7.4rem;
+            line-height: 7.4rem;
+            padding: 0 0.8rem;
+        }
+        th {
+            height: 5.2rem;
+            line-height: 5.2rem;
+            background: $color-g1;
+        }
+        tr {
+            td:nth-child(4) {
+                color: $color-primary;
+            }
+        }
+    }
+}
+.table_tab_menu {
+    display: flex;
+    border-bottom: 1px solid $border-base-light;
+    margin-bottom: 4rem;
+    li {
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        height: 4.4rem;
+        line-height: 4.4rem;
+        padding: 0 1.6rem;
+        color: $text-disabled;
+        &.on {
+            color: $text-body;
+            border-bottom: 3px solid $text-body;
+        }
     }
 }
