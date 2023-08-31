@@ -168,183 +168,64 @@
                         </div>
                     </section>
                     <ul class="table_tab_menu">
-                        <li class="on">상세 정산 내역</li>
-                        <li>정산 예정 원료 목록</li>
+                        <li class="on" onclick="contentsView('#tab_con_01')">
+                            상세 정산 내역
+                        </li>
+                        <li onclick="contentsView('#tab_con_02')">
+                            정산 예정 원료 목록
+                        </li>
                     </ul>
-                    <div class="main_table_wrap" id="tab_con_01">
+                    <div class="main_table_wrap tab_con" id="tab_con_01">
                         <div class="table_header">
                             <div class="counter">
                                 총 <b>101</b>건의 내역이 있습니다.
                             </div>
                             <div class="btn_wrap">
                                 <button
-                                    class="btn btn_secondary btn_check"
-                                    onclick="modalOpen('#alert_01')"
+                                    class="btn btn_border_secondary btn_download"
                                 >
-                                    취소승인
+                                    엑셀 다운로드
                                 </button>
                             </div>
                         </div>
-                        <div class="table_body order_delivery_mng_table">
+                        <div class="table_body settlement_mng_table st_2">
                             <table>
                                 <colgroup>
-                                    <!-- col 11 -->
-                                    <col style="width: 30px" />
+                                    <!-- col 9 -->
                                     <col style="width: 70px" />
-                                    <col style="width: 128px" />
-                                    <col style="width: 119px" />
-                                    <col style="width: 80px" />
-                                    <col style="width: 374px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 126px" />
-                                    <col style="width: 374px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
+                                    <col style="width: 191px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>#</th>
-                                        <th>주문번호</th>
-                                        <th>취소요청일시</th>
-                                        <th>주문상태</th>
-                                        <th>원료명</th>
-                                        <th>용량<i>(g)</i></th>
-                                        <th>수량<i>(개)</i></th>
-                                        <th>주문자<br />수령자</th>
-                                        <th>
-                                            주문자 연락처<br />수령자 연락처
-                                        </th>
-                                        <th>취소사유</th>
+                                        <th>매출일자</th>
+                                        <th>매출액<i>(원)</i></th>
+                                        <th>수수료<i>(원)</i></th>
+                                        <th>원료매입가<i>(원)</i></th>
+                                        <th>소분작업비<i>(원)</i></th>
+                                        <th>부자재비<i>(원)</i></th>
+                                        <th>보관료<i>(원)</i></th>
+                                        <th>최종지급액<i>(원)</i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_01"
-                                                />
-                                                <label
-                                                    for="chk_01"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>1</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
-                                        <td>2022.12.12 12:12</td>
-                                        <td>취소완료</td>
-                                        <td>
-                                            <div class="ellipsis">
-                                                옥수수 수염 레몬밤
-                                            </div>
-                                        </td>
+                                        <td>2022.12.12</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
-                                        <td>
-                                            홍길동<br />
-                                            이박호
-                                        </td>
-                                        <td>
-                                            010-1234-5678<br />
-                                            010-1234-5678
-                                        </td>
-                                        <td>다른원료주문</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
-                                        <td>2</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
-                                        <td>2022.12.12 12:12</td>
-                                        <td class="fc_danger">취소요청</td>
-                                        <td>
-                                            <div class="ellipsis">
-                                                옥수수 수염 레몬밤 옥수수 수염
-                                                레몬밤옥수수 수염 레몬밤옥수수
-                                                수염 레몬밤옥수수 수염
-                                                레몬밤옥수수 수염 레몬밤옥수수
-                                                수염 레몬밤옥수수 수염 레몬밤
-                                            </div>
-                                        </td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
-                                        <td>
-                                            홍길동<br />
-                                            이박호
-                                        </td>
-                                        <td>
-                                            010-1234-5678<br />
-                                            010-1234-5678
-                                        </td>
-                                        <td>다른원료주문</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_03"
-                                                />
-                                                <label
-                                                    for="chk_03"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
-                                        <td>3</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
-                                        <td>2022.12.12 12:12</td>
-                                        <td class="fc_primary">회수완료</td>
-                                        <td>
-                                            <div class="ellipsis">
-                                                옥수수 수염 레몬밤
-                                            </div>
-                                        </td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
-                                        <td>
-                                            홍길동<br />
-                                            이박호
-                                        </td>
-                                        <td>
-                                            010-1234-5678<br />
-                                            010-1234-5678
-                                        </td>
-                                        <td>다른원료주문</td>
+                                        <td>1,234,567</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -374,78 +255,116 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main_table_wrap" id="tab_con_02">
+                    <div
+                        class="main_table_wrap tab_con"
+                        id="tab_con_02"
+                        style="display: none"
+                    >
+                        <div class="search_box_wrap">
+                            <div class="search_box">
+                                <div class="col_2">
+                                    <div class="row col_2_1">
+                                        <h3>기간</h3>
+                                        <div class="selectbox">
+                                            <p class="selected">정산예정일</p>
+                                            <div class="option_group">
+                                                <div class="inner">
+                                                    <ul>
+                                                        <li class="active">
+                                                            정산예정일
+                                                        </li>
+                                                        <li>option2</li>
+                                                        <li>option3</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="date_wrap">
+                                            <input
+                                                class="date_picker"
+                                                type="text"
+                                                name="daterange"
+                                                id="dateRange"
+                                                readonly
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="row col_2_1">
+                                        <h3>검색어</h3>
+                                        <input
+                                            class="flex_1"
+                                            type="text"
+                                            placeholder="검색어를 입력해 주세요"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search_btn st_2">
+                                <button class="btn btn_search">검색</button>
+                            </div>
+                        </div>
                         <div class="table_header">
                             <div class="counter">
                                 총 <b>10</b>건의 내역이 있습니다.
                             </div>
                             <div class="btn_wrap">
                                 <button
-                                    class="btn btn_secondary btn_check"
-                                    onclick="modalOpen('#alert_01')"
+                                    class="btn btn_border_secondary btn_download"
                                 >
-                                    취소승인
+                                    엑셀 다운로드
                                 </button>
                             </div>
                         </div>
-                        <div class="table_body order_delivery_mng_table">
+                        <div class="table_body settlement_mng_table st_3">
                             <table>
                                 <colgroup>
-                                    <!-- col 11 -->
-                                    <col style="width: 30px" />
+                                    <!-- col 13 -->
                                     <col style="width: 70px" />
                                     <col style="width: 128px" />
-                                    <col style="width: 119px" />
+                                    <col style="width: 126px" />
                                     <col style="width: 80px" />
-                                    <col style="width: 374px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
+                                    <col style="width: 268px" />
+                                    <col style="width: 120px" />
+                                    <col style="width: 80px" />
                                     <col style="width: 96px" />
                                     <col style="width: 126px" />
-                                    <col style="width: 374px" />
+                                    <col style="width: 104px" />
+                                    <col style="width: 120px" />
+                                    <col style="width: 120px" />
+                                    <col style="width: 120px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>#</th>
                                         <th>주문번호</th>
-                                        <th>취소요청일시</th>
+                                        <th>주문일시</th>
                                         <th>주문상태</th>
                                         <th>원료명</th>
                                         <th>용량<i>(g)</i></th>
-                                        <th>수량<i>(개)</i></th>
-                                        <th>주문자<br />수령자</th>
+                                        <th>수량(개)</th>
                                         <th>
-                                            주문자 연락처<br />수령자 연락처
+                                            주문자<br />
+                                            수령자
                                         </th>
-                                        <th>취소사유</th>
+                                        <th>
+                                            주문자 연락처<br />
+                                            수령자 연락처
+                                        </th>
+                                        <th>
+                                            정산예정일<br />
+                                            정산완료일
+                                        </th>
+                                        <th>원료가격<i>(원)</i></th>
+                                        <th>수수료<i>(원)</i></th>
+                                        <th>정산금액<i>(원)</i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_01"
-                                                />
-                                                <label
-                                                    for="chk_01"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>1</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
+                                        <td>1234567890</td>
                                         <td>2022.12.12 12:12</td>
-                                        <td>취소완료</td>
+                                        <td>배송완료</td>
                                         <td>
                                             <div class="ellipsis">
                                                 옥수수 수염 레몬밤
@@ -461,39 +380,25 @@
                                             010-1234-5678<br />
                                             010-1234-5678
                                         </td>
-                                        <td>다른원료주문</td>
+                                        <td>
+                                            2022.12.12<br />
+                                            2022.12.12
+                                        </td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>2</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
+                                        <td>1234567890</td>
                                         <td>2022.12.12 12:12</td>
-                                        <td class="fc_danger">취소요청</td>
+                                        <td>배송완료</td>
                                         <td>
                                             <div class="ellipsis">
-                                                옥수수 수염 레몬밤 옥수수 수염
+                                                옥수수 수염 레몬밤옥수수 수염
                                                 레몬밤옥수수 수염 레몬밤옥수수
                                                 수염 레몬밤옥수수 수염
-                                                레몬밤옥수수 수염 레몬밤옥수수
-                                                수염 레몬밤옥수수 수염 레몬밤
+                                                레몬밤옥수수 수염 레몬밤
                                             </div>
                                         </td>
                                         <td>1,234,567</td>
@@ -506,48 +411,13 @@
                                             010-1234-5678<br />
                                             010-1234-5678
                                         </td>
-                                        <td>다른원료주문</td>
-                                    </tr>
-                                    <tr>
                                         <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_03"
-                                                />
-                                                <label
-                                                    for="chk_03"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
-                                        <td>3</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890</a
-                                            >
-                                        </td>
-                                        <td>2022.12.12 12:12</td>
-                                        <td class="fc_primary">회수완료</td>
-                                        <td>
-                                            <div class="ellipsis">
-                                                옥수수 수염 레몬밤
-                                            </div>
+                                            2022.12.12<br />
+                                            2022.12.12
                                         </td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
-                                        <td>
-                                            홍길동<br />
-                                            이박호
-                                        </td>
-                                        <td>
-                                            010-1234-5678<br />
-                                            010-1234-5678
-                                        </td>
-                                        <td>다른원료주문</td>
+                                        <td>1,234,567</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -576,6 +446,11 @@
                                 >
                             </div>
                         </div>
+                    </div>
+                    <div class="bottom_btn_wrap left_st">
+                        <button class="btn btn_border_secondary btn_list">
+                            목록으로
+                        </button>
                     </div>
                 </main>
                 <footer>

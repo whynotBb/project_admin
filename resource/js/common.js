@@ -24,7 +24,10 @@ function toastOpen(el) {
 function toastClose() {
     $(".toast_wrap").fadeOut();
 }
-
+function contentsView(el) {
+    $(".tab_con").hide();
+    $(el).show();
+}
 $(document).ready(function () {
     // text editor
     $("#summernote").summernote({
@@ -67,6 +70,11 @@ $(document).ready(function () {
     // 정산관리 - tab_menu
     $(".table_tab_menu li").on("click", function () {
         $(".table_tab_menu li").removeClass("on");
+        $(this).addClass("on");
+    });
+    //자주묻는질문 - tab menu
+    $(".check_tab_menu li").on("click", function () {
+        $(".check_tab_menu li").removeClass("on");
         $(this).addClass("on");
     });
     // date range picker
@@ -112,8 +120,14 @@ $(document).ready(function () {
     });
 
     //pagination
-    $(".pagination ul li").on("click", function () {
-        $(".pagination ul li").removeClass("on");
+    $(".pagination li").on("click", function () {
+        $(".pagination li").removeClass("on");
         $(this).addClass("on");
+    });
+
+    //input file custom
+    $("#file").on("change", function () {
+        var fileName = $("#file").val();
+        $(".upload-name").val(fileName);
     });
 });

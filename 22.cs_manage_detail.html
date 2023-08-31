@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>barter place admin</title>
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- date range picker -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        ></script>
+        <script
+            defer
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        ></script>
+        <!-- summernote -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <!-- CDN 한글화 -->
+
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+        <!-- ui common js -->
+        <script defer src="./resource/js/common.js"></script>
+
+        <!-- date range picker css -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <!-- summernote css -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+            rel="stylesheet"
+        />
+        <!-- ui common css -->
+        <link rel="stylesheet" href="./resource/css/style.css" />
+    </head>
+    <body>
+        <div class="admin_container_wrapper">
+            <!-- lnb_wrap -->
+            <div class="lnb_wrap">
+                <header>
+                    <h1>Barter Place</h1>
+                    <div class="my_info">
+                        <button class="btn btn_secondary">계정정보</button>
+                        <button class="btn btn_secondary">로그아웃</button>
+                    </div>
+                </header>
+                <nav>
+                    <ul class="depth_1">
+                        <li>
+                            <p>메인화면</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">대시보드</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">공지사항</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>회원정보</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >회원정보관리</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>원료관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">접수관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">입고관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">원료관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반송관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>주문관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >주문/배송관리</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반품 관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">취소 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>정산관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">정산 목록</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>고객센터</p>
+                            <ul class="depth_2">
+                                <li class="on">
+                                    <a href="javascript:void(0);">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >자주묻는 질문</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //lnb_wrap -->
+
+            <!-- admin_container -->
+            <div class="admin_container">
+                <div class="title">
+                    <h2>문의내역 상세</h2>
+                </div>
+                <main>
+                    <div class="contents_detail_wrap">
+                        <div class="detail_header">
+                            <div class="btn_right_wrap">
+                                <button
+                                    class="btn btn_border_secondary btn_del"
+                                >
+                                    삭제
+                                </button>
+                            </div>
+                        </div>
+                        <div class="detail_title">
+                            <span class="category">원료문의</span>
+                            <h3>반품신청 요청드립니다</h3>
+                            <ul class="title_info">
+                                <li>주문번호 : p343842434</li>
+                                <li>작작성자 : honggildong123@naver.com</li>
+                                <li>2023.12.12 12:12</li>
+                                <li>
+                                    처리상태 :
+                                    <span class="fc_danger">답변대기</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="answer_body">
+                            <div class="question">
+                                안녕하세요.<br />
+                                반품신청을 하고 싶습니다.<br />
+                                어떤절차로 해야 할까요?<br />
+                                <br />
+                                빠른답변 부탁드립니다.<br />
+                                감사합니다.
+                            </div>
+                            <div class="textarea_wrap">
+                                <textarea placeholder="답변 입력"></textarea>
+                                <p class="counter">(0/500자)</p>
+                            </div>
+                        </div>
+                        <div class="detail_footer">
+                        <button class="btn btn_border_secondary btn_list">
+                            목록으로
+                        </button>
+                        <div class="btn_right_wrap">
+                            <button class="btn btn_border_secondary">
+                                취소
+                            </button>
+                            <button class="btn btn_primary btn_add">
+                                답변하기
+                            </button>
+                            <!-- <button class="btn btn_primary btn_modify">
+                                수정하기
+                            </button> -->
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <p class="footer_copy">
+                        COPYRIGHT © (주)BARTERPLACE Co.,Ltd All RIGHT RESERVED.
+                    </p>
+                </footer>
+            </div>
+            <!-- //admin_container -->
+        </div>
+    </body>
+</html>

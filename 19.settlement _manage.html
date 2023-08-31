@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>barter place admin</title>
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- date range picker -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        ></script>
+        <script
+            defer
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        ></script>
+        <!-- summernote -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <!-- CDN 한글화 -->
+
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+        <!-- ui common js -->
+        <script defer src="./resource/js/common.js"></script>
+
+        <!-- date range picker css -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        />
+        <!-- summernote css -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+            rel="stylesheet"
+        />
+        <!-- ui common css -->
+        <link rel="stylesheet" href="./resource/css/style.css" />
+    </head>
+    <body>
+        <div class="admin_container_wrapper">
+            <!-- lnb_wrap -->
+            <div class="lnb_wrap">
+                <header>
+                    <h1>Barter Place</h1>
+                    <div class="my_info">
+                        <button class="btn btn_secondary">계정정보</button>
+                        <button class="btn btn_secondary">로그아웃</button>
+                    </div>
+                </header>
+                <nav>
+                    <ul class="depth_1">
+                        <li>
+                            <p>메인화면</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">대시보드</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">공지사항</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>회원정보</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >회원정보관리</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>원료관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">접수관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">입고관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">원료관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반송관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>주문관리</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >주문/배송관리</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">반품 관리</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">취소 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>정산관리</p>
+                            <ul class="depth_2">
+                                <li class="on">
+                                    <a href="javascript:void(0);">정산 목록</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>고객센터</p>
+                            <ul class="depth_2">
+                                <li>
+                                    <a href="javascript:void(0);">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                        >자주묻는 질문</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //lnb_wrap -->
+
+            <!-- admin_container -->
+            <div class="admin_container">
+                <div class="title">
+                    <h2>정산목록</h2>
+                    <div class="desc">
+                        접수업체별 판매내역과 정산내역을 확인할 수 있습니다.
+                    </div>
+                </div>
+                <main>
+                    <div class="search_box_wrap">
+                        <div class="search_box">
+                            <div class="col_2">
+                                <div class="row col_1">
+                                    <h3>정산월</h3>
+                                    <div class="selectbox">
+                                        <p class="selected">2023 6월</p>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">
+                                                        2023 6월
+                                                    </li>
+                                                    <li>2023 5월</li>
+                                                    <li>2023 4월</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col_2_1">
+                                    <h3>검색어</h3>
+                                    <div class="selectbox">
+                                        <p class="selected">전체</p>
+                                        <div class="option_group">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li class="active">전체</li>
+                                                    <li>접수번호</li>
+                                                    <li>원료명</li>
+                                                    <li>업체명</li>
+                                                    <li>사업자번호</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input
+                                        class="flex_1"
+                                        type="text"
+                                        placeholder="검색어를 입력해 주세요"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_btn st_2">
+                            <button class="btn btn_search">검색</button>
+                        </div>
+                    </div>
+                    <div class="main_table_wrap">
+                        <div class="table_header">
+                            <div class="counter">
+                                총 <b>101</b>건의 내역이 있습니다.
+                            </div>
+                        </div>
+                        <div class="table_body settlement_mng_table">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 70px" />
+                                    <col style="width: 288px" />
+                                    <col style="width: 288px" />
+                                    <col style="width: 288px" />
+                                    <col style="width: 288px" />
+                                    <col style="width: 288px" />
+                                    <col style="width: 88px" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>업체명</th>
+                                        <th>정산기준월</th>
+                                        <th>매출액<i>(원)</i></th>
+                                        <th>수수료<i>(원)</i></th>
+                                        <th>정산금액<i>(원)</i></th>
+                                        <th>정산일자</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <span class="link"
+                                                >뉴트리라이프케어</span
+                                            >
+                                        </td>
+                                        <td>2023.06</td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>2022.12.12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <a href="javascript:void(0);" class="prev"
+                                    >prev</a
+                                >
+                                <ul>
+                                    <li class="on">
+                                        <a href="javascript:void(0);">1</a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a href="javascript:void(0);">6</a></li>
+                                    <li><a href="javascript:void(0);">7</a></li>
+                                    <li><a href="javascript:void(0);">8</a></li>
+                                    <li><a href="javascript:void(0);">9</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);">10</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:void(0);" class="next"
+                                    >next</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <p class="footer_copy">
+                        COPYRIGHT © (주)BARTERPLACE Co.,Ltd All RIGHT RESERVED.
+                    </p>
+                </footer>
+            </div>
+            <!-- //admin_container -->
+        </div>
+    </body>
+</html>
