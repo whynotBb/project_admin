@@ -183,13 +183,24 @@
                                         <label for="rad_6month">6개월</label>
                                     </div>
                                 </div>
-                                <div class="date_wrap">
-                                    <input
-                                        class="date_picker"
-                                        type="text"
-                                        name="daterange"
-                                        id="dateRange"
-                                    />
+                                <div class="date_range_picker_wrap flex_1">
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
+                                    <span>→</span>
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div class="col_2">
@@ -238,7 +249,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="search_btn st_2">
+                        <div class="search_btn">
                             <button class="btn btn_search">검색</button>
                         </div>
                     </div>
@@ -317,11 +328,11 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="pagination">
-                                <a href="javascript:void(0);" class="prev"
-                                    >prev</a
-                                >
-                                <ul>
+                            <div class="pagination_wrap">
+                                <ul class="pagination">
+                                    <a href="javascript:void(0);" class="prev"
+                                        >prev</a
+                                    >
                                     <li class="on">
                                         <a href="javascript:void(0);">1</a>
                                     </li>
@@ -336,10 +347,10 @@
                                     <li>
                                         <a href="javascript:void(0);">10</a>
                                     </li>
+                                    <a href="javascript:void(0);" class="next"
+                                        >next</a
+                                    >
                                 </ul>
-                                <a href="javascript:void(0);" class="next"
-                                    >next</a
-                                >
                             </div>
                         </div>
                     </div>

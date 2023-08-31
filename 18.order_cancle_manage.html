@@ -156,14 +156,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="date_wrap">
-                                    <input
-                                        class="date_picker"
-                                        type="text"
-                                        name="daterange"
-                                        id="dateRange"
-                                        readonly
-                                    />
+                                <div class="date_range_picker_wrap flex_1">
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
+                                    <span>→</span>
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div class="col_2">
@@ -229,8 +239,7 @@
                             </div>
                             <div class="btn_wrap">
                                 <button
-                                    class="btn btn_secondary btn_check"
-                                    onclick="modalOpen('#alert_01')"
+                                    class="btn btn_secondary btn_check st_2"
                                 >
                                     취소승인
                                 </button>
@@ -399,11 +408,11 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="pagination">
-                                <a href="javascript:void(0);" class="prev"
-                                    >prev</a
-                                >
-                                <ul>
+                            <div class="pagination_wrap">
+                                <ul class="pagination">
+                                    <a href="javascript:void(0);" class="prev"
+                                        >prev</a
+                                    >
                                     <li class="on">
                                         <a href="javascript:void(0);">1</a>
                                     </li>
@@ -418,10 +427,10 @@
                                     <li>
                                         <a href="javascript:void(0);">10</a>
                                     </li>
+                                    <a href="javascript:void(0);" class="next"
+                                        >next</a
+                                    >
                                 </ul>
-                                <a href="javascript:void(0);" class="next"
-                                    >next</a
-                                >
                             </div>
                         </div>
                     </div>

@@ -192,13 +192,24 @@
                                         <label for="rad_6month">6개월</label>
                                     </div>
                                 </div>
-                                <div class="date_wrap">
-                                    <input
-                                        class="date_picker"
-                                        type="text"
-                                        name="daterange"
-                                        id="dateRange"
-                                    />
+                                <div class="date_range_picker_wrap flex_1">
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
+                                    <span>→</span>
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div class="col_2">
@@ -425,7 +436,7 @@
                                                 onclick="modalOpen('#modal_01')"
                                                 href="javascript:void(0);"
                                                 class="link"
-                                                >1234567890 (1234567890)</a
+                                                >1234567890<br />(1234567890)</a
                                             >
                                         </td>
                                         <td rowspan="3">옥수수 수염 레몬밤</td>
@@ -510,7 +521,7 @@
                                                 onclick="modalOpen('#modal_01')"
                                                 href="javascript:void(0);"
                                                 class="link"
-                                                >1234567890 (1234567890)</a
+                                                >1234567890<br />(1234567890)</a
                                             >
                                         </td>
                                         <td rowspan="2">옥수수 수염 레몬밤</td>
@@ -561,11 +572,11 @@
                                 </tbody>
                             </table>
                             <table></table>
-                            <div class="pagination">
-                                <a href="javascript:void(0);" class="prev"
-                                    >prev</a
-                                >
-                                <ul>
+                            <div class="pagination_wrap">
+                                <ul class="pagination">
+                                    <a href="javascript:void(0);" class="prev"
+                                        >prev</a
+                                    >
                                     <li class="on">
                                         <a href="javascript:void(0);">1</a>
                                     </li>
@@ -580,10 +591,10 @@
                                     <li>
                                         <a href="javascript:void(0);">10</a>
                                     </li>
+                                    <a href="javascript:void(0);" class="next"
+                                        >next</a
+                                    >
                                 </ul>
-                                <a href="javascript:void(0);" class="next"
-                                    >next</a
-                                >
                             </div>
                         </div>
                     </div>
@@ -794,13 +805,26 @@
                             <div class="content_list">
                                 <h4>유통 기한</h4>
                                 <div class="detail">
-                                    <div class="date_wrap w_100">
-                                        <input
-                                            class="date_picker w_100"
-                                            type="text"
-                                            name="daterange"
-                                            disabled
-                                        />
+                                    <div class="date_range_picker_wrap">
+                                        <div class="date_wrap">
+                                            <input
+                                                class="date_picker"
+                                                type="text"
+                                                name="singleDate"
+                                                readonly
+                                                disabled
+                                            />
+                                        </div>
+                                        <span>→</span>
+                                        <div class="date_wrap">
+                                            <input
+                                                class="date_picker"
+                                                type="text"
+                                                name="singleDate"
+                                                readonly
+                                                disabled
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1057,14 +1081,26 @@
                             <div class="content_list">
                                 <h4>유통 기한</h4>
                                 <div class="detail">
-                                    <div class="date_wrap w_100">
-                                        <input
-                                            class="date_picker w_100"
-                                            type="text"
-                                            name="daterange"
-                                            value=" "
-                                            disabled
-                                        />
+                                    <div class="date_range_picker_wrap">
+                                        <div class="date_wrap">
+                                            <input
+                                                class="date_picker"
+                                                type="text"
+                                                name="singleDate"
+                                                readonly
+                                                disabled
+                                            />
+                                        </div>
+                                        <span>→</span>
+                                        <div class="date_wrap">
+                                            <input
+                                                class="date_picker"
+                                                type="text"
+                                                name="singleDate"
+                                                readonly
+                                                disabled
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

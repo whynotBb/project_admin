@@ -158,14 +158,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="date_wrap">
-                                    <input
-                                        class="date_picker"
-                                        type="text"
-                                        name="daterange"
-                                        id="dateRange"
-                                        readonly
-                                    />
+                                <div class="date_range_picker_wrap flex_1">
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
+                                    <span>→</span>
+                                    <div class="date_wrap">
+                                        <input
+                                            class="date_picker"
+                                            type="text"
+                                            name="singleDate"
+                                            readonly
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div class="col_2">
@@ -247,8 +257,7 @@
                             </div>
                             <div class="btn_wrap">
                                 <button
-                                    class="btn btn_border_secondary btn_del"
-                                    onclick="modalOpen('#alert_02')"
+                                    class="btn btn_border_secondary btn_check"
                                 >
                                     체크한 접수건 발주확인 처리
                                 </button>
@@ -419,11 +428,11 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="pagination">
-                                <a href="javascript:void(0);" class="prev"
-                                    >prev</a
-                                >
-                                <ul>
+                            <div class="pagination_wrap">
+                                <ul class="pagination">
+                                    <a href="javascript:void(0);" class="prev"
+                                        >prev</a
+                                    >
                                     <li class="on">
                                         <a href="javascript:void(0);">1</a>
                                     </li>
@@ -438,10 +447,10 @@
                                     <li>
                                         <a href="javascript:void(0);">10</a>
                                     </li>
+                                    <a href="javascript:void(0);" class="next"
+                                        >next</a
+                                    >
                                 </ul>
-                                <a href="javascript:void(0);" class="next"
-                                    >next</a
-                                >
                             </div>
                         </div>
                     </div>
