@@ -443,7 +443,8 @@
             }
             .contents_box {
                 margin-bottom: 0;
-                height: 40rem;
+                // height: 40rem;
+                min-height: 34.8rem;
             }
             .box_title {
                 display: flex;
@@ -543,7 +544,6 @@
             }
         }
         .statistics_box {
-            padding: $space-lg;
             ul {
                 display: flex;
                 justify-content: space-between;

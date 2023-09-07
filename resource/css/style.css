@@ -1739,7 +1739,7 @@ button.btn.btn_download:hover {
 }
 .dashboard_main_wrap .dashboard_contents_wrap .row .contents_box {
   margin-bottom: 0;
-  height: 40rem;
+  min-height: 34.8rem;
 }
 .dashboard_main_wrap .dashboard_contents_wrap .row .box_title {
   display: flex;
@@ -1828,9 +1828,6 @@ button.btn.btn_download:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-.dashboard_main_wrap .dashboard_contents_wrap .statistics_box {
-  padding: 2.4rem;
 }
 .dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul {
   display: flex;
