@@ -14,14 +14,21 @@ body {
     font-weight: 400;
     width: 100%;
     max-width: 1920px;
-    min-width: 1800px;
+    min-width: 1900px;
     margin: 0 auto;
     color: $text-body;
+    background: $color-g1;
     &.modal-open {
         overflow: hidden;
     }
+    &.login_body {
+        min-width: 969px;
+        max-width: initial;
+    }
     &.sign_body {
         min-width: 969px;
+        max-width: 1920px;
+        background: #fff;
     }
 }
 // common
@@ -569,7 +576,7 @@ button.btn {
         flex: 1;
     }
     .btn {
-        width: 12rem !important;
+        min-width: 12rem !important;
         border-radius: 0 0.4rem 0.4rem 0;
     }
 }
