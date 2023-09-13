@@ -87,6 +87,11 @@ input[type="number"]::-webkit-outer-spin-button {
         color: $text-disabled;
         background: rgba(255, 255, 255, 0.8);
     }
+    &.sm {
+        textarea {
+            min-height: 1rem;
+        }
+    }
 }
 textarea {
     width: 100%;

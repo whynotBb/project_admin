@@ -292,18 +292,28 @@
                             <div class="counter">
                                 총 <b>101</b>건의 접수완료 내역이 있습니다.
                             </div>
+                            <div class="btn_wrap">
+                                <button
+                                    class="btn btn_secondary btn_check"
+                                    onclick="modalOpen('#alert_01')"
+                                >
+                                    체크한 접수건 입고완료 처리
+                                </button>
+                            </div>
                         </div>
                         <div class="table_body">
                             <table>
                                 <colgroup>
                                     <col style="width: 30px" />
-                                    <col style="width: 77px" />
+                                    <col style="width: 72px" />
                                     <col style="width: 128px" />
                                     <col style="width: 96px" />
                                     <col style="width: 96px" />
                                     <col style="width: 349px" />
                                     <col style="width: 349px" />
-                                    <col style="width: 170px" />
+                                    <col style="width: 160px" />
+                                    <col style="width: 80px" />
+                                    <col style="width: 80px" />
                                     <col style="width: 80px" />
                                     <col style="width: 80px" />
                                 </colgroup>
@@ -319,6 +329,8 @@
                                         <th>사업자번호</th>
                                         <th>현재상태</th>
                                         <th>보류사유</th>
+                                        <th>상태변경</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -358,6 +370,22 @@
                                         <td>123-456-7890</td>
                                         <td>접수완료</td>
                                         <td>-</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_03')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                보류
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_04')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                반송
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -399,6 +427,15 @@
                                                 class="link"
                                                 >사유보기</a
                                             >
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_04')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                반송
+                                            </button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -442,6 +479,15 @@
                                                 >사유보기</a
                                             >
                                         </td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_03')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                보류
+                                            </button>
+                                        </td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -477,6 +523,22 @@
                                         <td>123-456-7890</td>
                                         <td class="fc_success">재접수완료</td>
                                         <td>-</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_03')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                보류
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_04')"
+                                                class="btn btn_border_secondary sm"
+                                            >
+                                                반송
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -532,9 +594,15 @@
                         <section class="contents_box">
                             <h3>기본 정보</h3>
                             <div class="content_list">
-                                <h4>구분</h4>
+                                <h4>카테고리</h4>
                                 <div class="detail">
-                                    <p>수입</p>
+                                    <p>건강식품</p>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>원산지</h4>
+                                <div class="detail">
+                                    <p>미국</p>
                                 </div>
                             </div>
                             <div class="content_list">
@@ -544,33 +612,15 @@
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>식품유형</h4>
+                                <h4>원료설명</h4>
                                 <div class="detail">
-                                    <p>분말가루</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>수입 업체명</h4>
-                                <div class="detail">
-                                    <p>뉴트로라이트</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>수입업체 소재지</h4>
-                                <div class="detail">
-                                    <p>캐나다</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>제조사</h4>
-                                <div class="detail">
-                                    <p>올드트리라이프</p>
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>원산지</h4>
-                                <div class="detail">
-                                    <p>캐나다</p>
+                                    <p>
+                                        옥수수 수염 레몬밤은 이뇨작용을 통해
+                                        노폐물을 제거하고 시큼한 맛으로 소화를
+                                        도와줌옥수수 수염 레몬밤은 이뇨작용을
+                                        통해 노폐물을 제거하고 시큼한 맛으로
+                                        소화를 도와줌
+                                    </p>
                                 </div>
                             </div>
                             <div class="content_list">
@@ -580,15 +630,15 @@
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>원료명 및 함량</h4>
+                                <h4>제조원</h4>
                                 <div class="detail">
-                                    <p>옥수수 70%</p>
+                                    <p>올드트리라이프</p>
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>알레르기 유발물질</h4>
+                                <h4>구입처</h4>
                                 <div class="detail">
-                                    <p>밀 / 토마토</p>
+                                    <p>-</p>
                                 </div>
                             </div>
                             <div class="content_list">
@@ -600,112 +650,66 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="content_list">
-                                <h4>잔여량(g)</h4>
-                                <div class="detail"><p>100g</p></div>
-                            </div>
-                            <div class="content_list">
-                                <h4>희망판매가격</h4>
-                                <div class="detail"><p>200,000 원</p></div>
-                                <div class="detail">
-                                    <p class="fc_primary">
-                                        *희망 판매가격은 접수 시, 조정될 수
-                                        있습니다.
-                                    </p>
-                                </div>
-                            </div>
                         </section>
                         <section class="contents_box">
-                            <h3>증빙자료</h3>
+                            <h3>판매자 정보</h3>
                             <div class="content_list">
-                                <h4>성적서</h4>
+                                <h4>규격(성적서)</h4>
                                 <div class="detail">
-                                    <span class="link_st"
-                                        >image_sample.pdf</span
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
                                     >
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>한글라벨</h4>
+                                <h4>제조원</h4>
                                 <div class="detail">
-                                    <span class="link_st"
-                                        >image_sample.pdf</span
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
                                     >
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>품목제조보고서</h4>
+                                <h4>구입처</h4>
                                 <div class="detail">
-                                    <span class="link_st"
-                                        >image_sample.pdf</span
+                                    <ul class="list_st">
+                                        <li>수입</li>
+                                        <li>미국123</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>국내 증빙자료</h4>
+                                <div class="detail">
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
                                     >
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>수입신고확인증</h4>
+                                <h4>수입 증빙자료</h4>
                                 <div class="detail">
-                                    <span class="link_st"
-                                        >image_sample.pdf</span
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
                                     >
                                 </div>
                             </div>
                             <div class="content_list">
-                                <h4>수입신고필증</h4>
+                                <h4>기타 증빙</h4>
                                 <div class="detail">
-                                    <span class="link_st"
-                                        >image_sample.pdf</span
+                                    <a
+                                        class="link_st"
+                                        href="javascript:void(0);"
+                                        >image_sample.pdf</a
                                     >
-                                </div>
-                            </div>
-                            <div class="content_list">
-                                <h4>기타 증빙자료</h4>
-                                <div class="detail">
-                                    <span class="link_st"
-                                        >image_sample.pdf</span
-                                    >
-                                </div>
-                            </div>
-                        </section>
-                        <section class="contents_box">
-                            <h3>상태관리</h3>
-                            <div class="content_list">
-                                <h4>상태변경</h4>
-                                <div class="detail">
-                                    <div class="flex_row">
-                                        <div class="selectbox up_st">
-                                            <p class="selected">보류</p>
-                                            <div class="option_group">
-                                                <div class="inner">
-                                                    <ul>
-                                                        <li class="active">
-                                                            보류
-                                                        </li>
-                                                        <li>반송</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button
-                                            class="btn btn_border_secondary"
-                                            id="openReason"
-                                        >
-                                            사유 입력
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="content_list"
-                                id="writeReason"
-                                style="display: none"
-                            >
-                                <div class="detail">
-                                    <div class="textarea_wrap sm">
-                                        <textarea
-                                            placeholder="사유를 입력해주세요"
-                                        ></textarea>
-                                        <p class="counter"></p>
-                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -948,10 +952,5 @@
             </div>
         </div>
         <!-- //alert_01 -->
-        <script>
-            $("#openReason").on("click", function () {
-                $("#writeReason").fadeToggle();
-            });
-        </script>
     </body>
 </html>

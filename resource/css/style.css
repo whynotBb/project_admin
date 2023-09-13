@@ -256,6 +256,9 @@ input[type=number]::-webkit-outer-spin-button {
   color: #6c757d;
   background: rgba(255, 255, 255, 0.8);
 }
+.textarea_wrap.sm textarea {
+  min-height: 1rem;
+}
 
 textarea {
   width: 100%;
