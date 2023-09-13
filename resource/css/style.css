@@ -1862,9 +1862,15 @@ button.btn.btn_download:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.dashboard_main_wrap .dashboard_contents_wrap .statistics_box {
+  padding-top: 2rem;
+}
 .dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul {
   display: flex;
   justify-content: space-between;
+}
+.dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul li {
+  cursor: pointer;
 }
 .dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul li .num {
   display: block;
@@ -1886,6 +1892,12 @@ button.btn.btn_download:hover {
 }
 .dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul li:nth-child(2n) .num {
   background: #0ab968;
+}
+.dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul li:hover .num {
+  background: #212529;
+}
+.dashboard_main_wrap .dashboard_contents_wrap .statistics_box ul li:hover:nth-child(2n) .num {
+  background: #19a078;
 }
 
 .contents_detail_wrap {

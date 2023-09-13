@@ -572,10 +572,12 @@
             }
         }
         .statistics_box {
+            padding-top: 2rem;
             ul {
                 display: flex;
                 justify-content: space-between;
                 li {
+                    cursor: pointer;
                     .num {
                         display: block;
                         text-align: center;
@@ -597,6 +599,16 @@
                     &:nth-child(2n) {
                         .num {
                             background: $color-primary;
+                        }
+                    }
+                    &:hover {
+                        .num {
+                            background: $color-s1-dark;
+                        }
+                        &:nth-child(2n) {
+                            .num {
+                                background: $color-primary-dark;
+                            }
                         }
                     }
                 }
