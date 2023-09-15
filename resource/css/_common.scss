@@ -26,9 +26,9 @@ body {
         max-width: initial;
     }
     &.sign_body {
-        min-width: 969px;
-        max-width: 1920px;
-        background: #fff;
+        min-width: initial;
+        max-width: initial;
+        background: $color-g1;
     }
 }
 // common
@@ -201,7 +201,7 @@ input[type="text"].date_picker {
 .label_vertical {
     label {
         display: block;
-        font-weight: 700;
+        font-weight: 600;
         margin-bottom: 0.4rem;
     }
 }
@@ -398,12 +398,12 @@ button.btn {
         border-radius: 0.8rem;
         height: 5.2rem;
         line-height: 5.2rem;
-        font-weight: 700;
+        font-weight: 600;
     }
     &.btn_search {
         background: $color-primary;
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 600;
         color: #fff;
         width: 23rem;
         height: 5rem;
@@ -616,7 +616,7 @@ button.btn {
         .counter {
             b {
                 color: $color-primary;
-                font-weight: 700;
+                font-weight: 600;
             }
         }
         .btn_wrap {
@@ -646,7 +646,7 @@ button.btn {
                     background: $color-g1;
                     border-bottom: 1px solid $border-base-dark;
                     font-size: 1.6rem;
-                    font-weight: 700;
+                    font-weight: 600;
                     line-height: 2.4rem;
                     height: 4.4rem;
                     padding: 0.8rem;
@@ -932,7 +932,7 @@ button.btn {
                 padding: $space-xl $space-lg;
                 h4 {
                     font-size: 2rem;
-                    font-weight: 700;
+                    font-weight: 600;
                     text-align: center;
                     line-height: 2.6rem;
                     margin-bottom: $space-m;

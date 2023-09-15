@@ -52,7 +52,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 img {
@@ -185,9 +185,9 @@ body.login_body {
   max-width: initial;
 }
 body.sign_body {
-  min-width: 969px;
-  max-width: 1920px;
-  background: #fff;
+  min-width: initial;
+  max-width: initial;
+  background: #f8f9fa;
 }
 
 /* 스크롤바 설정*/
@@ -373,7 +373,7 @@ input[type=text].date_picker:disabled {
 
 .label_vertical label {
   display: block;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.4rem;
 }
 
@@ -553,12 +553,12 @@ button.btn.lg {
   border-radius: 0.8rem;
   height: 5.2rem;
   line-height: 5.2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 button.btn.btn_search {
   background: #0ab968;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   width: 23rem;
   height: 5rem;
@@ -768,7 +768,7 @@ button.btn.btn_download:hover {
 }
 .main_table_wrap .table_header .counter b {
   color: #0ab968;
-  font-weight: 700;
+  font-weight: 600;
 }
 .main_table_wrap .table_header .btn_wrap {
   display: flex;
@@ -794,7 +794,7 @@ button.btn.btn_download:hover {
   background: #f8f9fa;
   border-bottom: 1px solid #495057;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2.4rem;
   height: 4.4rem;
   padding: 0.8rem;
@@ -1027,7 +1027,7 @@ button.btn.btn_download:hover {
 }
 .modal_wrap.md_st .modal .modal_body h4 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   line-height: 2.6rem;
   margin-bottom: 1.6rem;
@@ -1142,7 +1142,9 @@ button.btn.btn_download:hover {
 }
 
 .sign_wrapper {
+  max-width: 1920px;
   width: 100%;
+  margin: 0 auto;
   height: 100vh;
   position: relative;
   background: #fff;
@@ -1273,7 +1275,7 @@ button.btn.btn_download:hover {
   width: 100%;
   height: 5rem;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 4rem 0;
 }
 .login_container .login_box .inner .bottom_btn_wrap {
@@ -1300,7 +1302,7 @@ button.btn.btn_download:hover {
 }
 .login_container .login_box .inner .id_result_box h3 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #0ab968;
 }
 .login_container .login_box .valid_txt {
@@ -1571,7 +1573,7 @@ button.btn.btn_download:hover {
 }
 .contents_box .state_list h4 {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 1.6rem;
 }
 .contents_box .state_list .detail {
@@ -1593,7 +1595,7 @@ button.btn.btn_download:hover {
 }
 .contents_box .state_list .detail .box p {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 .contents_box .state_list .detail .box span {
   font-size: 1.6rem;
@@ -1739,7 +1741,7 @@ button.btn.btn_download:hover {
   line-height: 2.5rem;
   padding: 0 8px;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   background: #0ab968;
   color: #fff;
@@ -1748,7 +1750,7 @@ button.btn.btn_download:hover {
 .dashboard_main_wrap .important_noti_wrap .list p {
   flex: 1;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 8.4rem;
 }
 .dashboard_main_wrap .important_noti_wrap .list .date {
@@ -1883,7 +1885,7 @@ button.btn.btn_download:hover {
   border-radius: 8rem;
   background: #343a40;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 16rem;
   color: #fff;
 }
@@ -1928,7 +1930,7 @@ button.btn.btn_download:hover {
 .contents_detail_wrap .detail_title h3 {
   margin: 8px 0 1.6rem;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #212529;
 }
 .contents_detail_wrap .detail_title .title_info {
@@ -2059,7 +2061,7 @@ button.btn.btn_download:hover {
 .settlement_table table td {
   text-align: center;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   height: 7.4rem;
   line-height: 7.4rem;
   padding: 0 0.8rem;
@@ -2080,7 +2082,7 @@ button.btn.btn_download:hover {
 }
 .table_tab_menu li {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   height: 4.4rem;
   line-height: 4.4rem;
