@@ -78,6 +78,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .textarea_wrap {
     position: relative;
+    line-height: initial;
     .counter {
         position: absolute;
         bottom: 1rem;
@@ -748,23 +749,22 @@ button.btn {
                     td {
                         border-bottom: none;
                         border-top: 1px solid $border-base-light;
-                        &[rowspan] {
-                            &:nth-child(1),
-                            &:nth-child(2),
-                            &:nth-child(4) {
-                                text-align: left;
-                            }
-                            &:nth-child(7) {
-                                text-align: right;
-                                border-right: 1px solid $border-base-light;
-                            }
-                        }
-                        &:nth-child(1),
-                        &:nth-child(2),
-                        &:nth-child(4),
-                        &:nth-child(8),
-                        &:nth-child(9),
-                        &:nth-child(11) {
+                        // &[rowspan] {
+                        //     &:nth-child(1),
+                        //     &:nth-child(2),
+                        //     &:nth-child(4) {
+                        //         text-align: left;
+                        //     }
+                        //     &:nth-child(7) {
+                        //         text-align: right;
+                        //         border-right: 1px solid $border-base-light;
+                        //     }
+                        // }
+                    }
+                    th,
+                    td {
+                        &:nth-child(6),
+                        &:nth-child(8) {
                             text-align: right;
                         }
                     }
@@ -780,11 +780,11 @@ button.btn {
             tr {
                 th,
                 td {
-                    &:nth-child(7),
                     &:nth-child(8),
-                    &:nth-child(12),
+                    &:nth-child(9),
                     &:nth-child(13),
-                    &:nth-child(14) {
+                    &:nth-child(14),
+                    &:nth-child(15) {
                         text-align: right;
                     }
                 }
@@ -988,6 +988,9 @@ button.btn {
             }
         }
     }
+    &.none_dim {
+        background: none;
+    }
 }
 .toast_wrap {
     display: none;
@@ -1010,6 +1013,10 @@ button.btn {
         &.danger {
             background: $color-s2 url(../images/icon_toast_danger.svg) no-repeat
                 left 1.6rem center;
+        }
+        &.primary {
+            background: $color-primary url(../images/icon_toast_danger.svg)
+                no-repeat left 1.6rem center;
         }
         p {
             line-height: 2.4rem;

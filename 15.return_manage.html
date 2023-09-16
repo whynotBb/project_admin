@@ -212,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="row col_1">
-                                <h3>검색어</h3>
+                                <h3>검색구분</h3>
                                 <div class="selectbox">
                                     <p class="selected">전체</p>
                                     <div class="option_group">
@@ -247,15 +247,14 @@
                             <table>
                                 <colgroup>
                                     <col style="width: 72px" />
-                                    <col style="width: 565px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 260px" />
-                                    <col style="width: 160px" />
-                                    <col style="width: 80px" />
-                                    <col style="width: 91px" />
-                                    <col style="width: 84px" />
+                                    <col style="width: 575px" />
+                                    <col style="width: 106px" />
+                                    <col style="width: 106px" />
+                                    <col style="width: 106px" />
+                                    <col style="width: 270px" />
+                                    <col style="width: 170px" />
+                                    <col style="width: 90px" />
+                                    <col style="width: 101px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
@@ -268,7 +267,6 @@
                                         <th>사업자번호</th>
                                         <th>현재상태</th>
                                         <th>반송사유</th>
-                                        <th>수정</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -300,7 +298,6 @@
                                                 >사유보기</span
                                             >
                                         </td>
-                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
@@ -329,14 +326,6 @@
                                                 class="link"
                                                 >사유보기</span
                                             >
-                                        </td>
-                                        <td>
-                                            <button
-                                                onclick="modalOpen('#alert_01')"
-                                                class="btn btn_border_secondary sm"
-                                            >
-                                                반송완료
-                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -515,6 +504,14 @@
                     </div>
                 </div>
                 <div class="modal_footer">
+                    <div class="link_wrap">
+                        <button
+                            class="btn btn_border_secondary"
+                            onclick="modalOpen('#alert_01')"
+                        >
+                            반송완료
+                        </button>
+                    </div>
                     <div class="btn_wrap">
                         <button class="btn btn_primary">확인</button>
                     </div>
@@ -676,7 +673,12 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">상태변경</button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalCloseAll()"
+                        >
+                            상태변경
+                        </button>
                     </div>
                 </div>
             </div>

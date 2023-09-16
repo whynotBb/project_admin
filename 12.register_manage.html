@@ -216,7 +216,7 @@
                             </div>
                             <div class="col_2">
                                 <div class="row col_2_1">
-                                    <h3>검색어</h3>
+                                    <h3>검색구분</h3>
                                     <div class="selectbox">
                                         <p class="selected">전체</p>
                                         <div class="option_group">
@@ -296,20 +296,19 @@
                         <div class="table_body">
                             <table>
                                 <colgroup>
-                                    <col style="width: 30px" />
+                                    <!-- <col style="width: 30px" /> -->
                                     <col style="width: 77px" />
                                     <col style="width: 128px" />
                                     <col style="width: 96px" />
                                     <col style="width: 96px" />
-                                    <col style="width: 349px" />
-                                    <col style="width: 349px" />
+                                    <col style="width: 354px" />
+                                    <col style="width: 354px" />
                                     <col style="width: 170px" />
                                     <col style="width: 80px" />
                                     <col style="width: 80px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>#</th>
                                         <th>접수번호</th>
                                         <th>접수일</th>
@@ -323,18 +322,6 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_01"
-                                                />
-                                                <label
-                                                    for="chk_01"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>1</td>
                                         <td>
                                             <a
@@ -360,18 +347,6 @@
                                         <td>-</td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>2</td>
                                         <td>
                                             <a
@@ -402,19 +377,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
-                                        <td>2</td>
+                                        <td>3</td>
                                         <td>
                                             <a
                                                 href="javascript:void(0);"
@@ -444,18 +407,6 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>2</td>
                                         <td>
                                             <a
@@ -621,7 +572,7 @@
                                 <h4>성적서</h4>
                                 <div class="detail">
                                     <span class="link_st"
-                                        >image_sample.pdf</span
+                                        >image_sample.pdfimage_sample.pdfimage_sample.pdfimage_sample.pdfimage_sample.pdfimage_sample.pdfimage_sample.pdfimage_sample.pdf</span
                                     >
                                 </div>
                             </div>
@@ -672,7 +623,7 @@
                                 <h4>상태변경</h4>
                                 <div class="detail">
                                     <div class="flex_row">
-                                        <div class="selectbox up_st">
+                                        <div class="selectbox">
                                             <p class="selected">보류</p>
                                             <div class="option_group">
                                                 <div class="inner">
@@ -687,25 +638,23 @@
                                         </div>
                                         <button
                                             class="btn btn_border_secondary"
-                                            id="openReason"
+                                            onclick="modalOpen('#modal_03')"
                                         >
-                                            사유 입력
+                                            상태 변경
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                class="content_list"
-                                id="writeReason"
-                                style="display: none"
-                            >
+                            <div class="content_list">
+                                <h4>보류 사유</h4>
                                 <div class="detail">
-                                    <div class="textarea_wrap sm">
-                                        <textarea
-                                            placeholder="사유를 입력해주세요"
-                                        ></textarea>
-                                        <p class="counter"></p>
-                                    </div>
+                                    <div>-</div>
+                                </div>
+                            </div>
+                            <div class="content_list">
+                                <h4>반송 사유</h4>
+                                <div class="detail">
+                                    <div>-</div>
                                 </div>
                             </div>
                         </section>
@@ -860,7 +809,12 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">상태변경</button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalCloseAll()"
+                        >
+                            상태변경
+                        </button>
                     </div>
                 </div>
             </div>
@@ -951,6 +905,11 @@
         <script>
             $("#openReason").on("click", function () {
                 $("#writeReason").fadeToggle();
+                if ($(this).text() === "사유 저장") {
+                    $(this).text("사유 입력");
+                } else {
+                    $(this).text("사유 저장");
+                }
             });
         </script>
     </body>

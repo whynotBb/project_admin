@@ -178,11 +178,11 @@
                             </div>
                             <div class="col_2">
                                 <div class="row col_2_1">
-                                    <h3>검색어</h3>
+                                    <h3>상품명</h3>
 
                                     <input
                                         type="text"
-                                        placeholder="검색어를 입력해 주세요"
+                                        placeholder="상품명을 입력해 주세요"
                                     />
                                 </div>
                                 <div class="row col_2_1">
@@ -253,7 +253,7 @@
                             <div class="counter">
                                 총 <b>101</b>건의 내역이 있습니다.
                             </div>
-                            <div class="btn_wrap">
+                            <!-- <div class="btn_wrap">
                                 <button
                                     class="btn btn_secondary btn_check st_2"
                                     onclick="modalOpen('#alert_02')"
@@ -266,32 +266,34 @@
                                 >
                                     반품승인
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="table_body order_delivery_mng_table">
                             <table>
                                 <colgroup>
-                                    <!-- col 11 -->
-                                    <col style="width: 30px" />
-                                    <col style="width: 70px" />
-                                    <col style="width: 128px" />
-                                    <col style="width: 119px" />
-                                    <col style="width: 80px" />
-                                    <col style="width: 374px" />
+                                    <!-- col 12 -->
                                     <col style="width: 100px" />
+                                    <col style="width: 120px" />
+                                    <col style="width: 122px" />
+                                    <col style="width: 122px" />
+                                    <col style="width: 80px" />
+                                    <col style="width: 270px" />
+                                    <col style="width: 130px" />
                                     <col style="width: 100px" />
                                     <col style="width: 96px" />
+                                    <col style="width: 100px" />
                                     <col style="width: 126px" />
-                                    <col style="width: 374px" />
+                                    <col style="width: 100px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>#</th>
                                         <th>주문번호</th>
+                                        <th>접수일시</th>
                                         <th>반품요청일시</th>
                                         <th>반품상태</th>
                                         <th>원료명</th>
+                                        <th>업체명</th>
                                         <th>용량<i>(g)</i></th>
                                         <th>수량<i>(개)</i></th>
                                         <th>주문자<br />수령자</th>
@@ -303,18 +305,6 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_01"
-                                                />
-                                                <label
-                                                    for="chk_01"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>1</td>
                                         <td>
                                             <a
@@ -324,6 +314,7 @@
                                                 >1234567890</a
                                             >
                                         </td>
+                                        <td>2022.12.12 12:12</td>
                                         <td>2022.12.12 12:12</td>
                                         <td>반품완료</td>
                                         <td>
@@ -336,6 +327,7 @@
                                                 수염 레몬밤
                                             </div>
                                         </td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -349,18 +341,6 @@
                                         <td>다른원료주문</td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_02"
-                                                />
-                                                <label
-                                                    for="chk_02"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>2</td>
                                         <td>
                                             <a
@@ -371,12 +351,14 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
+                                        <td>2022.12.12 12:12</td>
                                         <td class="fc_danger">반품요청</td>
                                         <td>
                                             <div class="ellipsis">
                                                 옥수수 수염 레몬밤
                                             </div>
                                         </td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -390,18 +372,6 @@
                                         <td>다른원료주문</td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="checkbox_wrap">
-                                                <input
-                                                    type="checkbox"
-                                                    id="chk_03"
-                                                />
-                                                <label
-                                                    for="chk_03"
-                                                    class="no_label"
-                                                ></label>
-                                            </div>
-                                        </td>
                                         <td>3</td>
                                         <td>
                                             <a
@@ -412,12 +382,14 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
+                                        <td>2022.12.12 12:12</td>
                                         <td class="fc_primary">회수완료</td>
                                         <td>
                                             <div class="ellipsis">
                                                 옥수수 수염 레몬밤
                                             </div>
                                         </td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -567,29 +539,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="contents_box">
-                            <h3>배송정보</h3>
-                            <div class="delivery_search_box">
-                                <div class="selectbox">
-                                    <p class="selected">전체</p>
-                                    <div class="option_group">
-                                        <div class="inner">
-                                            <ul>
-                                                <li class="active">전체</li>
-                                                <li>우체국</li>
-                                                <li>CJ</li>
-                                                <li>option3</li>
-                                                <li>option4</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="text" class="flex_1" />
-                                <button class="btn btn_secondary">
-                                    배송조회
-                                </button>
-                            </div>
-                        </section>
+
                         <section class="contents_box">
                             <h3>상태정보</h3>
                             <div class="state_list">
@@ -597,11 +547,11 @@
                                 <div class="detail delivery">
                                     <div class="box disabled">
                                         <p>주문접수</p>
-                                        <span>2023.07.01</span>
+                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                     <div class="box disabled">
                                         <p>배송준비</p>
-                                        <span>2023.07.01</span>
+                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                     <div class="box disabled"><p>품절</p></div>
                                     <div class="box disabled">
@@ -631,21 +581,50 @@
                                 <div class="detail cancle">
                                     <div class="box disabled">
                                         <p>반품요청</p>
-                                        <span>2023.07.01</span>
+                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                     <div class="box disabled">
                                         <p>회수접수</p>
-                                        <span>2023.07.01</span>
+                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
-                                    <div class="box disabled">
+                                    <div
+                                        class="box disabled"
+                                        onclick="modalOpen('#alert_02')"
+                                    >
                                         <p>회수완료</p>
-                                        <span>2023.07.01</span>
+                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
-                                    <div class="box active">
+                                    <div
+                                        class="box active"
+                                        onclick="modalOpen('#alert_01')"
+                                    >
                                         <p>반품완료</p>
-                                        <span>2023.07.01</span>
+                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                 </div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <h3>배송정보</h3>
+                            <div class="delivery_search_box">
+                                <div class="selectbox">
+                                    <p class="selected">전체</p>
+                                    <div class="option_group">
+                                        <div class="inner">
+                                            <ul>
+                                                <li class="active">전체</li>
+                                                <li>우체국</li>
+                                                <li>CJ</li>
+                                                <li>option3</li>
+                                                <li>option4</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="flex_1" />
+                                <button class="btn btn_secondary">
+                                    배송조회
+                                </button>
                             </div>
                         </section>
                     </div>
@@ -681,7 +660,12 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">처리하기</button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalClose('#alert_01')"
+                        >
+                            처리하기
+                        </button>
                     </div>
                 </div>
             </div>
@@ -708,7 +692,12 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">처리하기</button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalClose('#alert_02')"
+                        >
+                            처리하기
+                        </button>
                     </div>
                 </div>
             </div>

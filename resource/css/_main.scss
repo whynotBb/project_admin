@@ -212,13 +212,18 @@
                         height: 1rem;
                         background: $border-base;
                         position: absolute;
-                        top: 50%;
                         right: -1rem;
-                        transform: translateY(-50%);
+                        /* top: 50%;
+                        transform: translateY(-50%); */
+                        top: 1.2rem;
                     }
-                    &:last-child::before {
-                        display: none;
+                    &:last-child {
+                        flex: 1;
+                        &::before {
+                            display: none;
+                        }
                     }
+
                     a {
                         color: $color-primary;
                         text-decoration: underline;
@@ -231,6 +236,7 @@
                 color: $color-primary;
                 text-decoration: underline;
                 text-underline-position: under;
+                word-break: break-all;
             }
             .label_float {
                 width: 16rem;
@@ -285,6 +291,7 @@
                 span {
                     font-size: 1.6rem;
                     font-weight: 500;
+                    text-align: center;
                 }
                 &.active {
                     color: #fff;
@@ -404,6 +411,10 @@
             font-weight: 600;
             background-size: 1.6rem 1.6rem;
             background-position: left 9rem center;
+            &:hover {
+                background-size: 1.6rem 1.6rem;
+                background-position: left 9rem center;
+            }
         }
         &.st_2 {
             padding: $space-lg;
@@ -427,6 +438,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            cursor: pointer;
             i {
                 height: 2.5rem;
                 line-height: 2.5rem;
@@ -543,12 +555,14 @@
                         height: 2.4rem;
                         background: url(../images/chevron-right.svg) no-repeat
                             center;
+                        cursor: pointer;
                     }
                 }
             }
             .notice_list {
                 ul {
                     li {
+                        cursor: pointer;
                         display: flex;
                         height: 4.8rem;
                         align-items: center;

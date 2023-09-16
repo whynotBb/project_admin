@@ -246,6 +246,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .textarea_wrap {
   position: relative;
+  line-height: initial;
 }
 .textarea_wrap .counter {
   position: absolute;
@@ -882,25 +883,20 @@ button.btn.btn_download:hover {
   border-bottom: none;
   border-top: 1px solid #e9ecef;
 }
-.main_table_wrap .table_body.base_material_mng_table tbody tr td[rowspan]:nth-child(1), .main_table_wrap .table_body.base_material_mng_table tbody tr td[rowspan]:nth-child(2), .main_table_wrap .table_body.base_material_mng_table tbody tr td[rowspan]:nth-child(4) {
-  text-align: left;
-}
-.main_table_wrap .table_body.base_material_mng_table tbody tr td[rowspan]:nth-child(7) {
-  text-align: right;
-  border-right: 1px solid #e9ecef;
-}
-.main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(1), .main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(2), .main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(4), .main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(8), .main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(9), .main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(11) {
+.main_table_wrap .table_body.base_material_mng_table tbody tr th:nth-child(6), .main_table_wrap .table_body.base_material_mng_table tbody tr th:nth-child(8),
+.main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(6),
+.main_table_wrap .table_body.base_material_mng_table tbody tr td:nth-child(8) {
   text-align: right;
 }
 .main_table_wrap .table_body.base_material_mng_table tbody tr.border_st td {
   border-top: 1px solid #495057;
 }
-.main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(7), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(8), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(12), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(13), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(14),
-.main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(7),
+.main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(8), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(9), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(13), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(14), .main_table_wrap .table_body.order_delivery_mng_table tr th:nth-child(15),
 .main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(8),
-.main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(12),
+.main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(9),
 .main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(13),
-.main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(14) {
+.main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(14),
+.main_table_wrap .table_body.order_delivery_mng_table tr td:nth-child(15) {
   text-align: right;
 }
 .main_table_wrap .table_body.settlement_mng_table tr th:nth-child(4), .main_table_wrap .table_body.settlement_mng_table tr th:nth-child(5), .main_table_wrap .table_body.settlement_mng_table tr th:nth-child(6),
@@ -1078,6 +1074,9 @@ button.btn.btn_download:hover {
   font-weight: 600;
   margin-bottom: 2.4rem;
 }
+.modal_wrap.none_dim {
+  background: none;
+}
 
 .toast_wrap {
   display: none;
@@ -1101,6 +1100,9 @@ button.btn.btn_download:hover {
 }
 .toast_wrap .toast.danger {
   background: #dc3545 url(../images/icon_toast_danger.svg) no-repeat left 1.6rem center;
+}
+.toast_wrap .toast.primary {
+  background: #0ab968 url(../images/icon_toast_danger.svg) no-repeat left 1.6rem center;
 }
 .toast_wrap .toast p {
   line-height: 2.4rem;
@@ -1530,9 +1532,13 @@ button.btn.btn_download:hover {
   height: 1rem;
   background: #ced4da;
   position: absolute;
-  top: 50%;
   right: -1rem;
-  transform: translateY(-50%);
+  /* top: 50%;
+  transform: translateY(-50%); */
+  top: 1.2rem;
+}
+.contents_box .content_list .detail .list_st li:last-child {
+  flex: 1;
 }
 .contents_box .content_list .detail .list_st li:last-child::before {
   display: none;
@@ -1547,6 +1553,7 @@ button.btn.btn_download:hover {
   color: #0ab968;
   text-decoration: underline;
   text-underline-position: under;
+  word-break: break-all;
 }
 .contents_box .content_list .detail .label_float {
   width: 16rem;
@@ -1600,6 +1607,7 @@ button.btn.btn_download:hover {
 .contents_box .state_list .detail .box span {
   font-size: 1.6rem;
   font-weight: 500;
+  text-align: center;
 }
 .contents_box .state_list .detail .box.active {
   color: #fff;
@@ -1715,6 +1723,10 @@ button.btn.btn_download:hover {
   background-size: 1.6rem 1.6rem;
   background-position: left 9rem center;
 }
+.search_box_wrap .search_btn .btn:hover {
+  background-size: 1.6rem 1.6rem;
+  background-position: left 9rem center;
+}
 .search_box_wrap .search_btn.st_2 {
   padding: 2.4rem;
 }
@@ -1735,6 +1747,7 @@ button.btn.btn_download:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 }
 .dashboard_main_wrap .important_noti_wrap .list i {
   height: 2.5rem;
@@ -1846,8 +1859,10 @@ button.btn.btn_download:hover {
   width: 2.4rem;
   height: 2.4rem;
   background: url(../images/chevron-right.svg) no-repeat center;
+  cursor: pointer;
 }
 .dashboard_main_wrap .dashboard_contents_wrap .row .notice_list ul li {
+  cursor: pointer;
   display: flex;
   height: 4.8rem;
   align-items: center;

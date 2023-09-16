@@ -268,19 +268,20 @@
                                 <colgroup>
                                     <!-- col 14 -->
                                     <col style="width: 30px" />
-                                    <col style="width: 70px" />
-                                    <col style="width: 128px" />
-                                    <col style="width: 119px" />
+                                    <col style="width: 50px" />
+                                    <col style="width: 110px" />
+                                    <col style="width: 120px" />
                                     <col style="width: 80px" />
-                                    <col style="width: 287px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
+                                    <col style="width: 240px" />
+                                    <col style="width: 120px" />
+                                    <col style="width: 90px" />
+                                    <col style="width: 90px" />
                                     <col style="width: 96px" />
-                                    <col style="width: 126px" />
-                                    <col style="width: 162px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
-                                    <col style="width: 100px" />
+                                    <col style="width: 116px" />
+                                    <col style="width: 152px" />
+                                    <col style="width: 90px" />
+                                    <col style="width: 90px" />
+                                    <col style="width: 90px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
@@ -290,6 +291,7 @@
                                         <th>주문일시</th>
                                         <th>주문상태</th>
                                         <th>원료명</th>
+                                        <th>업체명</th>
                                         <th>용량<i>(g)</i></th>
                                         <th>수량<i>(개)</i></th>
                                         <th>주문자<br />수령자</th>
@@ -328,6 +330,7 @@
                                         <td>2022.12.12 12:12</td>
                                         <td>주문접수</td>
                                         <td>옥수수 수염 레몬밤</td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -368,6 +371,7 @@
                                         <td>2022.12.12 12:12</td>
                                         <td class="fc_danger">배송준비</td>
                                         <td>옥수수 수염 레몬밤</td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -408,6 +412,7 @@
                                         <td>2022.12.12 12:12</td>
                                         <td class="fc_primary">배송완료</td>
                                         <td>옥수수 수염 레몬밤</td>
+                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -563,10 +568,45 @@
                                 </div>
                             </div>
                         </section>
+
                         <section class="contents_box">
+                            <h3>상태정보</h3>
+                            <div class="state_list">
+                                <h4>배송상태</h4>
+                                <div class="detail delivery">
+                                    <div class="box disabled">
+                                        <p>주문접수</p>
+                                        <span>2023.07.01<br />00:00:00</span>
+                                    </div>
+                                    <div class="box active">
+                                        <p>배송준비</p>
+                                        <span>2023.07.01<br />00:00:00</span>
+                                    </div>
+                                    <div class="box">
+                                        <p>품절</p>
+                                    </div>
+                                    <div class="box"><p>배송중</p></div>
+                                    <div class="box"><p>배송완료</p></div>
+                                </div>
+                            </div>
+                            <div class="state_list">
+                                <h4>취소상태</h4>
+                                <div class="detail cancle">
+                                    <div class="box active">
+                                        <p>취소요청</p>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>취소승인</p>
+                                    </div>
+                                    <div class="box"><p>취소완료</p></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="contents_box">
+                            <!-- 배송중 이후에만 나타남 -->
                             <h3>배송정보</h3>
                             <div class="delivery_search_box">
-                                <div class="selectbox">
+                                <div class="selectbox up_st">
                                     <p class="selected">전체</p>
                                     <div class="option_group">
                                         <div class="inner">
@@ -584,37 +624,6 @@
                                 <button class="btn btn_secondary">
                                     배송조회
                                 </button>
-                            </div>
-                        </section>
-                        <section class="contents_box">
-                            <h3>상태정보</h3>
-                            <div class="state_list">
-                                <h4>배송상태</h4>
-                                <div class="detail delivery">
-                                    <div class="box disabled">
-                                        <p>주문접수</p>
-                                        <span>2023.07.01</span>
-                                    </div>
-                                    <div class="box active">
-                                        <p>배송준비</p>
-                                        <span>2023.07.01</span>
-                                    </div>
-                                    <div class="box"><p>품절</p></div>
-                                    <div class="box"><p>배송중</p></div>
-                                    <div class="box"><p>배송완료</p></div>
-                                </div>
-                            </div>
-                            <div class="state_list">
-                                <h4>취소상태</h4>
-                                <div class="detail cancle">
-                                    <div class="box active">
-                                        <p>취소요청</p>
-                                    </div>
-                                    <div class="box disabled">
-                                        <p>취소승인</p>
-                                    </div>
-                                    <div class="box"><p>취소완료</p></div>
-                                </div>
                             </div>
                         </section>
                     </div>
@@ -656,7 +665,8 @@
             <div class="modal">
                 <div class="modal_body">
                     <div class="alert_msg">
-                        체크한 회원을<br/ > 삭제하시겠습니까?
+                        체크한 회원을<br />
+                        삭제하시겠습니까?
                     </div>
                 </div>
                 <div class="modal_footer">
@@ -673,5 +683,54 @@
             </div>
         </div>
         <!-- //alert_02 -->
+        <!-- alert03 -->
+        <div class="modal_wrap alert_st" id="alert03">
+            <div class="modal">
+                <div class="modal_body">
+                    <div class="alert_msg">배송상태를</div>
+                </div>
+                <div class="modal_footer">
+                    <div class="btn_wrap">
+                        <button
+                            class="btn btn_secondary"
+                            onclick="modalCloseSingle('#alert03')"
+                        >
+                            취소
+                        </button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalCloseSingle('#alert03')"
+                        >
+                            확인
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert_02 -->
+        <script>
+            $(document).ready(function () {
+                $(".delivery .box").on("click", function () {
+                    if (
+                        $(this).hasClass("disabled") ||
+                        $(this).hasClass("active")
+                    ) {
+                        return;
+                    } else {
+                        $(".delivery .box").removeClass("active");
+                        $(this).addClass("active");
+                        const text = $(this).children("p").text();
+
+                        const alertContent =
+                            "배송상태를 " +
+                            text +
+                            "(으)로<br /> 변경하시겠습니까?";
+                        $("#alert03 .alert_msg").html(alertContent);
+
+                        modalOpen("#alert03");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

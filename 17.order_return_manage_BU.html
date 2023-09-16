@@ -97,10 +97,10 @@
                                         >주문/배송관리</a
                                     >
                                 </li>
-                                <li>
+                                <li class="on">
                                     <a href="javascript:void(0);">반품 관리</a>
                                 </li>
-                                <li class="on">
+                                <li>
                                     <a href="javascript:void(0);">취소 관리</a>
                                 </li>
                             </ul>
@@ -134,9 +134,9 @@
             <!-- admin_container -->
             <div class="admin_container">
                 <div class="title">
-                    <h2>취소관리</h2>
+                    <h2>반품관리</h2>
                     <div class="desc">
-                        주문에 대한 취소 내역을 확인할 수 있습니다.
+                        반품요청된 내역을 관리할 수 있습니다.
                     </div>
                 </div>
                 <main>
@@ -150,7 +150,7 @@
                                         <div class="inner">
                                             <ul>
                                                 <li class="active">전체</li>
-                                                <li>취소요청일</li>
+                                                <li>반품요청일</li>
                                                 <li>주문접수일</li>
                                             </ul>
                                         </div>
@@ -203,7 +203,7 @@
                                                 id="current_01"
                                             />
                                             <label for="current_01"
-                                                >취소요청</label
+                                                >주문접수</label
                                             >
                                         </div>
                                         <div class="checkbox_wrap">
@@ -212,7 +212,7 @@
                                                 id="current_02"
                                             />
                                             <label for="current_02"
-                                                >취소승인</label
+                                                >배송준비</label
                                             >
                                         </div>
                                         <div class="checkbox_wrap">
@@ -220,8 +220,24 @@
                                                 type="checkbox"
                                                 id="current_03"
                                             />
-                                            <label for="current_03"
-                                                >취소완료</label
+                                            <label for="current_03">품절</label>
+                                        </div>
+                                        <div class="checkbox_wrap">
+                                            <input
+                                                type="checkbox"
+                                                id="current_04"
+                                            />
+                                            <label for="current_04"
+                                                >배송중</label
+                                            >
+                                        </div>
+                                        <div class="checkbox_wrap">
+                                            <input
+                                                type="checkbox"
+                                                id="current_05"
+                                            />
+                                            <label for="current_05"
+                                                >배송완료</label
                                             >
                                         </div>
                                     </div>
@@ -237,50 +253,68 @@
                             <div class="counter">
                                 총 <b>101</b>건의 내역이 있습니다.
                             </div>
-                            <!-- <div class="btn_wrap">
+                            <div class="btn_wrap">
                                 <button
                                     class="btn btn_secondary btn_check st_2"
+                                    onclick="modalOpen('#alert_02')"
                                 >
-                                    취소승인
+                                    회수완료
                                 </button>
-                            </div> -->
+                                <button
+                                    class="btn btn_secondary btn_check st_2"
+                                    onclick="modalOpen('#alert_01')"
+                                >
+                                    반품승인
+                                </button>
+                            </div>
                         </div>
                         <div class="table_body order_delivery_mng_table">
                             <table>
                                 <colgroup>
+                                    <!-- col 11 -->
+                                    <col style="width: 30px" />
                                     <col style="width: 70px" />
-                                    <col style="width: 128px" />
                                     <col style="width: 128px" />
                                     <col style="width: 119px" />
                                     <col style="width: 80px" />
-                                    <col style="width: 300px" />
-                                    <col style="width: 170px" />
+                                    <col style="width: 374px" />
                                     <col style="width: 100px" />
                                     <col style="width: 100px" />
                                     <col style="width: 96px" />
                                     <col style="width: 126px" />
-                                    <col style="width: 174px" />
+                                    <col style="width: 374px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>#</th>
                                         <th>주문번호</th>
-                                        <th>접수일시</th>
-                                        <th>취소요청일시</th>
-                                        <th>주문상태</th>
-                                        <th>상품명</th>
-                                        <th>업체명</th>
+                                        <th>반품요청일시</th>
+                                        <th>반품상태</th>
+                                        <th>원료명</th>
                                         <th>용량<i>(g)</i></th>
                                         <th>수량<i>(개)</i></th>
                                         <th>주문자<br />수령자</th>
                                         <th>
                                             주문자 연락처<br />수령자 연락처
                                         </th>
-                                        <th>취소사유</th>
+                                        <th>반품사유</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_01"
+                                                />
+                                                <label
+                                                    for="chk_01"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
                                         <td>1</td>
                                         <td>
                                             <a
@@ -291,14 +325,17 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
-                                        <td>2022.12.12 12:12</td>
-                                        <td>취소완료</td>
+                                        <td>반품완료</td>
                                         <td>
                                             <div class="ellipsis">
-                                                옥수수 수염 레몬밤
+                                                옥수수 수염 레몬밤옥수수 수염
+                                                레몬밤옥수수 수염 레몬밤옥수수
+                                                수염 레몬밤옥수수 수염
+                                                레몬밤옥수수 수염 레몬밤수염
+                                                레몬밤옥수수 수염 레몬밤옥수수
+                                                수염 레몬밤
                                             </div>
                                         </td>
-                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -312,6 +349,18 @@
                                         <td>다른원료주문</td>
                                     </tr>
                                     <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_02"
+                                                />
+                                                <label
+                                                    for="chk_02"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
                                         <td>2</td>
                                         <td>
                                             <a
@@ -322,18 +371,12 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
-                                        <td>2022.12.12 12:12</td>
-                                        <td class="fc_danger">취소요청</td>
+                                        <td class="fc_danger">반품요청</td>
                                         <td>
                                             <div class="ellipsis">
-                                                옥수수 수염 레몬밤 옥수수 수염
-                                                레몬밤옥수수 수염 레몬밤옥수수
-                                                수염 레몬밤옥수수 수염
-                                                레몬밤옥수수 수염 레몬밤옥수수
-                                                수염 레몬밤옥수수 수염 레몬밤
+                                                옥수수 수염 레몬밤
                                             </div>
                                         </td>
-                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -347,6 +390,18 @@
                                         <td>다른원료주문</td>
                                     </tr>
                                     <tr>
+                                        <td>
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_03"
+                                                />
+                                                <label
+                                                    for="chk_03"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
                                         <td>3</td>
                                         <td>
                                             <a
@@ -357,14 +412,12 @@
                                             >
                                         </td>
                                         <td>2022.12.12 12:12</td>
-                                        <td>2022.12.12 12:12</td>
                                         <td class="fc_primary">회수완료</td>
                                         <td>
                                             <div class="ellipsis">
                                                 옥수수 수염 레몬밤
                                             </div>
                                         </td>
-                                        <td>뉴트리라이프케어</td>
                                         <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>
@@ -528,17 +581,12 @@
                                         <p>배송준비</p>
                                         <span>2023.07.01<br />00:00:00</span>
                                     </div>
-                                    <div class="box disabled">
-                                        <p>품절</p>
-                                        <span>2023.07.01<br />00:00:00</span>
-                                    </div>
+                                    <div class="box disabled"><p>품절</p></div>
                                     <div class="box disabled">
                                         <p>배송중</p>
-                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                     <div class="box disabled">
                                         <p>배송완료</p>
-                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                 </div>
                             </div>
@@ -547,14 +595,32 @@
                                 <div class="detail cancle">
                                     <div class="box disabled">
                                         <p>취소요청</p>
-                                        <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                     <div class="box disabled">
                                         <p>취소승인</p>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>취소완료</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="state_list">
+                                <h4>반품상태</h4>
+                                <div class="detail cancle">
+                                    <div class="box disabled">
+                                        <p>반품요청</p>
+                                        <span>2023.07.01<br />00:00:00</span>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>회수접수</p>
+                                        <span>2023.07.01<br />00:00:00</span>
+                                    </div>
+                                    <div class="box disabled">
+                                        <p>회수완료</p>
                                         <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                     <div class="box active">
-                                        <p>취소완료</p>
+                                        <p>반품완료</p>
                                         <span>2023.07.01<br />00:00:00</span>
                                     </div>
                                 </div>
@@ -563,7 +629,7 @@
                         <section class="contents_box">
                             <h3>배송정보</h3>
                             <div class="delivery_search_box">
-                                <div class="selectbox up_st">
+                                <div class="selectbox">
                                     <p class="selected">전체</p>
                                     <div class="option_group">
                                         <div class="inner">
@@ -586,11 +652,7 @@
                     </div>
                 </div>
                 <div class="modal_footer">
-                    <div class="link_wrap">
-                        <button class="btn btn_border_secondary">
-                            취소승인
-                        </button>
-                    </div>
+                    <div class="link_wrap"></div>
                     <div class="btn_wrap">
                         <button class="btn btn_secondary">취소</button>
                         <button class="btn btn_primary">확인</button>

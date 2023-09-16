@@ -214,7 +214,7 @@
                             </div>
                             <div class="col_2">
                                 <div class="row col_2_1">
-                                    <h3>검색구분</h3>
+                                    <h3>검색어</h3>
                                     <div class="selectbox">
                                         <p class="selected">전체</p>
                                         <div class="option_group">
@@ -345,7 +345,7 @@
                                 총 <b>101</b>건의 접수완료 내역이 있습니다.
                             </div>
                             <div class="btn_wrap">
-                                <!-- <div
+                                <div
                                     class="selectbox disabled"
                                     onclick="modalOpen('#alert_01')"
                                 >
@@ -366,7 +366,7 @@
                                     onclick="modalOpen('#alert_03')"
                                 >
                                     선택삭제
-                                </button>-->
+                                </button>
                                 <button
                                     class="btn btn_secondary btn_add"
                                     onclick="modalOpen('#modal_03')"
@@ -378,40 +378,60 @@
                         <div class="table_body base_material_mng_table">
                             <table>
                                 <colgroup>
-                                    <!-- 12 -->
-                                    <col style="width: 5%" />
-                                    <col style="width: 10%" />
-                                    <col style="width: 11%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
-                                    <col style="width: 8%" />
+                                    <!-- 16 -->
+                                    <col style="width: 30px" />
+                                    <col style="width: 70px" />
+                                    <col style="width: 128px" />
+                                    <col style="width: 240px" />
+                                    <col style="width: 135px" />
+                                    <col style="width: 70px" />
+                                    <col style="width: 96px" />
+                                    <col style="width: 93px" />
+                                    <col style="width: 94px" />
+                                    <col style="width: 72px" />
+                                    <col style="width: 108px" />
+                                    <col style="width: 108px" />
+                                    <col style="width: 86px" />
+                                    <col style="width: 86px" />
+                                    <col style="width: 86px" />
+                                    <col style="width: 80px" />
                                 </colgroup>
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>#</th>
                                         <th>접수번호<br /><i>(원료코드)</i></th>
                                         <th>원료명</th>
                                         <th>카테고리</th>
                                         <th>판매상태</th>
                                         <th>합산중량<i>(g)</i></th>
+                                        <th>판매중량<i>(g)</i></th>
+                                        <th>재고수량<i>(개)</i></th>
                                         <th>판매유형</th>
-                                        <th>총 판매가<i>(원)</i></th>
+                                        <th>정상판매가<i>(원)</i></th>
                                         <th>할인판매가<i>(%)</i></th>
                                         <th>원료등록일</th>
                                         <th>특가시작일</th>
                                         <th>최종수정일</th>
+                                        <th>수정</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
+                                    <tr class="border_st">
+                                        <td rowspan="3">
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_01"
+                                                />
+                                                <label
+                                                    for="chk_01"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td rowspan="3">1</td>
+                                        <td rowspan="3">
                                             <a
                                                 onclick="modalOpen('#modal_01')"
                                                 href="javascript:void(0);"
@@ -419,15 +439,17 @@
                                                 >1234567890<br />(1234567890)</a
                                             >
                                         </td>
-                                        <td>옥수수 수염 레몬밤</td>
-                                        <td>건강식품원료</td>
-                                        <td>
+                                        <td rowspan="3">옥수수 수염 레몬밤</td>
+                                        <td rowspan="3">건강식품원료</td>
+                                        <td rowspan="3">
                                             <a
                                                 href="javascript:void(0);"
                                                 class="link"
                                                 >판매중</a
                                             >
                                         </td>
+                                        <td rowspan="3">1,234,567</td>
+                                        <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>특가</td>
                                         <td>1,234,567</td>
@@ -435,26 +457,17 @@
                                         <td>2022.12.12</td>
                                         <td>2022.12.12</td>
                                         <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <a
-                                                onclick="modalOpen('#modal_01')"
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >1234567890<br />(1234567890)</a
-                                            >
-                                        </td>
-                                        <td>옥수수 수염 레몬밤</td>
-                                        <td>건강식품원료</td>
-                                        <td>
-                                            <a
-                                                href="javascript:void(0);"
-                                                class="link"
-                                                >판매중</a
-                                            >
-                                        </td>
+                                        <td>1,234,567</td>
                                         <td>1,234,567</td>
                                         <td>특가</td>
                                         <td>1,234,567</td>
@@ -462,6 +475,99 @@
                                         <td>2022.12.12</td>
                                         <td>2022.12.12</td>
                                         <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border_st">
+                                        <td rowspan="3">
+                                            <div class="checkbox_wrap">
+                                                <input
+                                                    type="checkbox"
+                                                    id="chk_02"
+                                                />
+                                                <label
+                                                    for="chk_02"
+                                                    class="no_label"
+                                                ></label>
+                                            </div>
+                                        </td>
+                                        <td rowspan="2">2</td>
+                                        <td rowspan="2">
+                                            <a
+                                                onclick="modalOpen('#modal_01')"
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >1234567890<br />(1234567890)</a
+                                            >
+                                        </td>
+                                        <td rowspan="2">옥수수 수염 레몬밤</td>
+                                        <td rowspan="2">건강식품원료</td>
+                                        <td rowspan="2">
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="link"
+                                                >판매중</a
+                                            >
+                                        </td>
+                                        <td rowspan="2">1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,234,567</td>
+                                        <td>1,234,567</td>
+                                        <td>특가</td>
+                                        <td>1,234,567</td>
+                                        <td>50%</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>2022.12.12</td>
+                                        <td>
+                                            <button
+                                                onclick="modalOpen('#modal_02')"
+                                                class="btn sm btn_border_secondary"
+                                            >
+                                                수정
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -600,34 +706,6 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="content_list">
-                                <h4>판매상태 변경</h4>
-                                <div class="detail flex_row">
-                                    <div class="selectbox">
-                                        <p class="selected">판매중</p>
-                                        <div class="option_group">
-                                            <div class="inner">
-                                                <p class="label">
-                                                    판매상태변경
-                                                </p>
-                                                <ul>
-                                                    <li class="active">
-                                                        판매중
-                                                    </li>
-                                                    <li>품절</li>
-                                                    <li>판매중지</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button
-                                        class="btn btn_border_secondary"
-                                        onclick="modalOpen('#alert_01')"
-                                    >
-                                        변경
-                                    </button>
-                                </div>
-                            </div>
                         </section>
                         <section class="contents_box">
                             <h3>증빙자료</h3>
@@ -683,22 +761,7 @@
                     </div>
                 </div>
                 <div class="modal_footer">
-                    <div class="link_wrap">
-                        <button
-                            class="btn btn_border_secondary btn_del"
-                            onclick="modalOpen('#alert_02')"
-                        >
-                            삭제
-                        </button>
-                        <button
-                            class="btn btn_secondary btn_modify"
-                            onclick="modalClose('#modal_01');modalOpen('#modal_02')"
-                        >
-                            수정
-                        </button>
-                    </div>
                     <div class="btn_wrap">
-                        <button class="btn btn_secondary">취소</button>
                         <button class="btn btn_primary">확인</button>
                     </div>
                 </div>
@@ -1038,12 +1101,7 @@
                     </div>
                     <div class="btn_wrap">
                         <button class="btn btn_secondary">취소</button>
-                        <button
-                            class="btn btn_primary"
-                            onclick="modalClose('#modal_02');toastOpen('#toast_02')"
-                        >
-                            수정완료
-                        </button>
+                        <button class="btn btn_primary">수정완료</button>
                     </div>
                 </div>
             </div>
@@ -1471,13 +1529,5 @@
             </div>
         </div>
         <!-- //toast_01 -->
-        <!-- toast_02 -->
-        <div class="toast_wrap" id="toast_02">
-            <div class="toast primary">
-                <p>수정되었습니다.</p>
-                <span class="toast_close" onclick="toastClose()">x</span>
-            </div>
-        </div>
-        <!-- //toast_02 -->
     </body>
 </html>

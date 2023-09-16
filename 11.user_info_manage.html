@@ -211,7 +211,7 @@
                                 </div>
                             </div> -->
                             <div class="row col_1">
-                                <h3>검색어</h3>
+                                <h3>검색구분</h3>
                                 <div class="selectbox">
                                     <p class="selected">전체</p>
                                     <div class="option_group">
@@ -242,7 +242,7 @@
                             <div class="counter">
                                 총 <b>101</b>건의 접수완료 내역이 있습니다.
                             </div>
-                            <div class="btn_wrap">
+                            <!-- <div class="btn_wrap">
                                 <button
                                     class="btn btn_border_secondary btn_del"
                                     onclick="modalOpen('#alert_02')"
@@ -255,25 +255,25 @@
                                 >
                                     체크한 회원 승인
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="table_body">
                             <table>
                                 <colgroup>
-                                    <col style="width: 30px" />
-                                    <col style="width: 72px" />
-                                    <col style="width: 433px" />
-                                    <col style="width: 104px" />
-                                    <col style="width: 433px" />
-                                    <col style="width: 160px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
-                                    <col style="width: 96px" />
+                                    <!-- <col style="width: 30px" /> -->
                                     <col style="width: 80px" />
+                                    <col style="width: 453px" />
+                                    <col style="width: 124px" />
+                                    <col style="width: 443px" />
+                                    <col style="width: 170px" />
+                                    <col style="width: 106px" />
+                                    <col style="width: 106px" />
+                                    <col style="width: 106px" />
+                                    <!-- <col style="width: 80px" /> -->
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <!-- <th></th> -->
                                         <th>#</th>
                                         <th>아이디</th>
                                         <th>회원명</th>
@@ -282,12 +282,12 @@
                                         <th>가입일자</th>
                                         <th>승인일자</th>
                                         <th>탈퇴일자</th>
-                                        <th>승인</th>
+                                        <!-- <th>승인</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
+                                        <!-- <td>
                                             <div class="checkbox_wrap">
                                                 <input
                                                     type="checkbox"
@@ -298,7 +298,7 @@
                                                     class="no_label"
                                                 ></label>
                                             </div>
-                                        </td>
+                                        </td> -->
                                         <td>1</td>
                                         <td>
                                             <a
@@ -314,17 +314,9 @@
                                         <td>2022.12.12</td>
                                         <td>2022.12.12</td>
                                         <td>-</td>
-                                        <td>
-                                            <button
-                                                onclick="modalOpen('#modal_04')"
-                                                class="btn btn_border_secondary sm"
-                                            >
-                                                승인
-                                            </button>
-                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <!-- <td>
                                             <div class="checkbox_wrap">
                                                 <input
                                                     type="checkbox"
@@ -335,8 +327,8 @@
                                                     class="no_label"
                                                 ></label>
                                             </div>
-                                        </td>
-                                        <td>1</td>
+                                        </td> -->
+                                        <td>2</td>
                                         <td>
                                             <a
                                                 onclick="modalOpen('#modal_01')"
@@ -351,7 +343,6 @@
                                         <td>2022.12.12</td>
                                         <td>-</td>
                                         <td>2022.12.12</td>
-                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -505,8 +496,27 @@
                     </div>
                 </div>
                 <div class="modal_footer">
+                    <div class="link_wrap">
+                        <button
+                            class="btn btn_border_secondary btn_del"
+                            onclick="modalOpen('#alert_02')"
+                        >
+                            삭제
+                        </button>
+                        <button
+                            class="btn btn_check"
+                            onclick="modalOpen('#alert_01')"
+                        >
+                            승인
+                        </button>
+                    </div>
                     <div class="btn_wrap">
-                        <button class="btn btn_primary">확인</button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalClose('#modal_01')"
+                        >
+                            확인
+                        </button>
                     </div>
                 </div>
             </div>
@@ -516,9 +526,7 @@
         <div class="modal_wrap alert_st" id="alert_01">
             <div class="modal">
                 <div class="modal_body">
-                    <div class="alert_msg">
-                        체크한 회원을<br/ >승인하시겠습니까?
-                    </div>
+                    <div class="alert_msg">승인하시겠습니까?</div>
                 </div>
                 <div class="modal_footer">
                     <div class="btn_wrap">
@@ -528,7 +536,12 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_primary">승인</button>
+                        <button
+                            class="btn btn_primary"
+                            onclick="modalCloseAll()"
+                        >
+                            승인
+                        </button>
                     </div>
                 </div>
             </div>
@@ -538,9 +551,7 @@
         <div class="modal_wrap alert_st" id="alert_02">
             <div class="modal">
                 <div class="modal_body">
-                    <div class="alert_msg">
-                        체크한 회원을<br/ > 삭제하시겠습니까?
-                    </div>
+                    <div class="alert_msg">삭제하시겠습니까?</div>
                 </div>
                 <div class="modal_footer">
                     <div class="btn_wrap">
@@ -550,7 +561,12 @@
                         >
                             취소
                         </button>
-                        <button class="btn btn_danger">삭제</button>
+                        <button
+                            class="btn btn_danger"
+                            onclick="modalCloseAll()"
+                        >
+                            삭제
+                        </button>
                     </div>
                 </div>
             </div>
