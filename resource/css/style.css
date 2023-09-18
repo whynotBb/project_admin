@@ -1142,6 +1142,9 @@ button.btn.btn_download:hover {
   height: 100vh;
   position: relative;
 }
+.login_wrapper .login_container .login_box {
+  height: 58.4rem;
+}
 
 .sign_wrapper {
   max-width: 1920px;
@@ -1166,7 +1169,13 @@ button.btn.btn_download:hover {
   background: url(../images/sign_header_logo.svg) no-repeat center left;
 }
 .sign_wrapper main {
-  height: calc(100% - 15.7rem);
+  padding: 8rem 4rem;
+  min-height: calc(100% - 15.7rem);
+}
+.sign_wrapper main .login_container {
+  position: initial;
+  transform: initial;
+  margin: 0 auto;
 }
 .sign_wrapper main .login_container .login_box {
   box-shadow: none;
@@ -1432,7 +1441,6 @@ button.btn.btn_download:hover {
   font-size: 1.4rem;
   color: #6c757d;
 }
-
 .contents_box {
   padding: 8rem 0 0 0;
 }

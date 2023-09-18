@@ -113,6 +113,24 @@
             }
         }
     }
+    @media (max-width: 1920px) {
+        // padding-left: 24rem;
+        // .lnb_wrap {
+        //     position: fixed;
+        //     top: 0;
+        //     left: 0;
+        //     z-index: 20;
+        //     max-height: 100vh;
+        //     overflow-y: auto;
+        // }
+        // .admin_container {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 24rem;
+        //     max-height: 100vh;
+        //     overflow-y: auto;
+        // }
+    }
 }
 .contents_box {
     padding: $space-xxl 0 0 0;
