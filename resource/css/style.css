@@ -1675,6 +1675,9 @@ button.btn.btn_download:hover {
 .search_box_wrap h3 {
   width: 9.6rem;
 }
+.search_box_wrap form {
+  flex: 1;
+}
 .search_box_wrap .search_box {
   flex: 1;
 }
